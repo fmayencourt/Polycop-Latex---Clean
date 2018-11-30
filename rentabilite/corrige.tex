@@ -1,0 +1,191 @@
+\begin{solution}
+Seuil de rentabilité $ {  : x}=\frac{42}{1-0.6}=105$
+
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=0, xmax=150,
+    ymin=0, ymax=160,
+    axis lines=center,
+    axis on top=true,
+    domain=0:150,
+    nodes near coords,
+    point meta=explicit symbolic,
+    height=8cm,width=\textwidth,
+    ]
+
+   	\addplot [mark=none,draw=red, thick] {0.6*x+42};
+	\addplot [mark=none,draw=blue, thick] {x};
+	\addplot+[only marks] coordinates{(105,105)[$(105 ;105)$]} ;
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+\begin{solution}
+Seuil de rentabilité $ {  1 : x}=\frac{100}{0.4-0.2}=500$	
+Seuil de rentabilité $ {  2 : x}=\frac{180}{0.4-0.1}=600$
+
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=0, xmax=1000,
+    ymin=0, ymax=450,
+    axis lines=center,
+    axis on top=true,
+    domain=0:1000,
+    nodes near coords,
+    point meta=explicit symbolic,
+    height=8cm,width=\textwidth,
+    ]
+
+   	\addplot [mark=none,draw=red, thick] {0.2*x+100};
+	\addplot [mark=none,draw=green, thick] {0.1*x+180};
+	\addplot [mark=none,draw=blue, thick] {0.4*x};
+	\addplot+[only marks] coordinates{(500,200)[$(500 ;200)$]} ;
+	\addplot+[only marks] coordinates{(600,240)[$(600 ;240)$]} ;
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+\begin{solution}
+$37=\frac{148}{x-2}\Leftrightarrow 37x-74=148\Leftrightarrow 37x=222\Leftrightarrow x=6$
+\end{solution}
+
+\begin{solution}
+Seuil de rentabilité $ {  1 : x}=\frac{12'240}{21-9}=1'020$
+
+Seuil de rentabilité $ {  2 : x}=\frac{9'660}{21-11}=966$
+
+
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=0, xmax=1600,
+    ymin=0, ymax=35000,
+    axis lines=center,
+    axis on top=true,
+    domain=0:1600,
+    nodes near coords,
+    point meta=explicit symbolic,
+    height=8cm,width=\textwidth,
+    ]
+
+   	\addplot [mark=none,draw=red, thick] {9*x+12240};
+	\addplot [mark=none,draw=green, thick] {11*x+9660};
+	\addplot [mark=none,draw=blue, thick] {21*x};
+	\addplot+[only marks] coordinates{(966,20286)[$(966 ;20286)$]} ;
+	\addplot+[only marks] coordinates{(1020,21420)[$(1020 ;21420)$]} ;
+	\addplot+[only marks] coordinates{(1290,23850)[$(1290 ;23850)$]} ;
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+\begin{solution}
+Seuil de rentabilité $ {  1 : x}=\frac{1000}{150-75}\cong 14$	
+
+Seuil de rentabilité $ {  2 : x}=\frac{2000-1000}{75-50}=40$
+ De 0 à 13 : proposition A	De 14 à 40 : proposition B	A partir de 41 : proposition C
+
+
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=0, xmax=50,
+    ymin=0, ymax=8000,
+    axis lines=center,
+    axis on top=true,
+    domain=0:50,
+    nodes near coords,
+    point meta=explicit symbolic,
+    height=8cm,width=\textwidth,
+    ]
+
+   	\addplot [mark=none,draw=red, thick] {75*x+1000};
+	\addplot [mark=none,draw=green, thick] {50*x+2000};
+	\addplot [mark=none,draw=blue, thick] {150*x};
+	\addplot+[only marks] coordinates{(13.3,2000)[$(13.3 ;2000)$]} ;
+	\addplot+[only marks] coordinates{(40,4000)[$(40 ;4000)$]} ;
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+\begin{solution}
+Frais fixes : Fr. 32'100.—, frais variables : Fr. 8.5
+
+Seuil de rentabilité $ {  1 : x}=\frac{32'100}{14.5-8.5}=5'350$
+
+Bénéfice :\[\]$25'000\cdot \left( 14.5-8.5 \right)-32'100=117'900$ 
+
+Nouveau prix de vente : Fr. 13.05, Seuil de rentabilité $ {  2 : x}=\frac{32'100}{13.05-8.5}\cong 7'055$
+
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=0, xmax=7500,
+    ymin=0, ymax=140000,
+    axis lines=center,
+    axis on top=true,
+    domain=0:7500,
+    nodes near coords,
+    point meta=explicit symbolic,
+    height=8cm,width=\textwidth,
+    ]
+
+   	\addplot [mark=none,draw=red, thick] {8.5*x+32100};
+	\addplot [mark=none,draw=green, thick] {14.5*x};
+	\addplot [mark=none,draw=blue, thick] {13.05*x};
+	\addplot+[only marks] coordinates{(5350,77575)[$(5350 ;77575)$]} ;
+	\addplot+[only marks] coordinates{(7055,92068)[$(7055 ;92068)$]} ;
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+\begin{solution}
+Prix de la location pour 4 ans : Fr. 10'000.—, Entretien d’un arbre pour 4 ans : Fr. 3.—
+
+Seuil de rentabilité $ {   : x}=\frac{10'000}{5-3}=5'000$
+
+Revenu  annuel : $\frac{54'000\cdot 5-60'000\cdot 3-10'000}{4}=Fr.\text{ }20'000$
+
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=0, xmax=6000,
+    ymin=0, ymax=35000,
+    axis lines=center,
+    axis on top=true,
+    domain=0:6000,
+    nodes near coords,
+    point meta=explicit symbolic,
+    height=8cm,width=\textwidth,
+    ]
+
+   	\addplot [mark=none,draw=red, thick] {5*x};
+	\addplot [mark=none,draw=green, thick] {3*x+10000};
+	\addplot+[only marks] coordinates{(5000,25000)[$(5000 ;25000)$]} ;
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+\begin{solution}
+Seuil de rentabilité $ {  1 : x}=\frac{150}{12.5-6.25}=24$
+
+Seuil de rentabilité $ {  2 : x}=\frac{1'050-150}{6.25}=144$
+
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=0, xmax=150,
+    ymin=0, ymax=1200,
+    axis lines=center,
+    axis on top=true,
+    domain=0:150,
+    nodes near coords,
+    point meta=explicit symbolic,
+    height=8cm,width=\textwidth,
+    ]
+
+   	\addplot [mark=none,draw=red, thick] {12.5*x};
+	\addplot [mark=none,draw=green, thick] {6.25*x+150};
+	\addplot [mark=none,draw=blue, thick] {1050};
+	\addplot+[only marks] coordinates{(24,300)[$(24 ;300)$]} ;
+	\addplot+[only marks] coordinates{(144,1050)[$(144 ;1050)$]} ;
+\end{axis}
+\end{tikzpicture}
+\end{solution}
+
+
+

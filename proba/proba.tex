@@ -1,0 +1,87 @@
+\chapter{Probabilités}
+
+\section{Un peu d'histoire}
+
+Bien que l'histoire des jeux de hasard remonte à la nuit des temps, on ne retrouve la trace de calculs de probabilités (à savoir : quelles sont les chances de gagner ou de perdre) qu'au Moyen-Âge. Le premier problème nous vient d'une correspondance entre Blaise Pascal~\index{Pascal, Blaise} et Pierre de Fermat\index{Fermat, Pierre} et porte sur l'histoire suivante (quelque peu simplifiée et tirée de \cite{godfroy2000pascal}) :
+\begin{quote}
+Deux joueurs jouent l'un contre l'autre à une partie de dés. Ils ont chacun misé dix pièces d'or. Le premier qui gagne trois manches remporte la totalité de la mise, c'est-à-dire les vingt pièces. Or ils doivent arrêter le jeu avant que l'un des deux soit vainqueur. Comment se répartir alors les vingt pièces pour respecter l'état actuel du jeu ?
+\end{quote}
+
+Ce problème peut paraître simple, voir simpliste, mais il a inspiré aux mathématiciens une nouvelle branche : celle du hasard. Il a même eu des répercutions jusqu'au XXe siècle\cite{coumet1970theorie} : Georges-Théodule Guilbaud a relié ce problème à celui, plus juridique, des ruptures de contrats aléatoires.
+
+\section{Et un peu de math}
+
+Nous allons nous concentrer sur un problème plus parlant : Dans une classe de vingt élèves avec vingt places, le titulaire décide de changer les places. Or Jules souhaite savoir combien il a de chance de se trouver à côté d'une fenêtre. Il a une idée : il commence par compter le nombre de possibilité de placement qu'a le titulaire, puis le nombre de placement où il se trouve à côté d'une fenêtre. Formalisons un peu cette pensée :
+
+\begin{definition}
+Dans une situation aléatoire discrète, la probabilité qu'un évènement $A$ surgisse, notée $P(A)$ est donnée par
+$$
+P(A) = \frac{\mbox{nombre de fois où }A\mbox{ arrive}}{\mbox{nombre d'issues possibles}}
+$$
+\end{definition}
+
+Éclaircissons un peu cette définition, en particulier le terme de "situation aléatoire discrète" : il s'agit d'une situation dont on ne peut pas calculer l'issue car le nombre de variables est trop grand ou font appel à un élément humain, mais le nombre d'issues, même s'il est grand, peut être calculé. Il s'agit par exemple d'un lancé de dés ou de tirer une carte dans un jeu. A contrario, on va parler de situation aléatoire continue si le nombre d'issues ne peut pas être déterminé.
+
+Reprenons notre exemple de plan de classe. Pour compter le nombre de possibilités de plans de classe, Jules procède de manière inductive : il commence par placer un élève, puis un deuxième, un troisième, etc. Il se rend vite compte qu'il ne va pas pouvoir faire tous les plans de classe. Mais heureusement, dans sa méthode il suffit de les compter. Voilà son raisonnement : il attribue à chaque place un numéro (de $1$ à $20$) et se dit 
+\begin{quotation}
+À la place numéro $1$, j'ai vingt possibilités (vingt élèves). J'en prends un au hasard et le mets là. Ensuite, pour la place numéro $2$, je n'ai plus que dix-neuf possibilités, car il ne reste plus que dix-neuf élèves à placer. Pour la place numéro $3$, il m'en reste dix-huit, etc.
+
+Si je représente la situation en forme d'arbre, la première division se fait en $20$, puis en $19$. A la deuxième étape, j'ai donc déjà $20\cdot 19$ possibilités de placement. Ainsi, le nombre de placements différents doit être donné par 
+$$
+20\cdot 19\cdot 18\cdot 17 \cdot \dots \cdot 3 \cdot 2 \cdot 1 
+$$
+\end{quotation}
+
+En généralisant le raisonnement de Jules, on obtient :
+
+\begin{definition}
+Le nombre de possibilités de placer $n$ objets à $n$ places distinctes est donné par 
+$$
+n! = n \cdot (n-1) \cdot \dots \cdot 2 \cdot 1
+$$
+On appelle ce calcul $n$ factoriel.
+\end{definition}
+
+Jules sait à présent que le nombre total de plans est de $20!$. Il doit encore compter le nombre de plans où il se trouve à côté d'une fenêtre. Il raisonne de la manière suivante :
+\begin{quote}
+Il y a quatre places au bord d'une fenêtre. Une fois que je m'y suis assis, il reste 19 places pour les 19 élèves restants. Ainsi le nombre de plans où je suis au bord d'une fenêtre est de 
+$$
+4 \cdot 19!
+$$
+Ainsi la probabilité que je sois à côté d'une fenêtre est de 
+$$
+P = \frac{4\cdot 19!}{20!} = 0.2 = 20 \%
+$$
+\end{quote}
+
+Or voilà que deux élèves décident de quitter l'école. Il ne reste donc plus que dix-huit élèves à placer sur vingt places. Jules raisonne ainsi :
+\begin{quote}
+Cette fois, je ne suis pas sûr que la place $1$ soit occupée. Par contre, je sais que chaque élève a une place. Je prend donc le premier élève et le place dans la classe ; il y a vingt possibilités. Puis, je fais de même avec le deuxième élève qui lui n'en a plus que dix-neuf possibilités et ainsi de suite jusqu'au dernier élève qui n'en a que trois. Ainsi le nombre de plans différents est de 
+$$
+20\cdot 19 \cdot \cdot \dots \cdot 4 \cdot 3
+$$
+\end{quote}
+Jules a raisonné en faisant un arrangement de dix-huit personnes dans vingt places, qu'on formalise de la manière suivante :
+\begin{definition}
+Le nombre de possibilités de placer $p$ objets dans $n$ places (avec $p>n$) est donné par 
+$$
+A^p_n = \frac{n!}{(n-p)!}
+$$
+On appelle cela un \emph{arrangement de $p$ parmi $n$}.
+\end{definition}
+
+Jules doit maintenant déterminer le nombre de possibilités d'être à côté d'une fenêtre :
+\begin{quote}
+J'ai toujours quatre possibilités d'être à côté d'une fenêtre. L'élève suivant a dix-neuf possibilités de placement, etc. jusqu'au dernier qui n'en a plus que trois. Ainsi le nombre de places où je suis à côté d'une fenêtre est de 
+$$
+4\cdot 19 \cdot \dots \cdot 3
+$$
+Ainsi la probabilité que je sois à côté d'une fenêtre est de 
+$$
+P = \frac{4\cdot 19 \cdot \dots \cdot 3}{20\cdot 19 \cdot \cdot \dots \cdot 4 \cdot 3} = \frac{^4\cdot A^{19}_3}{A^{20}_3} = 0.2 = 20 \%
+$$
+\end{quote}
+
+\section{Exercices}
+
+\input{proba/exercice}

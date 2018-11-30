@@ -1,0 +1,207 @@
+\documentclass[twoside, a4paper, 12pt, openright, fullpage]{book}
+\pagestyle{headings}
+
+
+\usepackage{mayencourt}
+\usepackage[Sonny]{fncychap}
+\usepackage[final]{pdfpages}
+\usepackage{eurosym}
+\usepackage{pdflscape}
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepgfplotslibrary{fillbetween}
+
+
+\title{Polycopié ECCG}
+\author{Florent Mayencourt}
+\date{2018}
+
+\usepackage{makeidx}
+\makeindex
+
+\usepackage[inner=4cm,outer=2cm, top=2cm, bottom=2cm,includeheadfoot]{geometry} 
+
+\usepackage{hyperref}
+
+
+\hypersetup{
+backref=true, %permet d'ajouter des liens dans...
+ pagebackref=true,%...les bibliographies
+hyperindex=true, %ajoute des liens dans les index.
+colorlinks=true, %colorise les liens
+breaklinks=true, %permet le retour  la ligne dans les liens trop longs
+urlcolor= blue, %couleur des hyperliens
+linkcolor= blue, %couleur des liens internes
+bookmarks=true, %cr des signets pour Acrobat
+bookmarksopen=true, %si les signets Acrobat sont crs, les afficher compltement.
+pdftitle={Polycopié Math}, %informations apparaissant dans
+pdfauthor={Florent MAYENCOURT}, %dans les informations du document
+pdfsubject={Le cours de mathématiques à l'ECCG de Martigny} %sous Acrobat.
+}
+
+
+
+\begin{document}
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.15\textwidth]{logo.png}\par\vspace{1cm}
+	{\scshape\LARGE ECCG Martigny \par}
+	\vspace{1cm}
+	{\scshape\Large Polycopié \par}
+	\vspace{1.5cm}
+	{\huge\bfseries Mathématiques \par}
+	\vspace{2cm}
+	{\Large\itshape Florent Mayencourt \par}
+	\vfill
+	supervisé par \par
+	professeurs ECCG \textsc{Martigny}
+
+	\vfill
+
+% Bottom of the page
+	{\large \today\par}
+\end{titlepage}
+
+\newpage
+
+\thispagestyle{empty}
+\begin{flushright}
+\textit{
+~\\ \hspace{5cm}
+N'ayez pas peur de faire une erreur. Mais faites en sorte de ne pas faire la même erreur deux fois.
+\\
+\textit{Akio Morita, fondateur du groupe Sony}
+}
+\end{flushright}
+
+\vspace{17cm}
+
+\textit{À tous les élèves dont les erreurs nous permettent d'avancer.}
+
+\thispagestyle{empty}
+~\\
+\newpage
+
+\tableofcontents
+
+\input{ensemble/ensemble}% à revoir / corrigé ok
+
+\input{monomes/monomes}% ok /corrigé ok
+
+\input{factorisation/factorisation}% ok /corrigé ok
+
+\input{fractions/fractions}% ok %rajouter vinculum /corrigé ok
+
+\input{affines/fonctions_affines}% ok / corrigé ok
+
+% \input{rentabilite/rentabilite}% ok / corrige ok
+
+\input{droite/droite}% ok / corrige ok
+
+\input{systeme/systeme2x2}% ok /corrige ok
+
+\input{inequation1/inequation1}% ok / corrige ok
+
+\input{racines/racines}% à revoir avec le polycopié de Jean-Philippe Javet /corrige ok
+
+\input{nequation/equation_n}% ok / corrige ok
+
+\input{quadratique/quadratique}% ok
+
+\section{Corrigés}
+
+\input{quadratique/corrige}
+
+\input{systemquad/systemequad}% ok
+
+\section{Corrigés}
+
+\includepdf[pages=1-6]{systemquad/corrige.pdf}
+
+\input{inequation2/inequation2}% ok
+
+\section{Corrigés}
+
+\includepdf[pages=1-6]{inequation2/corrige.pdf}
+
+\input{statistiques/statistiques}% ok
+
+\section{Corrigés}
+
+\includepdf[pages=1-8]{statistiques/corrige.pdf}
+
+\input{programmation/programmation}% ok
+
+\section{Corrigés}
+
+\includepdf[pages=1-16]{programmation/corrige.pdf}
+
+\input{suites/suites} % à rajouter : exemples
+
+\section{Corrigés}
+
+\includepdf[pages=1-5]{suites/corrige.pdf}
+
+\input{log/log}% à rajouter : caractéristique et mantisse, fonctions et graphe log et exp, modifier pour avoir log de base a
+
+\section{Corrigés}
+
+\includepdf[pages=1-3]{log/corrige.pdf}
+
+\input{mathfin/mathfin}% pas mis la notion d'escompte
+
+\section{Corrigés}
+
+\input{mathfin/corrige}
+
+\input{proba/proba}% ok
+
+\section{Corrigés}
+
+\includepdf[pages=1-7]{proba/corrige.pdf}
+
+\input{triangle/triangle} %ok minimaliste
+
+\section{Corrigés}
+
+\includepdf[pages=1-4]{triangle/corrige1.pdf}
+
+\input{volume/volume} %ok minimaliste
+
+\section{Corrigés}
+
+\includepdf[pages=1-6]{volume/corrige.pdf}
+
+\input{trigo/trigo}%ok minimaliste
+
+\section{Corrigés}
+
+\includepdf[pages=1-4]{trigo/corrige.pdf}
+
+\input{limites/limites}%rajouter des graphiques pour visualiser les limites
+
+\section{Corrigés}
+
+\input{limites/corrige}
+
+\input{derivee/derivee}%rajouter le graphique de la pente
+
+\section{Corrigés}
+
+\input{derivee/corrige}%tableaux à refaire
+
+
+\appendix
+
+\input{rtsdoc}
+
+\printindex
+
+\newpage
+
+\bibliographystyle{plain}
+\bibliography{biblio}
+
+\end{document}

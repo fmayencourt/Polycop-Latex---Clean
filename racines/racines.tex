@@ -1,0 +1,159 @@
+\chapter{Racines}
+
+\section{Racines carrées}
+
+\subsection{L'histoire}
+
+L'extraction d'une racine carrée a de tout temps joué un grand rôle en mathématique (du moins jusqu'à l'apparition de machines à calculer). En effet, les mathématiques ont pris une place vraiment importante dans la société dès que l'on a chercher à s'attribuer des biens: il faut savoir compter le nombre d'unités de blé qu'il me reste, sachant combien j'en avais après la récolte et sachant combien j'en ai vendu; il faut savoir combien d'unités d'aire de champs j'ai pour faire un partage (équitable ou non) de mon héritage, etc. Ces exemples mettent en évidence deux aspects des mathématiques : l'algèbre et la géométrie. Comme le disait Descartes \cite{Descartes}:
+\begin{quotation}
+(. . . ) toute l’arithmétique n’est composée que de quatre ou cinq opérations, qui
+sont : l’addition, la soustraction, la multiplication, la division et l’extraction des
+racines, qu’on peut prendre pour une espèce de division (. . . )
+\end{quotation}
+Si la racine carrée joue un rôle mineur dans l'algèbre de base, il en est tout autrement dans la géométrie, où la notion d'aire lui est intimement lié.
+
+L'origine de la notation $\sqrt{a}$ est flou, mais quelques auteurs \cite{Euler} pensent qu'elle provient de 
+$$
+Ra \rightarrow ra \rightarrow \sqrt{a}.
+$$
+
+\subsection{La théorie}
+
+On définit la racine carrée de la manière suivante :
+
+\begin{definition}
+Soit $a$ un nombre réel positif. Le nombre réel positif $x$ est appelé \emph{racine carrée de $a$} et noté $\sqrt{a}$ s'il satisfait la relation suivante :
+$$
+x = \sqrt{a} \ssi x^2 = a.
+$$
+\end{definition}
+
+Interprétons de manière géométrique cette définition: 
+\begin{quotation}
+Soit un champ de forme carrée et d'aire $a$. Quelle longueur à chacun de ses côtés ?\\
+Posons $l$ la longueur d'un des côtés. Par géométrie, on sait que l'aire du carré est donné par la formule \emph{aire = côté $\cdot$ côté}. On obtient donc
+$$
+l^2 = a,
+$$
+d'où, par la définition que nous venons de poser, $l = \sqrt{a}$.
+\end{quotation}
+
+La racine carrée possède des propriétés directement héritées de celles des puissances carrées:
+
+\begin{propriete}
+Soient $a$ et $b$ deux nombres réels positifs et $c$ un nombre réel quelconque. On a alors:
+\begin{indice}
+	\item $\sqrt{a \cdot b} = \sqrt{a} \cdot \sqrt{b}$; \label{racinei}
+	\item $\sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}$;\label{racineii}
+\end{indice}
+\end{propriete}
+
+\begin{proof}
+Soient $a$ et $b$ deux réels positifs. Montrons la propriété \ref{racinei} : posons $x = \sqrt{a}$ et $y = \sqrt{b}$. Par la définition, on a donc
+$$
+\left.
+\begin{array}{lcr}
+x^2 &=& a\\
+y^2 &=& b\\
+\end{array}
+\right\} \Rightarrow x^2 y^2 = ab.
+$$
+Par la distributivité du carré pour la multiplication, on a donc $(xy)^2 = ab$, d'où, par la définition:
+$$
+\sqrt{a \cdot b} = \sqrt{a} \cdot \sqrt{b}.
+$$
+Toujours sous les mêmes conditions, montrons la propriété \ref{racineii}. Par la définition, on a:
+$$
+\left.
+\begin{array}{lcr}
+x^2 &=& a\\
+y^2 &=& b\\
+\end{array}
+\right\} \Rightarrow \frac{x^2}{y^2} = \frac{a}{b}.
+$$
+Par la distributivité du carré pour la multiplication, on a donc $(\frac{x}{y})^2 = \frac{a}{b}$, d'où, par la définition:
+$$
+\sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}},
+$$
+ce qui achève la démonstration.
+\end{proof}
+
+\begin{remarque}
+\textbf{Attention !} En général, on a pour $x$ et $y$ deux nombres réels positifs et $z$ un nombre réel quelconque:
+\begin{itemize}
+	\item $\sqrt{x^2 + y^2} \neq x + y$;
+	\item $\sqrt{x+y} \neq \sqrt{x} + \sqrt{y}$;
+\end{itemize}
+\end{remarque}
+
+Ces deux premières formules découlent principalement de l'identité remarquable :
+$$
+(x+y)^2 = x^2 + 2xy + y^2.
+$$
+
+
+Introduisons maintenant une notion importante dans le calcul de racines:
+
+\begin{definition}
+On appelle \emph{carré parfait} les entiers $n$ dont la racine carrée est elle-même entière.
+\end{definition}
+
+\begin{enumerate}
+\item Suite à cette définition, la notion d'\emph{extraction de carrés parfaits} prend tout son sens: il s'agit de 'sortir' de la racines $\sqrt{n}$ ses diviseurs qui sont des carrés parfaits. Par exemple:
+$$
+\sqrt{175} = \sqrt{25 \cdot 7} = 5\sqrt{7}.
+$$
+Cette notation simplifie le calcul 'manuel' de racines : il est beaucoup plus facile d'approcher numériquement $\sqrt{7}$ plutôt que $\sqrt{175}$.
+\item Une autre simplification se situe au niveau des fractions : la fraction $\frac{\sqrt{3}}{\sqrt{5}}$ est très difficile à cerner, car il faut diviser un nombre approché par un autre nombre approché; sans compter que la division par un nombre non-entier est très difficile. La méthode consiste donc à amplifier la fraction par le dénominateur de façon à le rendre entier. Par exemple :
+$$
+\frac{\sqrt{3}}{\sqrt{5}} = \frac{\sqrt{3}}{\sqrt{5}} \cdot \frac{\sqrt{5}}{\sqrt{5}} = \frac{\sqrt{3 \cdot 5}}{(\sqrt{5})^2} = \frac{\sqrt{15}}{5} \simeq \frac{4}{5}.
+$$
+\end{enumerate}
+
+
+\section{Racines $n$-èmes}
+
+On peut étendre la notion de racine carrée à une racine $n$-ème selon la définition suivante :
+
+\begin{definition}
+Soient $a$ un nombre réel positif et $n$ un nombre entier positif. Le nombre réel $x$ (positif si $n$ est pair) est appelé \emph{racine n-ème de $a$} et noté $\sqrt[n]{a}$ s'il satisfait la relation suivante :
+$$
+x = \sqrt[n]{a} \ssi x^n = a.
+$$
+\end{definition}
+
+On applique les mêmes règles pour les extractions de racines $n$-èmes.
+
+\begin{theoreme}
+La notion de racine $n$-ème (et donc aussi de racine carrée) peut s'entendre sous la forme de puissance selon la formule :
+$$
+\sqrt[n]{a} = a^{\frac{1}{n}}.
+$$ 
+\end{theoreme}
+
+\begin{proof}
+Notons $x$ la puissance de $a$ telle que 
+$$
+\sqrt[n]{a} = a^x.
+$$
+Alors selon la définition de la racine :
+$$
+\begin{array}{ll}
+&\left(\sqrt[n]{a}\right)^n = a \\
+\ssi & \left(a^x\right)^n = a\\
+\ssi & a^{n\cdot x} = a^1
+\end{array}
+$$
+Ainsi $n\cdot x = 1$ et donc $x=\frac{1}{n}$. On a donc démontré
+$$
+\sqrt[n]{a} = a^\frac{1}{n}.
+$$
+\end{proof}
+
+\section{Exercice}
+
+\input{racines/exercice}
+
+\section{Corrigés}
+
+\input{racines/corrige}

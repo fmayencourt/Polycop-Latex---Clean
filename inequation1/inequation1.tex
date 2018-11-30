@@ -1,0 +1,243 @@
+\chapter{Inéquations du premier degré}
+
+\section{Notions ensemblistes}
+
+Pour écrire les réponses de ce chapitre, nous aurons besoin d'une notation particulière liée aux ensembles. Comme nous l'avons déjà vu, on note $\R$ l'ensemble de tous les nombres réels (nombres entiers et à virgule, positifs et négatifs). Un intervalle est un sous-ensemble de $\R$, c'est-à-dire une partie de cet ensemble.
+
+\begin{definition}
+On note 
+$$
+[a;b]
+$$
+l'ensemble qui contient tous les nombres entre $a$ et $b$, avec $a$ et $b$ compris dans cet ensemble. Ce genre d'intervalle avec des crochets qui pointent vers l'intérieur est appelé \emph{intervalle fermé}.
+\index{intervalle!fermé}
+\end{definition}
+
+Par exemple, l'intervalle $[-2;4]$ contient $-1$, $0$, $0.2431423$ ainsi que $-2$~et~$4$. 
+
+\begin{definition}
+On note 
+$$
+]a;b[
+$$
+l'ensemble qui contient tous les nombres entre $a$ et $b$, avec $a$ et $b$ \textbf{n'étant pas compris} dans cet ensemble. Ce genre d'intervalle avec des crochets qui pointent vers l'extérieur est appelé \emph{intervalle ouvert}.\index{intervalle!ouvert}
+\end{definition}
+
+Par exemple, l'intervalle $]0;5[$ contient $1$, $2$, $3$, $\pi$, $4.99999999$ mais ni~$5$~ni~$0$. 
+
+\begin{definition}\index{infini}
+On appelle \emph{plus infini} le nombre plus grand que n'importe quel autre et on le note
+$$
++\infty
+$$
+réciproquement, on appelle \emph{moins infini} le nombre plus petit que n'importe quel autre et on le note
+$$
+-\infty
+$$
+\end{definition}
+
+Ainsi, certains intervalles utilisent cette notion d'infini, par exemple si l'on veut prendre tous les nombres plus grands que $42$, sans le nombre $42$ lui-même, on va noter
+$$
+]42;+\infty[
+$$
+
+\begin{remarque}
+Certains ensembles ne sont ni ouverts, ni fermés. Par exemple
+$$
+]-2;2]
+$$
+Contient tous les nombres compris entre $-2$ et $2$, sans le $-2$ mais avec le $2$.
+\end{remarque}
+
+\section{Symboles}
+
+Les symboles d'inéquations se lisent toujours de gauche à droite. On peut trouver les quatre symboles suivants :
+
+\hspace{5mm}\index{Inéquation!symboles}
+
+\shadowbox{
+\begin{tabular}{ll|ll}
+$<$ & strictement plus petit que & $>$ & strictement plus grand que\\
+$\leq$ & plus petit ou égal à & $\geq$ & plus grand ou égal à\\
+\end{tabular}
+}
+
+\hspace{5mm}
+
+Ainsi l'inéquation suivante 
+$$
+x \geq 6
+$$
+se lit : "$x$ est plus grand ou égal à $6$".
+
+\section{À une inconnue}
+
+Contrairement à une équation, une inéquation ne va pas nous donner une valeur bien précise pour $x$, mais un ensemble de valeurs qui satisfait l'inégalité. Par exemples pour l'inéquation
+$$
+2x-3 \leq x+1
+$$
+la valeur $\textcolor{red}{x=1}$ fait partie de l'ensemble des solutions car $2\cdot \textcolor{red}{1} -3 = -1$, $\textcolor{red}{1}+1 = 2$ et on a bien $-1\leq 2$. Par contre la valeur $\textcolor{blue}{x=5}$ n'en fait pas partie car $2\cdot \textcolor{blue}{5} -3 = 7$, $\textcolor{blue}{5}+1 = 6$ et on n'a pas $7\leq 6$.
+
+\subsection{Résolution d'une inéquation}
+
+La résolution d'une équation à une inconnue se fait comme une résolution d'une équation à une inconnue à la différence que si l'on doit multiplier ou diviser des deux côtés par un nombre négatif, on inverse le sens de l'inégalité.
+
+\begin{exemple}
+Résoudre l'inéquation suivante :
+$$
+2x-3 \leq x+1
+$$
+On va utiliser les mêmes outils que pour les équations :
+$$
+\begin{array}{lcll}
+2x-3 &\leq& x+1 &\ssi^{-x} \\
+x-3 &\leq & 1 &\ssi^{+3}\\
+ x & \leq & 4&\\.
+\end{array}
+$$
+On peut alors représenter en vert la solution sur la droite des réels :
+
+\begin{center}
+\includegraphics[width = 0.9\textwidth]{inequation1/innequation1.png}
+\end{center}
+
+Avec la convention suivante : si $x$ peut être égal au nombre, on remplit le point et si $x$ ne peut pas être égal, on laisse un rond vide. Pour savoir de quel côté part la demi-droite, il suffit d'essayer avec $x=0$ (ou un autre nombre). Si le test est concluant, on prend le côté où se trouve $0$, sinon l'autre. Dans notre exemple, $x\leq 4$ donc on a pris le côté du $0$.\index{Inéquation!solution graphique}
+
+La solution du système est donc notée sous forme d'intervalle~\index{intervalle}
+$$
+S = ]-\infty ; 4]
+$$
+et se lit de la manière suivante "les solutions sont entre $-\infty$ et $4$ compris".
+
+\end{exemple}
+
+\subsection{Résolution d'un système d'inéquations}
+
+Pour un système d'inéquations à une inconnue, la méthode est assez simple : il faut résoudre chaque inéquation séparément et représenter chaque solution sur la même droite des réels. La solution du système est alors à l'intersection des solutions, c'est-à-dire là où l'on trouve toutes les couleurs.
+
+\begin{exemple}
+
+Résoudre le système 
+$$
+\left\{
+\begin{array}{lcl}
+2x+1&>&x-3\\
+3&\geq & 4x-5\\ 
+\end{array}
+\right.
+$$
+On résout chaque inéquation séparément et on trouve
+$$
+\left\{
+\begin{array}{lcl}
+x&>&x-2\\
+2&\geq & x\\ 
+\end{array}
+\right.
+$$
+
+On représente ensuite la solution
+\begin{center}
+\includegraphics[width = 0.9 \textwidth]{inequation1/inequations1.png}
+\end{center}
+\end{exemple}
+
+L'ensemble des solutions du système est donc donné par l'intervalle :
+$$
+S=]-2;2]
+$$
+
+\section{À plusieurs inconnues}
+
+Cette section traite des inéquations à plusieurs inconnues. Nous n'aborderons que l'aspect graphique des solutions (comment représenter les solutions possibles) et donc par souci de représentation, nous ne traiterons que les inéquations à deux inconnues. Cependant, la notion se généralise facilement aux équations à trois, quatre, etc. inconnues.
+
+\subsection{Résolution d'une inéquation}
+
+Nous nous intéressons à la manière de représenter sur le plan une inéquation à deux inconnues. Elles sont du type
+$$
+ax+by \lessgtr c
+$$
+
+Regardons dans un premier temps comment représenter l'équation
+$$
+ax+by=c
+$$
+sur le plan. Il s'agit d'une équation du premier degré à deux inconnues. Une telle notion a déjà été abordée au chapitre~\ref{droite_plan}; il s'agit d'une droite dans le plan. Pour la représenter, il faut simplement trouver deux points qui sont sur la droite, par exemple en remplaçant $x$ par un nombre puis en déterminant la valeur de $y$ et réciproquement.
+
+Cette droite va couper le plan en deux parties. Puisqu'il s'agit d'une inéquation, l'un des deux parties va vérifier l'inégalité et l'autre non. On peut donc prendre un point qui n'est pas sur la droite pour tester s'il fait partie de la solution. S'il en fait partie, on prendra son côté du plan, sinon, l'autre côté. On appelle cela le \emph{principe du tiers exclu}.\index{principe du tiers exclu}
+
+\begin{exemple}
+Résoudre graphiquement l'inéquation
+\begin{eqnarray}
+x-2y \geq 6 \label{inequation}
+\end{eqnarray}
+Commençons par représenter la droite 
+$$
+x-2y=6
+$$
+Il faut donc trouver deux points sur la droite. Usuellement on va remplacer une fois $x$ par $0$ et une fois $y$ par $0$, mais on peut choisir d'autres nombres ou remplacer deux fois $x$ ou deux fois $y$. Ainsi
+$$
+\begin{array}{lcl}
+\textcolor{red}{x=0} &\Longrightarrow & 0-2y=6 \ssi \textcolor{red}{y=-3}\\
+\textcolor{blue}{y=0} &\Longrightarrow & x-2\cdot 0 = 6 \ssi \textcolor{blue}{x = 6}
+\end{array}
+$$
+La droite passe donc par les points $\textcolor{red}{(0;-3)}$ et $\textcolor{blue}{(6;0)}$.
+
+Il faut maintenant tester un point. Usuellement, on teste le point $(0;0)$, mais on peut prendre un autre. Remplaçons $x$ et $y$ par $0$ dans l'inéquation~\ref{inequation}. On obtient
+$$
+0-2\cdot 0 \geq 6
+$$
+Or cette inégalité est fausse, donc le point $(0;0)$ ne fait pas partie de la solution. Le principe du tiers exclu nous indique qu'il faut prendre l'autre partie du demi-plan :
+\begin{center}
+\includegraphics[width = 0.9\textwidth]{inequation1/inequation2.png}
+\end{center}
+\end{exemple}
+\begin{remarque}
+Par convention, si le symbole est une inégalité stricte ($>$ ou $<$), on va dessiner la droite en trait tillé, et sinon ($\leq$ ou $\geq$) on passera la droite en gras.
+\end{remarque}
+
+\subsection{Résolution d'un système d'inéquations}
+
+Pour résoudre un système d'inéquations, on va résoudre graphiquement chaque inéquation sur le même système d'axes. La solution du système est là où se rejoignent les solutions de chaque inéquation.
+
+\begin{exemple}
+Résoudre graphiquement le système d'inéquations 
+$$
+\left\{
+\begin{array}{lcl}
+x-2y &\geq & 6\\
+2x-4y & < & -6\\
+\end{array}
+\right.
+$$
+La solution est représentée par 
+\begin{center}
+\includegraphics[width=0.9\textwidth]{inequation1/inequation21.png}
+\end{center}
+\end{exemple}
+
+\begin{remarque}
+On peut aussi représenter des solutions d'inéquations à trois inconnues :
+$$
+\left\{
+\begin{array}{lcl}
+3x + 2y - 4z &<& 2\\
+x - 3y + 4z &\geq & -1\\
+-2x - 3y - z &>& 4 \\
+\end{array}
+\right.
+$$
+\begin{center}
+\includegraphics[width = 0.9\textwidth]{inequation1/inequation3.png}
+\end{center}
+Mais ça devient vite très compliqué.
+\end{remarque}
+
+\section{Exercices}
+
+\input{inequation1/exercice}
+
+\section{Corrigés}
+
+\input{inequation1/corrige}

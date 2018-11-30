@@ -1,0 +1,170 @@
+\chapter{Fractions de polynômes}
+
+\section{Rappels numériques}
+Une fraction représente une partie d'un objet ou d'une quantité, par exemple une part de gâteau, une partie d'un champ, etc.
+
+Pour pouvoir additionner ou soustraire deux quantités, il est nécessaire qu'elles aient la même signification. Par exemple, je ne peux pas juste mettre ensemble une moitié de gâteau et un tiers du même gâteau. Je vais devoir trouver une unité commune. Dans cet exemple de gâteau, si je divise ma moitié en trois, j'ai trois sixièmes de gâteau et mon tiers en deux, deux sixièmes. Ainsi en tout j'ai cinq sixièmes du gâteau. Pour parler plus simplement, une petite précision de nomenclature est nécessaire :
+
+\begin{definition}
+Pour une fraction du type
+$$
+\frac{a}{b},
+$$
+$a$ est appelé le \emph{numérateur} (il sert à compter le nombre de parties) et $b$ le \emph{dénominateur} (il indique de quelle type de partie il s'agit)
+\end{definition}
+
+Certaines fractions peuvent être expliquées plus simplement. Par exemple deux quarts de gâteau représentent une moitié. Dans un cadre plus général, on peut \emph{simplifier une fraction} si le numérateur et le dénominateur peuvent être divisés par le même nombre.
+
+Comme nous l'avons vu dans l'exemple précédent, pour additionner ou soustraire deux fractions, il faut trouver un dénominateur commun. Bien sûr, nous pouvons toujours prendre la multiplication des dénominateurs, mais les fractions ainsi obtenues sont souvent trop compliquées et demandent alors une simplification. Pour ne pas faire le travail à double, nous allons plutôt prendre le PPMC des numérateurs.
+
+\begin{exemple}
+Additionner les deux fractions suivantes :
+$$
+\frac{3}{20} + \frac{7}{50}.
+$$
+Il nous faut donc trouver le PPMC de $20$ et $50$. On cherche donc à exprimer $20$ et $50$ en produits de nombres premier :
+$$
+\begin{array}{lcl}
+20 &=& 2^2 \cdot 5 \\
+50 &=& 2 \cdot 5^2
+\end{array}
+$$
+Ainsi le PPMC est donné par $2^2\cdot 5^2 = 100$. On amplifie la première fraction par $5$ et la seconde par $2$ :
+$$
+\frac{3\cdot 5}{20 \cdot 5} + \frac{7 \cdot 2}{50 \cdot 2} = \frac{15}{100} + \frac{14}{100} = \frac{15 +14}{100} = \frac{29}{100}.
+$$
+\end{exemple}
+
+\section{PPMC de polynômes}
+
+Pour les fractions de polynômes, le processus ne change pas. Ainsi il nous faut une méthode pour déterminer le PPMC de deux polynômes.
+
+\begin{enumerate}\index{polynôme!PPMC}
+\item Factoriser chaque polynôme
+\item Prendre chaque partie de factorisation avec sa plus haute puissance, mais une seule fois
+\end{enumerate}
+
+\begin{exemple}\label{PPMC}
+Trouver le PPMC de
+$$
+2x^2 +8x + 8 \mbox{ et } 3x^2 + 15x + 18.
+$$
+Ainsi
+\begin{enumerate}
+\item On commence par factoriser chaque polynôme
+$$
+\begin{array}{lcl}
+2x^2 +8x + 8 &=& 2(x+2)^2\\
+3x^2 + 15x + 18 &=& 3(x+2)(x+3)
+\end{array}
+$$
+\item Le PPMC est donc donné par 
+$$
+6(x+2)^2 (x+3)
+$$
+car $6$ et le PPCM de $3$ et $2$, $(x+2)$ apparaît à la puissance $2$ et  $(x+3)$ apparaît une fois.
+\end{enumerate}
+\end{exemple}
+
+\section{Simplifier une fraction de polynômes}
+
+Pour simplifier une fraction de polynômes, il faut, comme pour les nombres, trouver ce par quoi l'on peut diviser le numérateur et le dénominateur. Pour les nombres, c'est assez simple, mais pour les polynômes, trouver de tête les diviseurs est plus complexe. Il faut ainsi commencer par factoriser le numérateur et le dénominateur avant de simplifier.
+
+\begin{exemple}
+Simplifier
+$$
+\frac{2x^2 +8x + 8}{6x^2 + 30x + 36}
+$$
+On factorise numérateur et dénominateur :
+$$
+\begin{array}{lcl}
+2x^2 +8x + 8 &=& 2(x+2)^2\\
+6x^2 + 30x + 36 &=& 6(x+2)(x+3)
+\end{array}
+$$
+On remplace ensuite le numérateur et le dénominateur dans la fraction de base :
+$$
+\frac{2(x+2)^2}{6(x+2)(x+3)} = 
+\frac{\xout{2}^1(x+2)^2}{\xout{6}_3(x+2)(x+3)} =
+\frac{(x+2)^\xout{2}}{3\xout{(x+2)}(x+3)} =
+\frac{(x+2)}{3(x+3)}
+$$
+\end{exemple}
+
+\section{Additionner deux fractions}
+
+Comme dit précédemment, pour additionner deux polynômes il faut trouver le PPMC des dénominateurs. Cependant dans certains cas, il vaut mieux simplifier d'abord chaque fraction pour éviter des calculs par la suite. Ainsi pour additionner deux fractions de polynômes ;
+\begin{enumerate}
+\item Simplifier chaque fraction
+\item Déterminer le PPMC des dénominateurs
+\item Amplifier chaque fraction par ce qu'il manque au dénominateur par rapport au PPMC
+\item Additionner les numérateurs et réduire le numérateur
+\item Simplifier la fraction
+\end{enumerate}
+
+\begin{exemple}
+Additionner les fractions
+$$
+\frac{3}{2x^2 +8x + 8} + \frac{5}{3x^2 + 15x + 18}
+$$
+\begin{enumerate}
+\item Aucune des deux fractions n'est simplifiable
+\item Comme dans l'exemple~\ref{PPMC}, il est donné par $6(x+2)^2 (x+3)$
+\item On amplifie la première fraction par $\textcolor{red}{3(x+3)}$ et la seconde par $\textcolor{blue}{2(x+2)}$. Ainsi
+$$
+\begin{array}{l}
+\frac{3 \cdot  \textcolor{red}{3(x+3)}}{2(x+2)^2 \cdot  \textcolor{red}{3(x+3)}} + \frac{5\cdot  \textcolor{blue}{2(x+2)}}{3(x+2)(x+3) \cdot \textcolor{blue}{2(x+2)}}
+=\\
+\\
+\frac{9x+27}{6(x+2)^2 (x+3)} + \frac{10x + 20}{6(x+2)^2 (x+3)}
+\end{array}
+$$
+\item On additionne les numérateurs puisque les deux fractions ont le même dénominateur et on réduit :
+$$
+\frac{9x+27 + 10x + 20}{6(x+2)^2 (x+3)} = \frac{19x + 47}{6(x+2)^2 (x+3)}
+$$
+\item La fraction obtenue ne peut être simplifiée.
+\end{enumerate}
+\end{exemple}
+
+\section{Multiplier deux fractions}
+
+Contrairement à ce qu'on pourrait croire, multiplier deux fractions est plus simple que d'en additionner deux. Cependant il ne faut pas confondre les deux méthodes.
+\begin{enumerate}
+\item Factoriser chaque numérateur et chaque dénominateur
+\item Simplifier les polynômes qui apparaissent en haut et en bas (en vertical mais aussi en diagonal)
+\item Multiplier les numérateurs entre eux et les dénominateurs entre eux
+\end{enumerate}
+
+Attention : il n'y a pas de recherche de PPMC dans la multiplication !
+
+\begin{exemple}
+Multiplier 
+$$
+\frac{18}{2x^2 +8x + 8} \cdot \frac{3x^2 + 15x + 18}{x+3}
+$$
+Ainsi en suivant la méthode :
+\begin{enumerate}
+\item On factorise chaque terme :
+$$
+\frac{18}{2(x+2)^2} \cdot \frac{3(x+2)(x+3)}{x+3}
+$$
+\item On simplifie :
+$$
+\frac{\xout{18}^9}{\xout{2}_1(x+2)^2} \cdot \frac{3(x+2)\xout{(x+3)}}{\xout{(x+3)}} = \frac{9}{(x+2)^\xout{2}} \cdot \frac{3\xout{(x+2)}}{1} = 
+\frac{9}{(x+2)} \cdot \frac{3}{1}
+$$
+\item Et on finit par multiplier
+$$
+\frac{9\cdot 3}{(x+2) \cdot 1} = \frac{27}{(x+2)}
+$$
+\end{enumerate}
+\end{exemple}
+
+\section{Exercices}
+
+\input{fractions/exercice}
+
+\section{Corrigés}
+
+\input{fractions/corrige}

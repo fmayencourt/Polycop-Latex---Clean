@@ -1,0 +1,93 @@
+\chapter{Logarithmes}
+
+\section{Un peu d'histoire...}
+
+Depuis la Renaissance, en Europe, un grand nombre de savants se sont mis à étudier les étoiles et à développer une science particulière : l'astronomie~\cite{astropleiade}. Par des progrès techniques (invention de la lentille, du télescope),  et... moraux (fin de l'anthropocentrisme), il est dorénavant plus facile d'étudier les planètes. Cependant, ces études sont freinées au niveau mathématiques car certaines opérations sont toujours délicates (multiplication de grands nombres, extractions de racines carrées et cubiques).
+
+Jones Neper~\index{Neper, John} (ou Napier, 1550- 1617) essaya de déterminer une méthode mathématique qui transforme ce problème. Il a notamment inventé une série de réglettes qui remplace les multiplications, mais le procédé reste lourd. Il publie en 1614 le livre "Mirifici Logarithmorum canonis descriptio"~\cite{napier1614} dont voici la préface (traduite du latin qui était alors la langue scientifique)
+
+\begin{quotation}
+Très illustre amateur de mathématiques, comme rien n’est aussi pénible que la pratique des
+mathématiques, parce que la logistique est d’autant plus freinée, retardée que les
+multiplications, les divisions, et les extractions de racines carrées ou cubiques portent sur des
+grands nombres ; qu’elle est soumise à l’ennui de longues opérations et beaucoup plus encore
+à l’incertitude des erreurs, j’ai entrepris de rechercher par quel procédé sûr et rapide on
+pourrait éloigner ces obstacles. Dans ce but, j’en ai examiné soigneusement une grande
+quantité, les uns après les autres, et enfin j’en ai trouvé plus d’un, clair et d’un emploi facile...
+À la vérité, aucun, parmi les autres, n’est plus utile que l’un deux ; par son moyen, on rejette
+les nombres utilisés dans les multiplications, les divisions et les extractions de racines
+lorsqu’elles sont difficiles et prolixes, et on les remplace par d’autres nombres, que j’ai pris
+soin de leur adjoindre, et l’on achève le calcul par des additions, des soustractions, des
+divisions par deux et par trois seulement... Il m’a plu de communiquer son usage au monde
+des mathématiciens.
+\end{quotation}
+
+Il définit ainsi un outil, le logarithme, qui est encore aujourd'hui utilisé, plus forcément pour remplacer des calculs difficiles, mais pour résoudre des problèmes scientifiques ou économiques.
+
+\section{... et un peu de math}
+
+L'idée géniale de Neper est d'associer les deux types de suites dont nous avons parlé au chapitre précédent : une suite arithmétique et une suite géométrique. Son raisonnement ressemble à ça :
+$$
+\begin{array}{rrrrrr}
+0 & 1 & 2 & 3 & \dots & n \\
+1 & 10 & 100 & 1'000 & dots & 10^n
+\end{array}
+$$
+
+On remarque en effet assez vite que si on veut multiplier par exemple $100$ et $1'000$, dans la suite géométrique, qui correspondent respectivement à $2$ et $3$ dans la suite arithmétique, on trouve bien $100'000$ qui correspond à $5 = 2+3$ dans la suite arithmétique.
+
+La deuxième idée géniale de Neper est d'étendre cette suite aux nombre décimaux : il détermine une manière logique et cohérente d'associer par exemple $0.5$ dans la première ligne à un nombre compris entre $1$ et $10$ dans la deuxième ligne de façon à toujours pouvoir utiliser une addition dans la première ligne associée à un multiplication dans la deuxième. Il définit ainsi :
+
+\begin{definition}
+Soit $a$ un nombre réel positif et $n$ un nombre réel (positif ou négatif) on définit alors le \emph{logarithme}~\index{logarithme} de $a$ par
+$$
+\log(a) = n \ssi a = 10^n
+$$
+\end{definition}
+
+Le logarithme a donc bien les propriétés voulues par Neper :
+
+\begin{proposition}
+Le logarithme défini ainsi possède les propriétés suivantes :
+\begin{enumerate}
+\item $\log(1) = 0$
+\item $\log(a\cdot b) = \log(a) + \log (b)$
+\item $\log(10^n) = n$
+\item $10^{\log(a)} = a$
+\item $\log\left(a^p\right) = p\cdot \log(a)$
+\end{enumerate}
+\end{proposition}
+
+\begin{corollaire}
+Le logarithme possède aussi les propriétés suivantes :
+\begin{enumerate}
+\item $\log\left(\frac{a}{b}\right) = \log(a)- \log(b)$
+\item $\log\left(\sqrt[q]{a^p}\right) = \frac{p}{q} \cdot \log(a)$
+\end{enumerate}
+\end{corollaire}
+
+\begin{proof}
+Pour le théorème :
+\begin{enumerate}
+\item Par la définition, on a bien $10^0 = 1$.
+\item Posons $\log(a) = m$ et $\log(b) = n$. On calcule alors $a\cdot b = 10^m \cdot 10^n = 10^{m+m}$. Ainsi $\log(a\cdot b) = m+n = \log(a) + \log (b)$.
+\item C'est une conséquence directe de la définition.
+\item Posons $\log(a) = n$. Ainsi $10^{\log(a)} = 10^n = a$ par la définition.
+\item Posons $\log(a) = n$. On a $10^{p \cdot n} = \left(10^{n}\right)^p = a^p$. Ainsi $\log\left(a^p\right) = \log\left(10^{p \cdot n}\right) = p \cdot n = p \cdot \log(a) $.
+\end{enumerate}
+Pour le corollaire :
+\begin{enumerate}
+\item On sait que $\frac{a}{b} = a \cdot (b)^{-1}$ et on applique les propriétés.
+\item On sait que $\sqrt[q]{p} = a^{\frac{p}{q}}$ et on applique les propriétés.
+\end{enumerate}
+\end{proof}
+
+\begin{remarque}
+
+Dans sa version initiale, Neper avait utilisé un autre nombre que $10$, le nombre $e \simeq 2, 7182818284$
+
+\end{remarque}
+
+\section{Exercices}
+
+\input{log/exercice}

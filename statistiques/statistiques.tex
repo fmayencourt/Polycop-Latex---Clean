@@ -1,0 +1,259 @@
+\chapter{Statistiques}
+
+La statistique est la technique des mathématiques qui s’occupe de rassembler, d’organiser, d’analyser et d’interpréter des observations numériques, afin d’en tirer des conclusions les plus justes possible.
+Cela présuppose que nous adoptions dans notre démarche de recherches des faits une méthode sûre, une appréciation selon un ordre logique.
+Pour rassembler des données, nous pouvons procéder à un dénombrement instantané de toute une population (Ex. des recensements fédéraux qui interviennent tous les dix ans) ou alors - et c’est la méthode adoptée par le “marketing” d’entreprise - par des sondages dans une population donnée. Nous n’effectuerons pas nous-mêmes des sondages, car c’est un travail long, fastidieux et coûteux qui dépasserait largement notre temps disponible en mathématiques. Nous allons, dans notre cours, définir les principaux termes employés en statistique, procéder à l’établissement de tableaux statistiques selon différentes méthodes, étudier les éléments caractéristiques mathématiques de ces données.
+
+\section{Vocabulaire}
+
+Un certain nombre de termes nouveaux sont présents dans toute analyse statistique. Il s’agit des termes suivants :
+
+\begin{definition}
+\begin{enumerate}
+\item La \emph{population}\index{statistiques!population}, dans une étude statistique, désigne les éléments de l’ensemble étudié. Ce ne sont pas forcément des personnes humaines.
+\item La population possède un ou plusieurs traits communs présentés ou non par chacun des éléments ou unités statistiques recensés dans un ensemble donné. Ces traits sont appelés des \emph{caractères}\index{statistiques!caractère} et notés $x_i$.
+\item L’\emph{effectif}\index{statistiques!effectif} indique le nombre de membres de la population étudiée qui possèdent le caractère étudié. On le note $n$.
+\item Lorsque nous ordonnons et classons les éléments de la population en fonction du caractère, nous obtenons une \emph{distribution statistique}\index{statistiques!distribution}.
+\item La \emph{fréquence}\index{statistiques!fréquence} est le rapport entre l’effectif correspondant à un caractère observé et l’effectif total. On la note $f_i$.
+\item La \emph{moyenne}~\index{statistiques!moyenne} représente la valeur la plus proche de toutes les valeurs de la distribution.
+\item La \emph{médiane}~\index{statistiques!médiane} représente la valeur qui coupe en deux parties de tailles égales la distribution.
+\item La \emph{variance}~\index{statistiques!variance} représente l'écart de la distribution par rapport à la moyenne. On la note $v$.
+\item L'\emph{écart-type}~\index{statistiques!écart type} représente aussi l'écart de la distribution par rapport à la moyenne, mais de manière plus précise. On le note $\sigma$
+\item Le \emph{mode}~\index{statistiques!mode} représente le caractère qui est le plus constaté dans la distribution.
+\end{enumerate}
+\end{definition}
+
+\begin{remarque}
+On peut distinguer deux grandes séries de distributions statistiques :
+\begin{itemize}
+\item \emph{Distribution statistique discrète}\index{statistiques!distribution discrète} : le caractère ne peut prendre que des valeurs numériques isolées. Par exemple un nombre de points à un examen, un nombre de frères et soeurs, etc.
+\item \emph{Distribution statique continue}\index{statistiques!distribution continue} : le caractère peut prendre toutes les valeurs dans un intervalle. Par exemple : une taille, un poids, une vitesse, etc. Dans ce cas, on s'intéressera plus au \emph{centre de classe}~\index{statistiques!Centre de classe}, c'est-à-dire au nombre qui coupe l'intervalle en deux parties égales.
+\end{itemize}
+Il peut cependant arriver qu'on préfère rassembler des distributions discrètes dans des intervalles pour avoir une meilleures lisibilité. Par exemple, si l'on a relevé la vitesse en $km/h$ (distribution discrète car arrondie) d'une centaine de voitures, on peut décider de les trier par intervalle de $5km/h$.
+\end{remarque}
+
+\section{Tableau statistique}
+
+Pour nous aider à visualiser la situation et à déterminer certaines valeurs clefs selon la distribution statistique, nous allons former un \emph{tableau statistique} ayant les colonnes suivantes :
+\begin{enumerate}[colonne 1 : ]
+\item caractère de la distribution. On va généralement ordonner ceux-ci selon un ordre croissant. Si la distribution est discrète. On notera également le centre de classe dans une colonne $1$bis.
+\item effectifs. On donnera l'effectif de la distribution lié à chaque caractère, c'est-à-dire combien de fois chaque caractère apparaît dans notre relevé statistique. On donnera également le \emph{total des effectifs} au fond de la colonne.
+\item fréquence. Elle représente le pourcentage d'apparition du caractère dans la série. On la calcule ainsi :
+$$
+f_i = \frac{n_i}{N} = \frac{\mbox{effectifs du caractère}}{\mbox{effectifs totaux}}.
+$$
+On peut donner sa valeur soit en $\%$ soit en décimal (ex : $20\%$ ou $0.20$). \textcolor{red}{La somme des fréquences doit toujours être de $100\%$ ou de $1$ car il s'agit de l'ensemble de la distribution.}
+\item fréquence cumulée (notée $F_i$)~\index{statistiques!Fréquence cumulée}. Elle représente la somme des fréquences des caractères inférieurs ou égaux, c'est-à-dire le pourcentage de la distribution inférieur ou égal au caractère. On la calcule en additionnant les lignes des fréquences de caractère inférieur ou égal. Ex : pour trouver $F_3$ on fait $f_1 + f_2 + f_3$. On peut également gagner du temps en faisant $F_2 + f_3$.
+\item fréquence cumulée inverse (notée $F_i'$)~\index{statistiques!Fréquence cumulée inverse}. Elle représente la somme des fréquences des caractères supérieurs ou égaux, c'est-à-dire le pourcentage de la distribution supérieur ou égal au caractère. On la calcule en additionnant les lignes des fréquences de caractère supérieur ou égal. Ex : pour trouver $F_3'$ sur une distribution à $5$ caractères, on fait $f_3 + f_4 + f_5$. On peut également gagner du temps en faisant $F_4' + f_3$. Il est donc plus intéressant de partir du fond du tableau.
+\item fréquence pondérée (notée $f_ix_i$)~\index{statistiques!Fréquence pondérée}. Elle ne représente en soi rien, mais la somme de toutes les fréquences pondérées du tableau donne la moyenne de la distribution. On la calcule en multipliant la fréquence par le caractère (ou par le centre de classe dans une distribution discrète). Ex : si $20\%$ de la classe a fait $4$, on aura une fréquence pondérée de $0.2 \cdot 4 = 0.8$.
+\item fréquence pondérée carrée (notée $f_i x_i^2)$~\index{statistiques!fréquence pondérée carrée}. Elle ne représente non plus rien en soi, mais on va utiliser la somme des fréquences pondérées carrées de la distribution pour calculer la variance de la distribution. Ex : si $30\%$ de la classe a fait $4$, on aura une fréquence pondérée carrée de $0.3 \cdot 4^2 = 4.8$.
+\end{enumerate}
+
+\newpage
+
+\begin{landscape}
+\begin{exemple}
+A l'examen de statistiques, on a eu les résultats suivants : 3, 5, 4, 2.5, 5.5, 3.5, 4.5, 4.5, 4.5, 5, 6, 3.5, 3.5, 4.5, 5, 5.5, 4, 4, 4.5, 5. On établit le tableau statistique complet suivant :
+
+\vspace{5mm}
+
+\begin{tabular}{|l|llllll}
+\cline{1-1}
+Note de mathématique &                               &                                &                                        &                                            &                                         &                                                 \\ \hline
+Note                 & \multicolumn{1}{l|}{Effectif} & \multicolumn{1}{l|}{Fréquence} & \multicolumn{1}{l|}{F. cum.} & \multicolumn{1}{l|}{F. cum. inv.} & \multicolumn{1}{l|}{F. pond.} & \multicolumn{1}{l|}{F. pond. carrée}     \\ \hline
+$x_i$                 & \multicolumn{1}{l|}{$n_i$}     & \multicolumn{1}{l|}{$f_i$}      & \multicolumn{1}{l|}{$F_i$}              & \multicolumn{1}{l|}{$F_i'$}                 & \multicolumn{1}{l|}{$f_i x_i$}           & \multicolumn{1}{l|}{$f_i x_i^2$} \\ \hline
+2.5                  & \multicolumn{1}{l|}{1}        & \multicolumn{1}{l|}{0.05}      & \multicolumn{1}{l|}{0.05}              & \multicolumn{1}{l|}{1}                     & \multicolumn{1}{l|}{0.125}              & \multicolumn{1}{l|}{0.3125}                     \\ \hline
+3                    & \multicolumn{1}{l|}{1}        & \multicolumn{1}{l|}{0.05}      & \multicolumn{1}{l|}{0.1}               & \multicolumn{1}{l|}{0.95}                  & \multicolumn{1}{l|}{0.15}               & \multicolumn{1}{l|}{0.45}                       \\ \hline
+3.5                  & \multicolumn{1}{l|}{3}        & \multicolumn{1}{l|}{0.15}      & \multicolumn{1}{l|}{0.25}              & \multicolumn{1}{l|}{0.9}                   & \multicolumn{1}{l|}{0.525}              & \multicolumn{1}{l|}{1.8375}                     \\ \hline
+4                    & \multicolumn{1}{l|}{3}        & \multicolumn{1}{l|}{0.15}      & \multicolumn{1}{l|}{0.4}               & \multicolumn{1}{l|}{0.75}                  & \multicolumn{1}{l|}{0.6}                & \multicolumn{1}{l|}{2.4}                        \\ \hline
+4.5                  & \multicolumn{1}{l|}{5}        & \multicolumn{1}{l|}{0.25}      & \multicolumn{1}{l|}{0.65}              & \multicolumn{1}{l|}{0.6}                   & \multicolumn{1}{l|}{1.125}              & \multicolumn{1}{l|}{5.0625}                     \\ \hline
+5                    & \multicolumn{1}{l|}{4}        & \multicolumn{1}{l|}{0.2}       & \multicolumn{1}{l|}{0.85}              & \multicolumn{1}{l|}{0.35}                  & \multicolumn{1}{l|}{1}                  & \multicolumn{1}{l|}{5}                          \\ \hline
+5.5                  & \multicolumn{1}{l|}{2}        & \multicolumn{1}{l|}{0.1}       & \multicolumn{1}{l|}{0.95}              & \multicolumn{1}{l|}{0.15}                  & \multicolumn{1}{l|}{0.55}               & \multicolumn{1}{l|}{3.025}                      \\ \hline
+6                    & \multicolumn{1}{l|}{1}        & \multicolumn{1}{l|}{0.05}      & \multicolumn{1}{l|}{1}                 & \multicolumn{1}{l|}{0.05}                  & \multicolumn{1}{l|}{0.3}                & \multicolumn{1}{l|}{1.8}                        \\ \hline
+Totaux               & \multicolumn{1}{l|}{20}       & \multicolumn{1}{l|}{1}         &                                        & \multicolumn{1}{l|}{}                      & \multicolumn{1}{l|}{4.375}              & \multicolumn{1}{l|}{19.8875}                    \\ \cline{1-3} \cline{6-7} 
+\end{tabular}
+
+\vspace{5mm}
+
+On a donc une moyenne de $4.375$, une variance de 
+$$
+v = 19.8875 - 4.375^2 = 0.746875
+$$
+et un écart type de
+$$
+\sigma = \sqrt{v} = 0.864219
+$$
+et une médiane de $4.5$ car c'est à ce caractère que la fréquence pondérée dépasse le $50\%$ ($0.65$ dans le tableau).
+\end{exemple}
+\end{landscape}
+
+\section{Représentation graphique}
+
+La représentation en colonnes des effectifs permet de bien visualiser la situation :
+\begin{center}
+\includegraphics[width = 0.4 \textwidth]{statistiques/image/mode1.png} \hspace{5mm}
+\includegraphics[width = 0.4 \textwidth]{statistiques/image/mode2.png} 
+\end{center}
+
+Et celle des fréquences cumulées met en évidence la médiane :
+\begin{center}
+\includegraphics[width = 0.4 \textwidth]{statistiques/image/mediane1.png} \hspace{5mm}
+\includegraphics[width = 0.4 \textwidth]{statistiques/image/mediane2.png}
+\end{center}
+
+\section{Courbe de régression}
+
+Pour l'instant, nous ne nous somme intéressés qu'à des distributions statistiques univariées, c'est-à-dire avec un seul caractère. Or souvent il est intéressant de savoir comment plusieurs caractères s'influencent. On parle alors de statistiques bivariées~\index{statistiques!bivariées}. 
+
+Lors de notre distribution, chaque observation est représentée comme un point sur le plan, la coordonnée $x$ étant la valeur de la première variable et la coordonnée $y$ la valeur de la deuxième variable.
+
+On obtient donc un nuage de points. S'il y a un lien entre les points, qu'on peut y faire passer une courbe, on va parler de \emph{régression}. 
+
+\begin{center}
+\includegraphics[width = 0.4 \textwidth]{statistiques/image/regression1.png} \hspace{5mm}
+\includegraphics[width = 0.4 \textwidth]{statistiques/image/regression2.png}
+
+\vspace{5mm}
+
+\includegraphics[width = 0.4 \textwidth]{statistiques/image/regression3.png} \hspace{5mm}
+\includegraphics[width = 0.4 \textwidth]{statistiques/image/regression4.png}
+\end{center}
+
+\textcolor{red}{Attention : ce n'est pas parce qu'on peut faire passer une courbe par les points que forcément il y a un rapport de causalité entre les deux caractères !} Par exemple, le graphique suivant met en parallèle le nombre de Prix Nobel par million d'habitants et la consommation de chocolat en kg par habitant :
+\begin{center}
+\includegraphics[width = 0.6\textwidth]{statistiques/image/chocolat.png}
+\end{center}
+Mais, par contre, il est évident qu'il n'y a pas de lien de causalité entre ces deux variables.
+
+Dans les graphiques, il y a plusieurs manières de faire passer des courbes par le nuage de points. Cependant, nous ne nous intéresserons qu'au cas où l'on peut faire passer une droite de la forme
+$$
+y = ax+b
+$$
+où $a$ est la pente de la droite et $b$ l'intersection avec l'axe vertical.
+
+Enfin, on note $r$ le coefficient de régression qui nous indique à quel point la droite passe près de chaque point. Si $r$ est supérieur à $0.5$ ou inférieur à $-0.5$, on dit que la corrélation est forte. Si $r$ est entre $-0.5$ et $0.5$, on parle de corrélation faible.
+
+Pour calculer la valeur de $a$, de $b$ et de $r$, on doit également réaliser un tableau statistique contenant $5$ colonnes : 
+\begin{enumerate}[colonne 1 :]
+\item la valeur $x$ du point
+\item la valeur $y$ correspondante
+\item $x^2$
+\item $y^2$
+\item $xy$
+\end{enumerate}
+
+Pour chacune de ces colonnes, il faut calculer la moyenne, c'est-à-dire la somme des termes divisée par le nombre de mesures.
+
+On a ainsi les formules suivantes, où par exemple $\overline{x}$ correspond à la moyenne de la colonne $x$ :
+$$
+a  = \frac{\overline{xy}-\overline{x}\cdot \overline{y}}{\overline{x^2}-\left(\overline{x}\right)^2}
+$$
+
+$$
+b = \overline{y}-a\cdot \overline{x}
+$$
+
+$$
+r = \frac{\overline{xy}- \overline{x}\cdot \overline{y}}{\sqrt{\overline{x^2}-\overline{x}^2} \cdot \sqrt{\overline{y^2}-\overline{y}^2}}
+$$
+
+\begin{exemple}
+
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+      & $x_i$ & $y_i$ & $(x_i)^2$ & $(y_i)^2$ & $x_i y_i$ \\
+      \hline
+      & 2  & 3  & 4     & 9     & 6    \\
+      \hline
+      & 2  & 5  & 4     & 25    & 10   \\
+      \hline
+      & 3  & 6  & 9     & 36    & 18   \\
+      \hline
+      & 4  & 5  & 16    & 25    & 20   \\
+      \hline
+      & 5  & 6  & 25    & 36    & 30   \\
+      \hline
+      & 5  & 7  & 25    & 49    & 35   \\
+      \hline
+      & 6  & 8  & 36    & 64    & 48   \\
+      \hline
+      & 7  & 9  & 49    & 81    & 63   \\
+      \hline
+      & 7  & 8  & 49    & 64    & 56   \\
+      \hline
+      & 8  & 9  & 64    & 81    & 72   \\
+      \hline
+      & 9  & 10 & 81    & 100   & 90   \\
+      \hline
+      & 10 & 12 & 100   & 144   & 120  \\
+      \hline
+Somme   & 68 & 88 & 462   & 714   & 568  \\
+\hline
+Moyenne &  5.66  &  7.33  &   38.5    &   59.5    &   47.33 \\ 
+\hline
+\end{tabular}
+
+$$
+a = \frac{47.33-5.66\cdot 7.33}{38.5 - 5.66^2} \simeq 0.904
+$$
+
+$$
+b = 7.33 - 0.904 \cdot 5.6 \simeq 2.209
+$$
+
+$$
+r = \frac{47.33-5.66\cdot 7.33}{\sqrt{38.5-5.66^2} \cdot \sqrt{59.5 - 7.33^2}}\simeq 0.956
+$$
+
+On a ainsi la courbe 
+$$
+y = 0.904 x + 2.209
+$$
+qui est bien corrélée ($0.956$) :
+
+\begin{center}
+\includegraphics[width = 0.7\textwidth]{statistiques/image/regression10.png}
+\end{center}
+
+%calcul de a, b et r et droite de régression et schéma
+
+\end{exemple}
+
+\begin{remarque}[Le quartet d'Anscombe~\cite{wikianscombe}]
+Il ne suffit pas toujours de simplement calculer les droites de régression pour bien visualiser une situation. L'exemple le plus connu est le quartet d'Anscombe~\index{Anscombe!quartet}. Il présente quatre ensembles de données qui paraissent similaires mais qui sont en réalité très différentes.
+
+\begin{center}
+\begin{tabular}{|ll|ll|ll|ll|}
+\hline
+I    &       & II   &      & III  &       & IV   &       \\
+\hline
+$x$    & $y$     & $x$    & $y$    & $x$    & $y$     & $x$    & $y$     \\
+10,0 & 8,04  & 10,0 & 9,14 & 10,0 & 7,46  & 8,0  & 6,58  \\
+8,0  & 6,95  & 8,0  & 8,14 & 8,0  & 6,77  & 8,0  & 5,76  \\
+13,0 & 7,58  & 13,0 & 8,74 & 13,0 & 12,74 & 8,0  & 7,71  \\
+9,0  & 8,81  & 9,0  & 8,77 & 9,0  & 7,11  & 8,0  & 8,84  \\
+11,0 & 8,33  & 11,0 & 9,26 & 11,0 & 7,81  & 8,0  & 8,47  \\
+14,0 & 9,96  & 14,0 & 8,10 & 14,0 & 8,84  & 8,0  & 7,04  \\
+6,0  & 7,24  & 6,0  & 6,13 & 6,0  & 6,08  & 8,0  & 5,25  \\
+4,0  & 4,26  & 4,0  & 3,10 & 4,0  & 5,39  & 19,0 & 12,50 \\
+12,0 & 10,84 & 12,0 & 9,13 & 12,0 & 8,15  & 8,0  & 5,56  \\
+7,0  & 4,82  & 7,0  & 7,26 & 7,0  & 6,42  & 8,0  & 7,91  \\
+5,0  & 5,68  & 5,0  & 4,74 & 5,0  & 5,73  & 8,0  & 6,89 \\
+\hline
+\end{tabular}
+\end{center}
+
+Toutes ces distributions ont un coefficient de corrélation de $0.816$ et une droite de régression $y=3 + 0.5 x$, MAIS... lorsqu'on visualise les graphiques :
+
+\begin{center}
+\includegraphics[width = 0.9\textwidth]{statistiques/image/anscombe.png}
+\end{center}
+
+La première distribution est un cas typique de données corrélées. La deuxième distribution suit clairement une corrélation quadratique, mais suffisamment proche. La troisième est parfaitement corrélée, mais une donnée aberrante fausse les calculs. Enfin la dernière montre qu'une erreur de mesure fait apparaître un coefficient de corrélation élevé alors que la variable $x$ est constante.
+
+\end{remarque}
+
+
+\section{Exercices}
+
+\input{statistiques/exercice}

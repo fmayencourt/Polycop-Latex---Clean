@@ -1,0 +1,457 @@
+\chapter[Systèmes d'équations]{Systèmes équations à plusieurs inconnues}
+
+
+
+Nous avons déjà vu les équations à une seule inconnue. Intéressons-nous maintenant aux équations à plusieurs  inconnues.
+
+Pour pouvoir déterminer de manière unique la valeur des inconnues, il faut que le nombre d'équations soit égal au nombre d'inconnues. Aussi durant ce chapitre, nous nous intéresserons  tout d'abord aux systèmes de deux équations à deux inconnues, puis aux systèmes de trois équations à trois inconnues.
+
+\section{Systèmes $2\times 2$}
+
+Essayons de trouver les valeurs de $x$ et de $y$ qui vérifient les deux équations suivantes en même temps :
+$$
+\left\{
+\begin{array}{lll}
+2x+3y &=& 8\\
+4x-2y &=& 0
+\end{array}
+\right.
+$$
+\index{équation!à deux inconnues! premier degré}
+Nous verrons ainsi trois méthodes différentes qui nous permettent de déterminer ces valeurs.
+
+\subsection{Substitution}
+
+Le principe de cette méthode est assez simple. En isolant une inconnue dans l'une des deux équations, puis en remplaçant cette inconnue dans l'autre, on se retrouve avec une équation à une inconnue que l'on sait résoudre. Ainsi dans l'exemple on a :
+$$
+\begin{array}{lr}
+\left\{
+\begin{array}{lll}
+2x+3y &=& 8\\
+4x-2y &=& 0
+\end{array}
+\right.
+&(\mbox{ isoler }y\mbox{ dans la deuxième}) \\
+\ssi \left\{
+\begin{array}{lll}
+2x+3y &=& 8\\
+-2y &=& -4x
+\end{array}
+\right.
+& \\
+\ssi\left\{
+\begin{array}{lll}
+2x+3\textcolor{red}{y} &=& 8\\
+\textcolor{red}{y} &=& \textcolor{red}{2x}
+\end{array}
+\right.
+&(\mbox{remplacer }\textcolor{red}{y}\mbox{ par }\textcolor{red}{2x}\mbox{ dans la première})\\
+\ssi\left\{
+\begin{array}{lll}
+2x+3 \cdot \textcolor{red}{2x} &=& 8\\
+y &=& 2x
+\end{array}
+\right.
+&(\mbox{résoudre la première})\\
+\ssi\left\{
+\begin{array}{lll}
+8x &=& 8\\
+y &=& 2x
+\end{array}
+\right.
+&\\
+\ssi\left\{
+\begin{array}{lll}
+x&=& 1\\
+y &=& 2x
+\end{array}
+\right.
+&(\mbox{remplacer }x\mbox{ par }1\mbox{ dans la deuxième})\\
+\ssi\left\{
+\begin{array}{lll}
+x&=& 1\\
+y &=& 2\cdot 1 = 2
+\end{array}
+\right. & \\
+\end{array}
+$$
+
+Ainsi $x=1$ et $y=2$ et on note l'ensemble des solutions
+$$
+S=\left\{(1;2)\right\}.
+$$
+
+\subsection{Combinaison linéaire}
+
+Cette méthode consiste, comme son nom l'indique, à combiner (c'est-à-dire additionner ou soustraire) deux équations pour supprimer une inconnue. Pour ce faire, il faut parfois commencer par multiplier l'une ou l'autre équation pour avoir le même nombre d'inconnues que l'on souhaite supprimer. Dans l'exemple :
+$$
+\begin{array}{lr}
+\left\{
+\begin{array}{lll}
+2x+3y &=& 8\\
+4x-2y &=& 0
+\end{array}
+\right.
+&(\mbox{ multiplier par }2\mbox{ la première équation}) \\
+\ssi 
+\left\{
+\begin{array}{lll}
+4x+6y &=& 16\\
+4x-2y &=& 0
+\end{array}
+\right.
+&(\mbox{ soustraire la deuxième équation de la première}) \\
+\Rightarrow
+8y = 16
+&(\mbox{ résoudre l'équation}) \\
+\ssi
+y = 2
+&(\mbox{ reprendre le système de base}) \\
+&\\
+&\\
+\left\{
+\begin{array}{lll}
+2x+3y &=& 8\\
+4x-2y &=& 0
+\end{array}
+\right.
+&(\mbox{ multiplier par }2\mbox{ la première et par }3\mbox{ la deuxième}) \\
+\ssi
+\left\{
+\begin{array}{lll}
+4x+6y &=& 16\\
+12x-6y &=& 0
+\end{array}
+\right.
+&(\mbox{ additionner les deux équations}) \\
+\Rightarrow
+16x = 16
+&(\mbox{ résoudre l'équation}) \\
+\ssi
+x = 1
+&(\mbox{ isoler }y\mbox{ dans la deuxième}) \\
+\end{array}
+$$
+
+\subsection{Méthode de Cramer}
+
+Gabriel Cramer\index{Cramer Gabriel}, né le 31 juillet 1704 à Genève et mort le 4 janvier 1752 à Bagnols-sur-Cèze, est un mathématicien suisse, professeur de mathématiques et de philosophie à l'académie de Genève.\footnote{Tiré explicitement de Wikipedia.com, consulté le 27 novembre 2015}
+
+Il est notamment connu pour avoir donné une méthode générale de résolution des systèmes d'équations linéaires à plusieurs inconnues.
+
+\begin{theoreme}
+Soit un système linéaire de deux équations à deux inconnues du type
+$$
+\left\{
+\begin{array}{lcl}
+a_1 x + b_1 y &=& c_1\\
+a_2 x + b_2 y &=& c_2
+\end{array}
+\right.
+$$
+Et soit les déterminants 
+$$
+\begin{array}{lcr}
+D = \vaabs{\begin{array}{cc}
+a_1 & b_1\\
+a_2 & b_2
+\end{array}},
+&
+D_x = \vaabs{\begin{array}{cc}
+c_1 &b_1\\
+c_2 & b_2
+\end{array}},
+&
+D_y = \vaabs{\begin{array}{cc}
+a_1 & c_1\\
+a_2 & c_2
+\end{array}}
+\end{array}.
+$$
+Alors la réponse du système est donnée par
+$$
+x= \frac{D_x}{D} \mbox{ et } y = \frac{D_y}{D}
+$$
+\end{theoreme}
+
+\begin{remarque}
+Dans le théorème, l'ordre des colonnes est le suivant :
+$$
+AB,\quad CB,\quad AC
+$$
+Nous nous en rappellerons par la phrase suivante :
+\textcolor{red}{À Bex, c'est bien assez !}
+\end{remarque}
+
+Pour calculer un déterminant, on utilise la règle suivante :
+$$
+\begin{array}{l}
+\xymatrix{
+a_1\ar@[blue][rd] & b_1\ar@[red][ld] \\
+a_2 & b_2 }
+\end{array}
+= \textcolor{blue}{a_1 \cdot b_2} - \textcolor{red}{b_1 \cdot a_2}
+$$
+
+\begin{exemple}
+Toujours pour notre système 
+$$
+\left\{
+\begin{array}{lll}
+2x+3y &=& 8\\
+4x-2y &=& 0
+\end{array}
+\right.
+$$
+On a 
+$$
+A = \left(\begin{array}{c}2 \\ 4 \end{array} \right),\quad
+B = \left(\begin{array}{c}3 \\ -2 \end{array} \right),\quad
+C = \left(\begin{array}{c}8 \\ 0 \end{array} \right).
+$$
+
+Ainsi 
+$$
+\begin{array}{l}
+D = \vaabs{AB} = \vaabs{\begin{array}{cc}
+2 & 3 \\
+4 & -2
+\end{array}}
+= 2\cdot (-2) - 3\cdot 4 = -16
+\\
+D_x = \vaabs{CB} = \vaabs{\begin{array}{cc}
+8 & 3 \\
+0 & -2
+\end{array}}
+= 8\cdot (-2) - 3\cdot 0 = -16
+\\
+D_y = \vaabs{AC} = \vaabs{\begin{array}{cc}
+2 & 8 \\
+4 & 0
+\end{array}}
+= 2\cdot 0 - 8\cdot 4 = -32
+\end{array}
+$$
+
+Donc 
+$$
+x = \frac{D_x}{D} = \frac{-16}{-16}= 1 \mbox{ et } y = \frac{D_y}{D} = \frac{-32}{-16}= 2.
+$$
+\end{exemple}
+
+\section{Systèmes $3\times 3$}
+
+
+Essayons de trouver les valeurs de $x$ , de $y$ et de $z$ qui vérifient les trois équations suivantes en même temps :
+$$
+\left\{
+\begin{array}{lll}
+2x-y+3z &=& 7\\
+x-2y+4z &=& 3\\
+3x-7y+8z &=& 3
+\end{array}
+\right.
+$$
+\index{équation!à trois inconnues! premier degré}
+Nous verrons ainsi deux méthodes différentes qui nous permettent de déterminer ces valeurs.
+
+\subsection{Combinaison linéaire}
+
+Cette méthode est identique à celle employée pour les systèmes $2\times 2$. Elle consiste, par multiplication et soustraction/addition, à se ramener à un système $2\times 2$ que l'on sait résoudre. Ainsi :
+$$
+\begin{array}{c}
+
+\left\{
+\begin{array}{llll}
+2x-y+3z &=& 7 &(A)\\
+x-2y+4z &=& 3 &(B)\\
+3x-7y+8z &=& 3 & (C)
+\end{array}
+\right.
+\\
+\\
+\begin{array}{cc}
+(A)-2\cdot (B)&
+(C)-3\cdot(B)\\
+&\\
+\begin{array}{rrrrrr}
+2x & -y &+3z &=&7&\\
+-2x &+4y &-8z&=&-6&\\
+\hline
+&3y&-5z&=&1 &(D)\\
+\end{array}
+&
+\begin{array}{rrrrrr}
+3x & -7y & +8z &=& 3&\\
+-3x & +6y & -12z &=& -9&\\
+\hline
+&-y&-4z &=& -6&(E)\\
+\end{array}\\
+\end{array}
+\\
+\\
+\ssi \left\{
+\begin{array}{rrrrrr}
+x&-2y&+4z &=& 3 &(B)\\
+&3y&-5z&=&1 &(D)\\
+&-y&-4z &=& -6&(E)\\
+\end{array}
+\right.
+\\
+\begin{array}{cc}
+3\cdot (E) & (D)+(F)\\
+&\\
+\ssi \left\{
+\begin{array}{rrrrrr}
+x&-2y&+4z &=& 3 &(B)\\
+&3y&-5z&=&1 &(D)\\
+&-3y&-12z &=& -18&(F)\\
+\end{array}
+\right.
+& \ssi \left\{
+\begin{array}{rrrrrr}
+x&-2y&+4z &=& 3 &\\
+&3y&-5z&=&1 &\\
+&&-17z &=& -17&\\
+\end{array}
+\right.\\
+&\\
+&\\
+&\mbox{remplacer en remontant}\\
+&\\
+\ssi \left\{
+\begin{array}{rrrrrr}
+x&-2y&+4z &=& 3 &\\
+&3y&-5z&=&1 &\\
+&&z &=& 1&\\
+\end{array}
+\right.
+&
+\ssi \left\{
+\begin{array}{rrrrrr}
+x&-2y&+4 &=& 3 &\\
+&3y&-5&=&1 &\\
+&&z &=& 1&\\
+\end{array}
+\right.\\
+&\\
+\ssi \left\{
+\begin{array}{rrrrrr}
+x&-2y&+4 &=& 3 &\\
+&y&&=&2 &\\
+&&z &=& 1&\\
+\end{array}
+\right.
+&
+\ssi \left\{
+\begin{array}{rrrrrr}
+x&-4&+4z &=& 3 &\\
+&y&&=&2 &\\
+&&z &=& 1&\\
+\end{array}
+\right.\\
+\end{array}\\
+\ssi \left\{
+\begin{array}{rrrrrr}
+x&& &=& 3 &\\
+&y&&=&2 &\\
+&&z &=& 1&\\
+\end{array}
+\right.\\
+\end{array}
+$$
+
+On trouve donc l'ensemble des solutions :
+$$
+S=\{(3;2;1\}.
+$$
+
+\subsection{Méthode de Sarrus}
+
+La méthode de Sarrus~\index{Sarrus} est aux systèmes $3\times 3$ ce que la méthode de Cramer est aux systèmes $2\times 2$. Ainsi 
+
+\begin{theoreme}
+Le système linéaire de trois équations à  trois inconnues du type
+$$
+\left\{
+\begin{array}{rrrcr}
+a_1 x & +b_1 y & + c_1 z &=&d_1\\
+a_2 x & +b_2 y & + c_2 z &=&d_2\\
+a_3 x & +b_3 y & + c_3 z &=&d_3\\
+\end{array}
+\right.
+$$
+admet les solutions
+$$
+x= \frac{D_x}{D}, \quad y=\frac{D_y}{D}, \quad z = \frac{D_z}{D},
+$$
+où $D$ est le déterminant $ABC$, $D_x$ le déterminant $DBC$, $D_y$ le déterminant $ADC$ et $D_z$ le déterminant $ABD$.
+\end{theoreme}
+
+Il nous reste maintenant à savoir comment on calcule un déterminant $3\times 3$. Il existe  une manière générale de calculer un déterminant $n\times n$ (et de même une manière de donner les solutions d'un système $n\times n$), mais elle est assez complexe. Nous verrons donc la solution "simplifiée" :
+
+Dans notre exemple, le déterminant que l'on doit chercher est
+$$
+D=
+\vaabs{
+\begin{array}{ccc}
+2&-1&3\\
+1&-2&4\\
+3&-7&8
+\end{array}
+}
+$$
+On commence par répéter les deux premières colonnes à droite, puis on utilise les flèches pour calculer sa valeur :
+$$D=
+\begin{array}{c}
+\xymatrix{
+2\ar@[blue][rd]&-1\ar@[blue][rd]&3\ar@[blue][rd] \ar@[red][ld]&2\ar@[red][ld]&-1\ar@[red][ld]\\
+1&-2\ar@[blue][rd]\ar@[red][ld]&4\ar@[blue][rd]\ar@[red][ld]&1\ar@[blue][rd]\ar@[red][ld]&-2\\
+3&-7&8&3&-7\\
+}\\
+\\
+= \textcolor{blue}{2 \cdot (-2) \cdot 8 + (-1)\cdot 4 \cdot 3 + 3\cdot 1  \cdot(-7)} \textcolor{red}{-3\cdot (-2)\cdot 3 -2\cdot 4 \cdot (-7) - (-1)\cdot 1 \cdot 8}\\
+= 17\\
+\end{array}
+$$
+
+De la même manière, on trouve : $D_x = 51$, $D_y = 34$ et $D_z = 17$ et on obtient bien l'ensemble des solutions
+$$
+S = \{(3;2;1)\}
+$$
+
+\section{Interprétation géométrique}
+
+Dans le chapitre~\ref{droite_plan}, nous avons vu qu'une droite est représentée par son équation implicite
+$$
+ax+by=c.
+$$
+Aussi, résoudre un système d'équation $2\times 2$ revient à dessiner les deux droites et à trouver leur point d'intersection. Si l'on reprend l'exemple 
+$$
+\left\{
+\begin{array}{lll}
+2x+3y &=& 8\\
+4x-2y &=& 0
+\end{array}
+\right.
+$$
+on a la représentation suivante :
+
+\begin{center}
+\includegraphics[width = 0.9 \textwidth]{systeme/systeme2x2.png}
+\end{center}
+
+De même, on peut représenter un système $3\times 3$ dans l'espace. Chaque équation correspond à un plan, et la solution se trouve à l'intersection des trois plans :
+
+\begin{center}
+\includegraphics[width = 0.9 \textwidth]{systeme/systeme3x3.png}
+\end{center}
+
+On peut généraliser de la sorte aux systèmes $4\times 4$, $5\times 5$, etc. mais ça devient vite très compliqué à représenter.
+\section{Exercice}
+
+\input{systeme/exercice}
+
+\section{Corrigés}
+
+\input{systeme/corrige}

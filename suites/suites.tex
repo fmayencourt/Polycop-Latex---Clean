@@ -1,0 +1,255 @@
+\chapter{Suites et séries}
+
+\section{Suites}
+
+\begin{definition}
+Une \emph{suite}\index{Suite} de nombre réels est une succession infinie de nombres réels. Mathématiquement on parlera d'une injection de $\N$ dans $\R$.
+\end{definition}
+
+\begin{exemple}
+Il existe un infinité de type de suites. Par exemple :
+\begin{enumerate}
+\item Les suites arithmétiques : $$(1,2,3,4,5,6,\dots) $$\label{exemplearithmetique}
+\item Les suites géométriques : $$(1,2,4,8,16,\dots) $$\label{exemplegeometrique}
+\item Les suites constantes $$(\frac{1}{2},\frac{1}{2},\frac{1}{2},\frac{1}{2},\frac{1}{2},\dots) $$\label{exempleconstante}
+\item La suite de Fibonacci : $$(0,1,1,2,3,5,8,13,21,\dots) $$\label{exemplefibonacci}
+\item Les suites aléatoires : $$(2, \frac{5}{3}, -4, 7, \pi, \dots) $$\label{exemplealeatoire}
+\end{enumerate}
+Le travail le plus compliqué, quand on nous donne une suite, est de déterminer de quel type il s'agit. Heureusement pour nous, nous ne traiterons que de deux types de suites : les suites arithmétiques et les suites géométriques.
+\end{exemple}
+
+Il existe deux grandes manières de donner une suite. Comme elles sont infinies, il nous faut un "truc" qui permette de calculer ses termes. Pour travailler de manière plus simple, introduisons une notation particulière : $a_n$ représente le $n$ème terme de la suite. Ainsi pour la suite de Fibonacci
+
+$$
+\begin{array}{lllllllll}
+(&0,& 1,&1,&2,&3,&5,&8,&\dots)\\
+&\downarrow &\downarrow &\downarrow &\downarrow &\downarrow &\downarrow &\downarrow & \\
+(& a_1 & a_2 & a_3 & a_4 & a_5 & a_6 & a_7 & \dots )\\
+\end{array}
+$$
+
+on a par exemple $a_3 = 1$ et $a_7 = 8$.
+
+Voyons à présent les deux manières de calculer une suite :
+
+\begin{definition}
+Une suite est donnée \emph{explicitement}\index{Suite!explicite} si l'on peut calculer son $n$ème terme ($a_n$) directement. Par exemple :
+$$
+a_n = 4 + 2n
+$$
+Une suite est donnée \emph{par récurrence}\index{Suite!par récurrence} si l'on peut calculer son $n$ème  terme ($a_n$) à l'aide de son terme précédent ($a_{n-1}$) et que l'on connaît la valeur du premier terme ($a_1$). Par exemple :
+$$
+a_n = 2\dot a_{n-1}
+$$
+\end{definition}
+
+La manière explicite de donner une suite est la plus pratique à utiliser : on peut par exemple calculer directement $a_{42}$. A contrario, si l'on veut calculer $a_{42}$ avec une définition récurrente, il nous faut $a_{41}$. Pour calculer $a_{41}$, il nous faut $a_{40}$, pour calculer $a_{40}$, il nous faut $a_{39}$, etc. jusqu'au premier terme  $a_1$.
+
+Cependant, pour déterminer le type de suite, pour bien comprendre son fonctionnement, il est beaucoup plus facile de trouver sa définition par récurrence. Voyons donc les définitions récurrentes des deux types de suites qui nous intéresseront :
+
+\begin{definition}
+\begin{itemize}
+\item Une \emph{suite algébrique}\index{Suite!algébrique} est définie par :
+$$
+a_n = a_{n-1} + r
+$$
+où $r$, appelé \emph{raison de la suite}, est un nombre réel.
+\item Une \emph{suite géométrique}\index{Suite!géométrique} est définie par :
+$$
+a_n = a_{n-1} \cdot q
+$$
+où $q$, appelé \emph{raison de la suite}, est un nombre réel.
+\end{itemize}
+\end{definition}
+
+Le théorème suivant nous permet de passer de la définition par récurrence à une définition explicite :
+
+\begin{theoreme}\label{thmsuites}
+\begin{enumerate}
+\item \label{thmarithmetique} Soit $(a_1, a_2, a_3, \dots)$ une suite arithmétique de raison $r$. Alors son $n$ème terme est donné par 
+$$
+a_n = a_1 + (n-1)\cdot r
+$$
+\item \label{thmgeometrique} Soit $(b_1, b_2, b_3, \dots)$ une suite géométrique de raison $q$. Alors son $n$ème terme est donné par 
+$$
+b_n = b_1 \cdot q^{n-1}
+$$
+\end{enumerate}
+\end{theoreme}
+
+\begin{proof}[idée de la démonstration]
+\begin{enumerate}
+\item[\ref{thmarithmetique}] Calculons les premiers termes de la suite pour trouver un schéma :
+$$
+\begin{array}{lll}
+a_1 &=& a_1\\
+a_2 &=& a_1 + r\\
+a_3 &=& a_2 + r = (a_1+r)+r = a_1 + 2\cdot r\\
+a_4 &=& a_3 + r = (a_1 + 2r) + r = a_1 + 3\cdot r\\
+\dots \\
+a_n &=& a_{n-1} + r = (a_1 + (n-2) r) + r = a_1 + (n-1)\cdot r
+\end{array}
+$$
+\item[\ref{thmgeometrique}] De la même manière, calculons les premiers termes de la suite pour trouver un schéma :
+$$
+\begin{array}{lll}
+a_1 &=& a_1\\
+a_2 &=& a_1 \cdot q\\
+a_3 &=& a_2 \cdot q = (a_1\cdot q)\cdot q = a_1 \cdot q^2\\
+a_4 &=& a_3 \cdot q = (a_1 \cdot q^2) \cdot q = a_1 \cdot q^3\\
+\dots \\
+a_n &=& a_{n-1} \cdot q = (a_1 \cdot q^{n-2})\cdot q= a_1\cdot q^{n-1}
+\end{array}
+$$
+\end{enumerate}
+\end{proof}
+
+\begin{proof}[Démonstration mathématique]
+La démonstration mathématique fonctionne par récurrence : on va supposer que la formule est vraie pour $n$ et on va montrer qu'elle fonctionne aussi pour $n+1$ :
+\begin{enumerate}
+\item[\ref{thmarithmetique}] Supposons donc que $a_n = a_1 + (n-1)\cdot r$. Par la définition de la suite arithmétique, $a_{n+1} = a_n +r$. Puisqu'on a supposé que la formule pour $a_n$ est correcte, on peut remplacer $a_n$, ce qui nous donne : $a_{n+1} = (a_1 + (n-1)\cdot r )+ r$. Avec un peu de travail algébrique, on a bien 
+$$
+a_{n+1} = a_1 + ((n+1)-1) \cdot r
+$$
+Ce qui clôt la démonstration.
+\item[\ref{thmgeometrique}] De la même manière, supposons que $b_n = a_1 \cdot q^{n-1}$. On a donc $b_{n+1} = b_n \cdot q$ et de suite $b_{n+1} = (b_1 \cdot q^{n-1}) \cdot q$. Avec encore une fois un peu de travail algébrique, on obtient bien :
+$$
+b_{n+1} = a_1 \cdot q^{(n+1)-1}
+$$
+Ce qui clôt la démonstration.
+\end{enumerate}
+\end{proof}
+
+\begin{exemple}
+\begin{enumerate}
+\item On donne la suite $(2,5,8,11,\dots)$. Déterminer la valeur de $a_{101}$.
+
+Pour commencer, il nous faut déterminer de quel type de suite il s'agit. On a $a_1 = 2$, $a_2 = 5$ et $a_3 = 8$. Pour passer de $a_1$ à $a_2$, on ajoute $3$ et pour passer de $a_2$ à $a_3$, on ajoute aussi $3$, idem pour les termes suivants. On est donc en présence d'une suite arithmétique avec 
+$$
+a_1 = 2 \mbox{ et } r = +3
+$$
+Grâce à la formule du théorème~\ref{thmsuites}, on peut donc calculer avec $n=101$
+$$
+\begin{array}{ccccccccl}
+a_n &=& a_1 &+& (&n&-1) \cdot &r &\\
+\downarrow & & \downarrow & & & \downarrow& & \downarrow &\\
+a_{101} &=& 2 &+&(&101&-1) \cdot & (+3) & 302\\
+\end{array}
+$$
+\item On donne la suite $(2,6,18,48,\dots)$. Déterminer la valeur de $a_{15}$.
+
+Pour commencer, il nous faut déterminer de quel type de suite il s'agit. On a $a_1 = 2$, $a_2 = 6$ et $a_3 = 18$. Pour passer de $a_1$ à $a_2$, on ajoute $4$, mais pour passer de $a_2$ à $a_3$, on ajoute $12$. Il ne s'agit donc pas d'une suite arithmétique. Une autre manière de passer de $a_1$ à $a_2$ est de multiplier par $3$. Or si l'on multiplie $a_2$ par $3$, on obtient bien $a_3$ et ainsi de suite. On est donc en présence d'une suite géométrique avec
+$$
+a_1 = 2 \mbox{ et } q = \cdot 3
+$$
+Grâce à la formule du théorème~\ref{thmsuites}, on peut donc calculer avec $n=15$
+$$
+\begin{array}{cccccl}
+a_n & = & a_1 & \cdot & q^{n-1}& \\
+\downarrow &  & \downarrow & & \downarrow &\\
+a_{15} &=& 2 & \cdot & 3^{15-1} &= 9'565'938
+\end{array}
+$$
+\end{enumerate}
+\end{exemple}
+
+\section{Séries}
+
+Vous connaissez peut être cette histoire, tirée de~\cite{echec} :
+
+\begin{quote}
+Le vizir, à qui son calife propose (pour le remercier d'avoir inventé le jeu d'échecs, justement !) une pièce d'or par case du jeu d'échecs, refuse poliment mais accepte, en revanche, qu'on remplace les pièces d'or par des grains de blé et qu'on mette, non pas un grain de blé sur chaque case, mais un grain de blé sur la 1re case, le double sur la 2e case, le double de la 2e case sur la 3e case, le double de la 3e case sur la 4ème case, et ainsi de suite jusqu'à la 64e.
+Le calife ricane, mais le vizir ricane encore davantage parce que sur la 64e case, il y aura des tonnes de grains de blé.
+
+Or, je n'ai jamais trouvé nulle part combien il y avait réellement de grains de blé sur le jeu d'échecs.
+
+Alors, j'ai fait le calcul moi-même. Le vizir a sûrement eu la tête tranchée pour s'être moqué ainsi de son calife...
+\end{quote}
+
+On reconnaît bien ici la suite géométrique 
+$$
+1,2,4,8,16,32,\dots, 2^{(n-1)}, dots
+$$
+
+cependant le problème va un peu plus loin : on ne cherche pas à connaître la valeur du $64$e terme, mais de la somme des $64$ premiers termes, c'est-à-dire
+$$
+1+2+4+8+16+\dots + 2^{64-1} = s_{64}
+$$
+
+\begin{definition}
+On appelle \emph{série partielle}\index{Série partielle} la suite donnée par la somme des $n$ premiers termes d'une autre suite :
+Si $a_1, \dots, a_n$ est une suite connue, sa série, notée $s_n$ est donnée par
+$$
+\begin{array}{lcl}
+s_1 &=& a_1\\
+s_2 &=& a_1+a_2\\
+s_3 &=& a_1 + a_2 + a_3\\
+& \dots & \\
+s_n &=& a_1 + a_2 + \dots + a_n\\
+\end{array}
+$$
+\end{definition}
+
+\begin{theoreme}
+Soit $a_n$ une \emph{suite arithmétique} et $s_n$ sa série. On peut calculer $s_n$ le $n$ème terme de la série par la formule :
+$$
+s_n = \frac{n}{2}\left(2\cdot b_1 + (n-1) r \right)
+$$
+
+Soit $b_n$ une \emph{suite géométrique} et $s_n$ sa série. On peut calculer $s_n$ le $n$ème terme de la série par la formule :
+$$
+s_n = b_1 \cdot \frac{q^n-1}{q-1}
+$$
+\end{theoreme}
+
+\begin{proof}
+La première partie de la preuve a été apportée par le mathématicien allemand Carl Friedrich Gauss\index{Gauss, Carl Friedrich} dans les années 1780 alors qu'il était âgé de 7 à 10 ans~\cite{kehlmann2011arpenteurs}:
+
+On doit calculer $a_1+a_2+\dots + a_n$. On sait que la suite est arithmétique de raison $r$, donc chacun des terme est séparé du suivant de $r$. Faisons le calcul à double :
+$$
+\begin{array}{l|ccccc}
+s_n & a_1 & +(a_1 + r) & \dots & + (a_n -r) & + a_n\\
+s_n & a_n & +(a_n-r) \dots & +(a_1 + r) & + a_1 \\
+\hline
+2\cdot s_n & (a_1 + a_n) & (a_1 + a_n) & \dots & (a_1 + a_n) & (a_1 + a_n) \\
+\end{array}
+$$
+On a donc $2s_n = n \cdot (a_1+a_n)$ et donc $s_n = \frac{n}{2}(a_1 + a_n)$. On on a déjà vu que $a_n = a_1  +(n-1)r$. Par substitution on a bien 
+$$
+s_n = \frac{n}{2}\left(a_1 + a_1 + (n-1)r \right) = \frac{n}{2}\left(2\cdot b_1 + (n-1) r \right).
+$$
+
+La démonstration de la série géométrique est un peu plus compliquée : on va calculer la soustraction de $q \cdot s_n$ et de $s_n$: 
+$$
+\begin{array}{l|cccccc}
+q\cdot s_n & & +b_1 \cdot q &+ b_1 \cdot q^2 & \dots & + b_1 \cdot q^{n-1} & + b_1 \cdot q^n\\
+s_n & b_1 & +b_1 \cdot q &+ b_1 \cdot q^2 & \dots & + b_1 \cdot q^{n-1} & \\
+\hline
+(q-1) \cdot s_n & -b_1  &&&&& + b_1 \cdot q^n \\
+\end{array}
+$$
+
+On a donc $(q-1)s_n = -b_1 + b_1 q^n$. On met $b_1$ en évidence dans la partie de droite : $(q-1)s_n = b_1(q^n-1)$ et on divise par $(q-1)$ pour avoir 
+$$
+s_n = b_1 \cdot \frac{q^n-1}{q-1}
+$$
+\end{proof}
+
+On peut ainsi revenir à notre exemple du vizir et de ses grains de riz :
+On sait que 
+$$
+\begin{array}{lcl}
+n &=& 64 \\
+a_1 &=& 1 \\
+q &=& 2
+\end{array}
+$$
+On peut donc calculer $s_{64}$ à l'aide de la formule :
+$$
+s_{64} = 1 \cdot \frac{2^{64}-1}{2-1} = 2^{64} -1 = 18'446'744'073'709'551'615
+$$
+Si on considère qu'un grain de riz à en moyenne un poids de $0.020g$, cela représente environ $368$ milliards de tonnes de riz, soit $500$ ans de production mondiale de riz (source FAO\footnote{La production de riz en 2014 c'est élevée à $740$ millions de tonnes}) !
+
+\section{Exercices}
+
+\input{suites/exercice}

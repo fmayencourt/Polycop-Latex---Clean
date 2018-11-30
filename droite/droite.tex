@@ -1,0 +1,194 @@
+\chapter{Droite dans le plan}\label{droite_plan}
+
+\section{Rappel}
+
+Commençons par rappeler la définition du plan et des notions associées :
+
+\begin{definition}
+Le \emph{plan}\index{plan} est l'ensemble des couples $(x;y)$ avec $x,y\in \R$. On peut ainsi le représenter comme une feuille infinie.
+
+Pour s'y repérer, nous utiliserons deux axes gradués, perpendiculaires et se croisant sur le point $(0;0)$.
+
+Le premier axe, horizontal, s'appelle l'\emph{abscisse}\index{abscisse} et le second, vertical, l'\emph{ordonnée}\index{ordonnée}. Le point $(0;0)$, quant à lui, s'appelle l'\emph{origine}\index{origine}.
+\end{definition}
+
+\begin{center}
+\includegraphics[width = 0.9 \textwidth]{droite/plan.png}
+\end{center}
+
+Sur le plan, tout point peut être représenté selon ses deux coordonnées $x$ et $y$ comme nous l'avons vu à la section~\ref{fct_representation}.
+
+Aussi, de manière générale, nous parlerons du point
+$$
+P(x_P;y_P)
+$$
+
+Par exemple, pour le point $A(3;-2)$, on a $x_A = 3$ et $y_A = -2$. Cette notion est très importante et nous l'utiliserons dans tout ce chapitre !
+
+\section{Droite}
+
+Euclide\index{Euclide}, en $300$ avant J.-C., écrivait à propos de la droite :
+\begin{quote}
+\begin{enumerate}
+\item Une ligne est une longueur sans largeur.\label{def_droite}
+\item  Un segment de droite peut être tracé en joignant deux points quelconques.\label{elt_un}
+\item Un segment de droite peut être prolongé indéfiniment en une ligne droite.\label{elt_deux}
+\item Étant donné un segment de droite quelconque, un cercle peut être tracé en prenant ce segment comme rayon et l'une de ses extrémités comme centre.\label{elt_trois}
+\item Tous les angles droits sont congruents.\label{elt_quatre}
+\item Si deux lignes droites sont sécantes avec une troisième de telle façon que la somme des angles intérieurs d'un côté est inférieure à deux angles droits, alors ces deux lignes sont forcément sécantes de ce côté.\label{elt_cinq}
+\end{enumerate}
+\end{quote}
+Pour nous, seule les éléments~(\ref{def_droite}), (\ref{elt_un}) et (\ref{elt_deux}) concernent la droite. Mais il est intéressant de voir que ces notions intéressaient les grecs déjà dans l'antiquité. C'est aussi dans l'histoire l'une des premières fois que la notion d'infini appara\^it.
+
+Pour nous, nous définirons la notion de droite via la \emph{géométrie analytique} :
+
+\begin{definition}
+Une \emph{droite} est un ensemble de point vérifiant une équation à deux inconnues linéaire du type
+$$\begin{array}{l}
+ax+by=c, \mbox{ avec } a,b,c\in \R \mbox{ forme implicite}\\
+y = mx + h, \mbox{ avec } m,h\in \R \mbox{ forme explicite}
+\end{array}
+$$
+\end{definition}
+
+Remarquons dans cette définition que la forme explicite ressemble fortement à une fonction affine (section~\ref{fct_affine}). Nous utiliserons des notions de fonction pour les droites par la suite.
+
+On voit peu le lien entre cette définition et l'idée, toute simple, que l'on peut se faire d'une droite. Voyons cela de plus près avec un exemple :
+
+\begin{exemple}
+Soit la droite $d:2x+5y = 10$. Une première question serait : comment savoir si un point $P$ est sur la droite $d$. Prenons donc un point $P(3;2)$ au hasard. Pour savoir si $P$ est sur la droite, il convient d'appliquer l'équation de la droite au point :
+$$
+\begin{array}{rcl}
+P &\in^?& d \ssi \\
+d:2x_P + 5y_P &=^?& 10\ssi \\
+2\cdot 3 + 5 \cdot 2 &=^?& 10 \ssi \\
+6 + 10 &=^?& 10 \ssi \\
+16 &=^?& 10
+\end{array}
+$$
+Puisque manifestement $16\neq 10$, le point $P$ n'est pas sur la droite $d$.
+
+Dès lors, comment trouver un point qui est sur la droite $d$ ? Puisque nous avons une seule équation et deux inconnues, nous pouvons sans problème fixer une coordonnée, c'est-à-dire attribuer une valeur au hasard à $x$ ou à $y$. Pour simplifier les calculs, commençons par poser $x=0$ :
+$$
+\begin{array}{lcl}
+2 \cdot 0 + 5 y &=& 10 \ssi \\
+5y  &=& 10 \ssi \\
+y &=& 2.
+\end{array}
+$$
+Ainsi puisque nous avons posé $x=0$ et que nous avons trouvé $y=2$, la droite $d$ passe par le point $A(0;2)$. C'est déjà un début, mais pour rejoindre le point de vue d'Euclide sur la droite, il nous faut un deuxième point. Naturellement regardons ce qui se passe si $y=0$ :
+$$
+\begin{array}{lcl}
+2x + 5\cdot 0 &=& 10 \ssi \\
+2x &=& 10 \ssi \\
+x &=& 5.
+\end{array}
+$$
+Ainsi puisque nous avons posé $y=0$ et que nous avons trouvé $x=5$, la droite $d$ passe par le point $B(5;0)$. Si on devait la dessiner, on trouverait :
+\begin{center}
+\includegraphics[width = 0.9\textwidth]{droite/droite_ex.png}
+\end{center}
+On remarque que la droite passe aussi par le point $C(10;-2)$, mais est-ce que ce point vérifie l'équation de la droite $d$ ?
+$$
+\begin{array}{rcl}
+C &\in^?& d \ssi \\
+d:2x_C + 5y_C &=^?& 10\ssi \\
+2\cdot 10 + 5 \cdot (-2) &=^?& 10 \ssi \\
+20 - 10 &=^?& 10 \ssi \\
+10 &=^?& 10
+\end{array}
+$$
+Puisque manifestement $10 = 10$, le point $C$ est sur la droite $d$. Or il en est de même pour les autres points de la droite et l'on voit ainsi comment les notions d'Euclide et de géométrie analytique se rejoignent.
+\end{exemple}
+
+Intéressons-nous maintenant à une notion déjà aperçue dans la section des fonctions affines : la pente.
+
+\begin{definition}
+La \emph{pente}\index{pente!d'une droite} entre deux points $A$ et $B$ du plan est donnée par 
+$$
+\mbox{pente } = \frac{\mbox{distance verticale entre }A\mbox{ et }B}{\mbox{distance horizontale entre }A\mbox{ et }B}
+$$
+\end{definition}
+
+Comme on le voit sur le graphique suivant, la pente d'une droite est donnée par la formule
+$$
+\mbox{pente } = \frac{y_B-y_A}{x_B-x_A}
+$$
+
+\begin{center}
+\includegraphics[width=0.9 \textwidth]{droite/droite_pente.png}
+\end{center}
+
+\begin{theoreme}
+La pente d'une droite est donnée par $m$ dans sa forme explicite.
+\end{theoreme}
+
+\begin{proof}
+Soit une droite $d:y = mx+h$ et soient $A$ et $B$ deux points sur la droite. Ainsi
+$$
+\left\{
+\begin{array}{lcl}
+y_A &=& mx_A + h\\
+y_B &=& mx_B + h
+\end{array}
+\right.
+$$
+Si l'on soustrait ces deux équations et que l'on isole $m$ on obtient :
+$$
+\begin{array}{lcl}
+y_B-y_A &=& (mx_B + h)-(mx_A + h)\ssi \\
+y_B-y_A &=& mx_B + h-mx_A - h\ssi \\
+y_B-y_A &=& mx_B-mx_A \ssi \\
+(y_B-y_A) &=& m(x_B-x_A)\ssi \\
+\frac{(y_B-y_A)}{(x_B-x_A)} &=& m\ssi \\
+\end{array}
+$$
+ce qui démontre que $m$ est la pente de la droite $d$.
+\end{proof}
+
+\subsection{Parallèle}
+
+En géométrie euclidienne, on dit que deux droites sont parallèles si et seulement si elles n'ont aucune intersection. Avec le postulat~(\ref{elt_cinq}) que l'on trouve au début de ce chapitre on peut conclure que par un point passe une seule parallèle à une autre droite. Cette notion parait tellement triviale que durant longtemps les mathématiciens ont essayé de la démontrer. Euler~\index{Euler}, un mathématicien suisse du 18e siècle a proposé d'autres modèles de géométrie, typiquement la géométrie sur une sphère, où cette propriété n'est pas vérifiée (c'est-à-dire qu'on peut faire passer plusieurs parallèles par le même point).
+
+\begin{proposition}
+En géométrie euclidienne, deux droites sont parallèles si et seulement si elles ont la même pente.
+\end{proposition}
+
+Cette proposition ne sera pas démontrée, une compréhension graphique suffit.
+
+\subsection{Perpendiculaires}
+
+La notion de perpendiculaire est, au sein de notre progression, difficile à définir. En effet, nous n'avons pas défini la notion d'angle. Aussi nous considérerons la notion de perpendicularité comme intuitive, par exemple s'il est possible de dessiner un carré ayant chacune des deux droites sécantes comme diagonales.
+
+\begin{proposition}
+Soient $d_1$ et $d_2$ deux droites ayant respectivement les pentes $m_1$ et $m_2$. Alors les deux droites sont perpendiculaires si et seulement si
+$$
+m_1 = \frac{-1}{m_2}.
+$$
+\end{proposition}
+
+\begin{proof}
+Voyons cette proposition par voie graphique et uniquement dans un sens :
+\begin{center}
+\includegraphics[width=0.9\textwidth]{droite/perpendiculaire.png}
+\end{center}
+On remarque que la verticale de $d_2$ est égale à l'horizontale de $d_1$ et que l'horizontale de $d_2$ est le contraire de la verticale de $d_1$.
+Ainsi 
+$$
+\begin{array}{lcl}
+m_1 &=& \frac{\mbox{vertical}_1}{\mbox{horizontal}_1}\\
+&=& \frac{-\mbox{horizontal}_2}{\mbox{vertical}_2}\\
+&=& \frac{-1}{\frac{\mbox{vertical}_2}{\mbox{horizontal}_2}}\\
+&=& \frac{-1}{m_2}.
+\end{array}
+$$
+Une partie de la proposition est ainsi démontrée. Il nous faudrait encore voir que si deux droites respectent l'égalité liée aux pentes, alors elles sont perpendiculaires, mais comme notre définition de perpendiculaire est très intuitive, elle complique la démonstration.
+\end{proof}
+
+\section{Exercices}
+
+\input{droite/exercice}
+
+\section{Corrigés}
+
+\input{droite/corrige}

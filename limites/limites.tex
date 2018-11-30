@@ -1,0 +1,103 @@
+\chapter{Limites}
+
+\section{Limite vers un nombre}
+
+Rappelons que certaines fonctions ont un domaine de définition différent de $\R$. C'est par exemple le cas des fonctions homographiques car le dénominateur ne peut pas être nul.
+
+Ce chapitre s'intéresse à ce qui se passe quand on fait  rentrer dans la fonction des valeurs qui s'approchent de la valeur problématique.
+
+\begin{definition}
+Soit $f(x)$ une fonction numérique et $a$ un nombre réel. On note
+$$
+\lim_{x\rightarrow a} f(x)
+$$
+la \emph{limite de $f$ en $a$}. Il s'agit de ce vers quoi tend la fonction quand $x$ prend des valeurs de plus en plus proches de $a$.
+\end{definition}
+
+Cette définition n'est pas très "mathématique" ; la définition standard utilise une notion un peu trop avancée pour notre cours :
+$$
+\lim_{x\rightarrow a} f(x) = l \ssi \forall \epsilon >0 \exists \delta >0 \mbox{ tel que si }  \vaabs{x-a}< \epsilon \mbox{ alors } \vaabs{f(x) - l}<\epsilon
+$$
+
+\begin{exemple}
+Nous voyons en exemple les trois cas auxquels nous serons confrontés en exercice :
+\begin{enumerate}
+\item La limite est un nombre
+$$
+\lim_{x\rightarrow 2} \frac{2x-5}{x+3}
+$$
+On remplace $x$ par $2$ et on obtient $\frac{-1}{5}$. Ainsi 
+$$
+\lim_{x\rightarrow 2} \frac{2x-5}{x+3} = \frac{-1}{5}
+$$
+\item La limite est indéterminée $\left( \frac{0}{0}\right)$
+$$
+\lim_{x\rightarrow 2} \frac{x^2 - 3 x + 2}{x^2-4}
+$$
+On remplace $x$ par $2$ et on obtient $\frac{0}{0}$. On factorise donc le numérateur et le dénominateur :
+$\frac{(x-2)(x-1)}{(x-2)(x+2)}$. On remarque que le facteur problématique $x-2$ peut être simplifié au numérateur et au dénominateur :
+$$
+\lim_{x\rightarrow 2} \frac{x^2 - 3 x + 2}{x^2-4} = \lim_{x\rightarrow 2}\frac{x-1}{x+2} = \frac{1}{4}
+$$
+\item La limite est asymptotique $\left( \frac{\mbox{nombre}}{0}\right)$
+$$
+\lim_{x\rightarrow 2}\frac{x+3}{x-2}
+$$
+On remplace $x$ par $2$ et on obtient $\frac{5}{0}$. La limite est donc infinie, on a une asymptote verticale en $x=2$. On va de plus déterminer ce qui se passe lorsque l'on approche $2$ par des nombres plus petits et plus grands : $f(1.9) = -49$ et $f(2.1) = +51$. On a donc
+$$
+\lim_{x\rightarrow 2}\frac{x+3}{x-2} = \mp \infty
+$$
+\end{enumerate}
+\end{exemple}
+
+\section{Limite à l'infini}
+
+On cherche maintenant à décrire le comportement de fractions lorsque $x$ devient très grand (en positif et en négatif : $\pm \infty$). 
+
+\begin{theoreme}
+Soit $f(x)$ une fonction polynomiale. Alors la limite à l'infini de cette fonction ne dépend que du monôme du plus grand degré.
+\end{theoreme}
+
+Nous ne démontrerons pas ce théorème, mais l'idée est la suivante :
+
+Regardons par exemple la fonction $$f(x) = 2x^2 -3x+4$$
+
+Lorsque $x$ prend des valeurs de plus en plus grande, par exemple $1'000$, on peut calculer $f(1'000) = 2'000'000 - 3'000 + 4$. Par rapport aux autres nombres, le $+4$ est insignifiant. On peut donc le négliger lorsque l'on calcule une limite. Il en va de même pour le $-3x$ par rapport au $2x^2$ : lorsque $x$ devient très grand, le $-3x$ devient négligeable par rapport au $2x$. Ainsi pour une fonction polynomiale, seul le monôme du plus haut degré est important.
+
+\begin{exemple}
+Voilà les différents types d'exemples que l'on peut rencontrer dans les exercices :
+\begin{enumerate}
+\item $$ \lim_{x\rightarrow \pm \infty} -3x^4+7x^3-2x+1 = \lim_{x\rightarrow \pm \infty} -3x^4$$
+On va regarder séparément ce qui se passe pour $+\infty$ et $-\infty$ :
+	\begin{itemize}
+	\item $-3\cdot (+\infty)^4 = -3 \cdot +\infty = -\infty$, selon la règle des signes $-\cdot + = -$
+	\item $-3\cdot (-\infty)^4 = -3 \cdot +\infty = -\infty$, car $(-)^4 = +$
+	\end{itemize}
+On a donc 
+$$
+\lim_{x\rightarrow \pm \infty} -3x^4+7x^3-2x+1 = -\infty
+$$
+\item 
+$$
+\lim_{x\rightarrow \pm \infty} \frac{3x^2-5x+2}{x^3-8} = \lim_{x\rightarrow \pm \infty} \frac{3x^2}{x^3}
+$$
+On peut simplifier la fraction : $\frac{3x^2}{x^3} = \frac{3}{x}$. Ainsi 
+$$
+\lim_{x\rightarrow \pm \infty} \frac{3x^2-5x+2}{x^3-8} = \lim_{x\rightarrow \pm \infty} \frac{3}{x} \left( = \frac{3}{\infty} \right) = 0
+$$
+On dit alors que \emph{$f$ a une asymptote horizontale en $y=0$}.
+\item 
+$$
+\lim_{x\rightarrow \pm \infty} \frac{3x^5-2x+4}{3-7x^5} = \lim_{x\rightarrow \pm \infty} \frac{3x^5}{-7x^5}
+$$
+On peut simplifier la fraction $\frac{3x^5}{-7x^5} = -\frac{3}{7}$. Ainsi
+$$
+\lim_{x\rightarrow \pm \infty} \frac{3x^5-2x+4}{3-7x^5} = \lim_{x\rightarrow \pm \infty} -\frac{3}{7} = -\frac{3}{7}
+$$
+On dit alors que \emph{$f$ a une asymptote horizontale en $y=-\frac{3}{7}$}.
+\end{enumerate}
+\end{exemple}
+
+\section{Exercices}
+
+\input{limites/exercice}

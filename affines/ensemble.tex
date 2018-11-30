@@ -1,0 +1,250 @@
+\chapter{Symboles et ensembles}
+\section{Symboles utilisés fréquemment}
+
+En mathématiques, on utilise une série de symboles pour simplifier l'écriture. L'ensemble de ces symboles ont été fixés à la fin du 19ème siècle. Avant cela, chaque mathématicien écrivait avec ses propres notations et cela n'était pas sans poser parfois quelques problèmes. Les symboles suivant constituent la base du langage mathématique :
+
+\vspace*{0.5cm}
+\shadowbox{
+\begin{tabular}{p{0.02\textwidth} l | p{0.02\textwidth} l | p{0.05\textwidth} l }
+$\forall$ & Pour tout & $\in$ & est élément de & $\notin$ & n'est pas élément de\\
+&&&&&\\
+$\exists$ & Il existe & $\subset$ & est inclus dans & $\not \subset$ & n'est pas inclus dans\\
+&&&&&\\
+$\{.\}$ & L'ensemble des & $\wedge$ & et & $\vee$ & ou\\
+&&&&&\\
+$\cup$ & union & $\cap$ & intersection & $|$ & tel que\\
+&&&&&\\
+$\Rightarrow$ & implique & $\Leftrightarrow$ & si et seulement si & ie & c'est-à-dire\\
+\end{tabular}
+}
+
+\vspace*{0.5cm}
+
+
+
+\begin{remarque}
+Le symbole $\Rightarrow$ se lit aussi \emph{Si \dots, alors}. Par exemple :
+$$
+p\Rightarrow q
+$$
+se lit : \emph{Si $p$, alors $q$}.
+\end{remarque}
+\newpage
+\section{Les ensembles}
+
+\subsection{Généralités}
+
+Un ensemble est un objet mathématique composé d'éléments en général de même nature. On peut par exemple trouver des ensembles de nombre, des ensembles de couleurs, des ensembles de prénoms, etc.
+
+Quand l'élément $a$ \emph{appartient} à l'ensemble $A$, on note
+$$
+a\in A
+$$
+Si tous les éléments d'un ensemble $A$ appartiennent à un ensemble $B$, on dit que \emph{$A$ est inclu dans $B$}. On le note
+$$
+A \subset B
+$$
+Deux ensembles $A$ et $B$ \emph{sont égaux} si et seulement si $A$ est inclu dans $B$ et $B$ est inclu dans $A$. Cela revient à dire qu'ils sont composés des mêmes éléments. On le note 
+$$
+A=B
+$$
+
+L'ensemble composé des éléments communs à l'ensemble $A$ et $B$ est appelé \emph{l'intersection de $A$ et $B$}. On le note
+$$
+A\cap B
+$$
+
+L'ensemble composé de tous les éléments de $A$ et $B$ est appelé \emph{la réunion de $A$ et $B$}. On le note
+$$
+A\cup B
+$$
+
+\subsection{Les ensembles de nombre}
+
+Voilà les différents types d'ensemble que l'on rencontre fréquemment en mathématique :
+\begin{itemize}
+\item $\N$ est l'ensemble de tous les nombres entiers. C'est le premier ensemble qui est apparu dans la construction des nombres. Cette idées de nombre était déjà présente chez les hommes préhistoriques et des études ont montré qu'elle est aussi présente chez les animaux. Par exemple les abeilles peuvent "compter" jusqu'à sept.
+
+Ainsi cet ensemble est appelé \emph{ensemble des nombres naturels}, d'où la lettre $\N$.
+\item $\Z$ est l'ensemble de tous les nombres entiers positifs et négatifs. Cet ensemble est apparu plus tard (~VIème siècle), lorsqu'il s'agissait de trouver combien séparait deux nombre entiers positifs mais n'a été fixé définitivement qu'au XVIIIème siècle. 
+
+Cet ensemble est appelé \emph{l'ensemble des nombres relatifs}, d'où la lettre $\Z$ (pour \textit{zahlen}, compter en allemand).
+\item $\Q$ est l'ensemble de toutes les fractions positives et négatives. La notion de fraction est aussi vieille que l'écriture. Il s'agissait alors de séparer des biens (kilo de blé pour la taxe, parcelles de champs pour l'héritage, etc.) La plus vieille tablette babylonienne parlant de mathématiques pose justement un problème de fraction (tablette YBC 4652). 
+
+Cet ensemble est appelé \emph{l'ensemble des rationnels}, la lettre $\Q$ vient le l'italien \textit{quoziente}, le quotient.
+\item $\R$ est l'ensemble des tous les nombres avec ou sans virgules. Cette notion est apparue assez tôt (-300 chez Euclide) Lorsqu'on a compris qu'il était impossible de construire un carré de $2m^2$ avec des fractions. Cet ensemble est appelé \emph{l'ensemble des nombres réels}, terme apparu au XVIIème siècle et parfois opposé au terme de \emph{nombre formels}.
+\end{itemize}
+
+\subsection{Représentation des ensembles}
+
+Il existe plusieurs manières de représenter un ensemble :
+\begin{enumerate}
+\item \emph{En extension} : on donne explicitement tous les éléments de l'ensemble. Par exemple
+$$
+\{0,2,3,7,\frac{3}{2}\} \mbox{ ou } \{0,2,4,6,8,\dots\}
+$$
+\item \emph{En compréhension} : les éléments de l'ensemble ont un lien logique qu'on peut expliquer. Par exemple 
+$$
+\{x\in \N \, | \, x \mbox{ est impaire}\} \mbox{ ou } \{\mbox{multiples entier positifs de cinq}\}
+$$
+\item \emph{Par un diagramme de Venn} : exemple
+\begin{center}
+\includegraphics{Venn.png}
+\end{center}
+\end{enumerate}
+
+\subsection{Exemple}
+
+Soit l'ensemble $A=\{x\in \Z \, | \, x \mbox{est un multiple entier de 3}\}$, l'ensemble $B = \{-7, -6, -4, -1, 0, 2, 3, 5, 8\}$ et l'ensemble $C=\{-6,-3,0,3,21\}$
+
+L'ensemble $A$ est donc un ensemble donné en compréhension, alors que les ensembles $B$ et $C$ sont donnés en extension.
+
+L'élément $3$ est un élément commun à $A$, $B$ et $C$ alors que l'élément $21$ n'appartient que à $a$ et $C$ mais pas à $B$.
+
+$A\cap B = \{-6, 0, 3\}$
+
+$B\cup C= \{-7,-6,-4,-3,-1,0,2,3,5,8,21\}$
+
+On peut représenter la situation avec un diagramme de Venn :
+\begin{center}
+\includegraphics[width = 0.9\textwidth]{exemple.png}
+\end{center}
+
+On remarque que certains parties sont vides. Par exemple, il n'y a aucun élément qui appartient à $C$ et pas $A$. On peut donc conclure du diagramme que $C$ est inclu dans $A$. Et en effet, si l'on observe les éléments de $C$, on remarque qu'il ne s'agit que de multiples de $3$. Ainsi 
+$$
+C \subset A.
+$$
+\newpage
+
+\section{Exercices sur les ensembles}
+
+\begin{exercice}Parmi les élèves de la classe, réaliser un diagramme de Venn avec les deux ensembles suivants :
+	\begin{enumerate}[A]
+	\item Les élèves nés entre le 1er janvier et le 30 juin
+	\item Les élèves nés entre le 15 mars et le 31 décembre
+	\end{enumerate}
+\end{exercice}
+
+\begin{exercice}Pour chacune des paires d'objets suivants, placer les signes $\in$, $\notin$, $\subset$ ou $\not \subset$ et justifier brièvement :
+	\begin{enumerate}
+	\item $\frac{1}{2} \hspace{5mm} \Z$
+	\item $\Z \hspace{5mm} \R$
+	\item $1MP1 \hspace{5mm} ECCG$
+	\item $\{\frac{3}{7}\} \hspace{5mm} \Q$
+	\item $\Z \hspace{5mm} \N$
+	\item $\{\mbox{porteurs de lunettes}\} \hspace{5mm} 1MP1$
+	\end{enumerate}
+\end{exercice}
+
+\begin{exercice}
+Pour chacun des ensembles suivants, donner l'extension ou la compréhension
+	\begin{enumerate}
+	\item
+	$
+	\{0,2,4,6,8,\dots\}
+	$
+	\item
+	$
+	\{2,3,5,7,11,\dots \}
+	$
+	\item
+	$
+	\left\{ x\in \N \; | \; x\leq 3\right\}
+	$
+	\item
+	$
+	\left\{ x\in \{ \mbox{élèves de la classe} \} \; | \; x \mbox{ a des lunettes} \right\}
+	$
+	\item
+	$
+	\left\{ \mbox{Léa, Lucie, Linette, Laurianne, } \dots \right\}
+	$
+	\item 
+	$
+	\left\{1, \frac{1}{2}, \frac{1}{4}, \frac{1}{8}, \frac{1}{16}, \dots \right\}
+	$
+	\end{enumerate}
+\end{exercice}
+
+\begin{exercice}
+Soient les ensembles $A=\{1,2,3,4\}$, $B=\{1,3,5,7\}$, $C= \{-1,1\}$ et $D = \{1,3,5\}$, déterminer en extension :
+\begin{multicols}2
+	\begin{enumerate}
+	\item $ A\cup B$
+	\item $ C \cap B $
+	\item $ B \cup C $
+	\item $ A \cap B $
+	\item $ B \cap D $
+	\item $ (A\cup B)\cup C $
+	\item $ A \cup (B\cup C)$
+	\item $ A \cap (B\cap C)$
+	\item $ (A \cap B) \cap C $
+	\end{enumerate}
+\end{multicols}
+Conclure sur $ (A\cup B)\cup C $ et sur $ A \cup (B \cup C) $.
+\end{exercice}
+\newpage
+\section{Corrigé}
+\begin{solution}En fonction de la classe :
+\begin{center}
+\includegraphics[width = \textwidth]{ex1.png}
+\end{center}
+\end{solution}
+
+\begin{solution}
+	\begin{enumerate}
+	\item $\frac{1}{2} \notin \Z$ car c'est une fraction et $\Z$ est l'ensemble des nombres entiers positifs et négatifs
+	\item $\Z \subset \R$ car tout nombre entier est un nombre réel
+	\item $1MP1 \subset ECCG$ car l'ECCG est l'ensemble de toutes le élèves et que tous les élèves de la 1MP1 sont aussi des élèves de l'école
+	\item $\{\frac{3}{7}\} \subset \Q$ car $\{\frac{3}{7}\}$ est un ensemble qui ne contient qu'un élément, $\frac{3}{7}$. Or cet élément est une fraction et donc appartient à $\Q$
+	\item $\Z \not \subset \N$. Par exemple $-2$ est un élément de $\Z$ et pas de $\N$
+	\item $\{\mbox{porteurs de lunettes}\} \not \subset 1MP1$. Par exemple Clark Kent porte des lunettes mais ne fait pas partie de la 1MP1.
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}On a
+	\begin{enumerate}
+	\item
+	$
+	\{0,2,4,6,8,\dots\} = \{\mbox{nombres paires positifs}\}
+	$
+	\item
+	$
+	\{2,3,5,7,11,\dots \} = \{\mbox{nombres premiers}\}
+	$
+	\item
+	$
+	\left\{ x\in \N \; | \; x\leq 3\right\} = \{0,1,2,3\}
+	$
+	\item
+	$
+	\left\{ x\in \{ \mbox{élèves de la classe} \} \; | \; x \mbox{ a des lunettes} \right\} = \{\dots\}
+	$ en fonction de la classe
+	\item
+	$
+	\left\{ \mbox{Léa, Lucie, Linette, Laurianne, } \dots \right\} =$\newline $ \{\mbox{prénoms féminins}\mbox{ qui commencent par un L}\}
+	$
+	\item 
+	$
+	\left\{1, \frac{1}{2}, \frac{1}{4}, \frac{1}{8}, \frac{1}{16}, \dots \right\} = \{\frac{1}{2^n} \mbox{ avec } n\in \N\}
+	$
+	\end{enumerate}
+\end{solution}
+
+\begin{solution}
+Soient les ensembles $A=\{1,2,3,4\}$, $B=\{1,3,5,7\}$, $C= \{-1,1\}$ et $D = \{1,3,5\}$, déterminer en extension :
+\begin{multicols}2
+	\begin{enumerate}
+	\item $ A\cup B = \{1,2,3,4,5,6\}$
+	\item $ C \cap B = \{1\} $
+	\item $ B \cup C  = \{-1,1,3,5,7\}$
+	\item $ A \cap B = \{1,3\}$
+	\item $ B \cap D = \{1,3,5\}$
+	\item $ (A\cup B)\cup C = \{-1,1,2,3,4,5,7\}$
+	\item $ A \cup (B\cup C) = \{-1,1,2,3,4,5,7\}$
+	\item $ A \cap (B\cap C) = \{1\}$
+	\item $ (A \cap B) \cap C = \{1\}$
+	\end{enumerate}
+\end{multicols}
+Conclure sur $ (A\cup B)\cup C $ et sur $ A \cup (B \cup C) $ : ils sont égaux, donc on peut imaginer que les parenthèses n'ont pas d'importances.
+\end{solution}

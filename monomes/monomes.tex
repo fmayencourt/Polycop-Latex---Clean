@@ -1,0 +1,845 @@
+\chapter{Algèbre : éléments de base}
+
+\section{Notion de base} 
+ 
+\subsection{Monômes et polynômes}
+
+Dès les premières traces d'écriture, on trouve des aspects mathématiques. Les hommes ont de tout temps chercher à généraliser leurs calculs. Au départ par des parties de phrase (\textit{que ton esprit retienne}), puis par des lettres (le fameux $x$).
+
+\begin{exemple}
+L'expression
+$$
+3x+1
+$$
+signifie : tripler la quantité puis ajouter $1$
+\end{exemple}
+
+Pour mieux se comprendre, les mathématiciens ont nommé différents objets :
+ 
+\begin{definition}[Monôme] Un \emph{monôme}\index{monôme} est l'élément de base du calcul littéral.
+
+Il est composé d'une \emph{partie numérique} et d'une \emph{partie littérale}.
+\end{definition}
+ 
+\begin{exemple}
+Dans l'expression
+$$
+\overbrace{42} \underbrace{a^2 b^4 x^{71}}
+$$
+$42$ est la partie numérique (nombre) et $a^2 b^4 x^{71}$ est la partie littérale (lettres).
+\end{exemple}
+
+\begin{definition}[Polynôme]
+Un \emph{polynôme}\index{polynôme} est une addition ou soustraction de monômes.
+\end{definition}
+
+\begin{exemple}
+$$
+3x^2 - 2x + 1
+$$
+\end{exemple}
+
+\begin{definition}[Degré d'un polynôme]
+Le \emph{degré} d'un polynôme en $x$ est la plus haute puissance de $x$ présente dans le polynôme.
+\end{definition}
+
+\begin{exemple}
+Le polynôme $3x^2 - 2x + 1$ est de degré $2$.
+
+Le polynôme $4a^7 x - 3a^2 x^3 + 2x -4$ est de degré $3$.
+\end{exemple}
+
+\subsection{Opérations}
+
+On peut effectuer plusieurs opérations sur les monômes et les polynômes :
+
+\begin{definition}[Calculer la valeur numériques]
+Pour calculer la valeur numérique d'un polynôme, il faut conna\^itre la valeur de chacune des lettres de la partie littérale. Il suffit ensuite de remplacer chaque lettre par sa valeur et d'effectuer le calcul.
+\end{definition}
+
+\begin{exemple}
+Calculer la valeur numérique du polynôme
+$$
+3ab^2 -5b^3 +3 a^2
+$$
+avec $a=1$ et $b=-2$.
+
+On remplace $a$ et $b$ :
+$$
+\begin{array}{cccccccl}
+3 &\cdot a &\cdot b^2 & -5 &\cdot b^3 & +3 &\cdot a^2 & =\\
+ & \downarrow & \downarrow & & \downarrow & & \downarrow & \\
+3 &\cdot 1 &\cdot (-2)^2 &- 5 &\cdot (-2)^3 &+ 3 &\cdot 1^2 & = 12 - (-40) + 3 = 55
+\end{array}
+$$
+\end{exemple}
+
+\begin{definition}[Ordonner un polynôme]
+Pour pouvoir facilement comparer deux polynômes, on va donner une manière de l'écrire identique pour tous. Il s'agit d'\emph{ordonner un polynôme selon les exposants d'une lettre}, en général $x$. 
+\end{definition}
+
+\begin{exemple}
+On cherche à ordonner selon les exposants de $x$ le polynôme
+$$
+3a^9 x^2 - 2 a x^7 + 42 a^2 - 5 x
+$$
+Rappelons que $5x = 5x^1$ et que $42 a^2 = 42 a^2 x^0$. Ainsi 
+$$
+3a^9 x^{\fbox{2}} - 2 a x^{\fbox{7}} + 42 a^2 x^{\fbox{0}} - 5 x^{\fbox{1}} = -2ax^7+3a^9 x^2 -5x + 42a^2
+$$
+\end{exemple}
+
+\begin{definition}[Réduire un polynôme]
+Dans un polynôme, on peut assembler plusieurs monômes, mais seulement s'ils ont exactement la même partie littérale. On appelle cela : \emph{réduire un polynôme}.
+\end{definition}
+
+\begin{exemple}
+Réduire le polynôme
+$$
+3a^2 b - 2 a b^2 + 4 a^2 b.
+$$
+Si l'on remplace $a^2 b$ par $\heartsuit$ et $ab^2$ par $\spadesuit$, cela nous donne :
+$$
+3 \heartsuit -2 \spadesuit + 4 \heartsuit = 7\heartsuit -2\spadesuit
+$$
+et donc
+$$
+7a^2 b - 2 ab^2
+$$
+\end{exemple}
+
+\begin{remarque}
+La règle de calcul qui nous permet d'assembler plusieurs monômes, alors qu'ils ne sont pas côte-à-côte s'appelle la commutativité de l'addition\index{commutativité}. Cela signifie que dans nos calculs, 
+$a+b+c$ est identique à $a + c + b$. Cette règle parait évidente, mais elle n'est pas valable dans tous les domaines des mathématiques.
+\end{remarque}
+
+\begin{definition}[Multiplication de monômes]\label{distribuer}
+On multiplie deux monômes de la manière suivante :
+\begin{itemize}
+\item les nombres multiplient les nombres
+\item les lettres multiplient les lettres
+\end{itemize}
+\end{definition}
+
+\begin{theoreme}
+On utilise les règles suivantes pour multiplier deux parties littérales :
+\begin{enumerate}
+\item \fbox{$ a^0 = 1  $}\label{frml1}
+\item {\fbox{$ a^1 = a$}}\label{frml2}
+\item {\fbox{$a^m \cdot a^n = a^{m+n} $}}\label{frml3}
+\item {\fbox{$\left(a^n\right)^m = a^{m\cdot n} $}}\label{frml4}
+\end{enumerate}
+\end{theoreme}
+
+\begin{proof}
+Avant de démontrer ces formules, rappelons la définition générique de $a^m$ :
+$$
+a^m = \underbrace{a \cdot a \cdot \dots \cdot a \cdot a}_{m \mbox{ fois}}
+$$
+\begin{enumerate}
+\item[\ref{frml3}.] Ainsi la troisième formule se démontre facilement :
+$$
+a^m \cdot a^n = \underbrace{\underbrace{a \cdot \dots \cdot a}_{m \mbox{ fois}} \underbrace{a \cdot \dots \cdot a}_{n \mbox{ fois}}}_{m+n \mbox{ fois}} = a^{m+n}
+$$
+\item[\ref{frml4}.] De même la quatrième formule se démontre dirrectement :
+$$
+\left(a^n\right)^m 	= \underbrace{a^n  \dots  a^n}_{m \mbox{ fois}} =
+					= \underbrace{\underbrace{a  \dots a}_{n \mbox{ fois}} \dots \underbrace{a \dots a}_{n \mbox{ fois}}}_{m\cdot n \mbox{ fois}} = a^{m\cdot n}
+$$
+\item[\ref{frml1}.] La première formule se démontre de manière indirecte, avec la formule~\ref{frml3} :
+$$
+a^m \cdot a^0 = a^{m+0} = a^m
+$$
+Ainsi multiplier par $a^0$ ne change pas la valeur. Or le seul nombre qui ne change pas la valeur dans une multiplication est le nombre $1$. Ainsi
+$$
+a^0 = 1
+$$
+\item[\ref{frml2}.] De même que la première formule, celle-ci se démontre de manière indirecte :
+$$
+a^m \cdot a = \underbrace{a \dots a}_{m \mbox{ fois}} \cdot a = \underbrace{a \dots a \cdot a }_{m+1 \mbox{fois}} = a^{m+1} = a^m \cdot a^1.
+$$
+On en déduit donc que multiplier par $a$ est équivalent à multiplier par $a^1$ et donc que $a = a^1$.
+\end{enumerate}
+\end{proof}
+
+\begin{remarque}
+Comme pour la réduction de polynômes, la multiplication de monômes requiert une règle : la commutativité de la multiplication\index{commutativité}.
+\end{remarque}
+
+\begin{definition}[Multiplication de deux polynômes]
+Deux polynômes se multiplient en utilisant la règle de distributivité de la multiplication par rapport à l'addition (ou la soustraction)\index{distributivité de la multiplication par rapport à l'addition}.
+\end{definition}
+
+\begin{exemple}
+Commençons par regarder ce que donne la multiplication d'un monôme et d'un polynôme, puis de deux polynômes.
+\begin{enumerate}
+\item 
+$$
+2a^2(21ab -3b^2) = 2a^2 \cdot 21ab - 2a^2 \cdot 3b^2 = 42a^3b - 6 a^2 b^2
+$$
+\item 
+$$
+(2x+1)(4-5x) = 2x \cdot 4 - 2x \cdot 5x + 1 \cdot 4 - 1 \cdot 5x = 8x - 10 x^2 + 4 - 5x = -10x^2 +3x + 4
+$$
+\end{enumerate}
+
+\begin{remarque}
+Lorsqu'on doit effectuer une multiplication de trois polynômes il est préférable d'en multiplier d'abord deux, puis de multiplier le résultat avec le dernier. On peut faire cela grâce à l'associativité de la multiplication\index{associativité}.
+\end{remarque}
+\end{exemple}
+
+\section{Identités remarquables} \label{identites}
+
+Certaines multiplications de polynômes sont tellement courantes qu'on va utiliser des formules pour les calculer plus vite. Ces dernières sont connues sous le nom d'\emph{identités remarquables}\index{identité remarquables}.
+\begin{theoreme}
+Les identités suivantes sont à retenir :
+\begin{enumerate}
+\item \fbox{$(a+b)^2 = a^2 + 2ab + b^2$}
+\item \fbox{$(a-b)^2 = a^2 - 2ab + b^2$}
+\item \fbox{$(a+b+c)^2 = a^2 + b^2 + c^2 + 2ab + 2ac + 2bc$}
+\item \fbox{$(a+b)(a-b) = a^2 - b^2$}
+\item \fbox{$(a+b)^3 = a^3 + 3a^2b + 3ab^2+ b^3$}
+\item \fbox{$(a-b)^3 = a^3 - 3a^2b +3ab^2 - b^3$}
+\item \fbox{$(a+b)(a^2 - ab + b^2) = a^3 +b^3$}
+\item \fbox{$(a-b)(a^2 + ab + b^2) = a^3 - b^3$}
+\end{enumerate}
+\end{theoreme}
+\begin{proof}
+en exercice.
+\end{proof}
+On les utilise de la manière suivante :
+\begin{exemple}
+$$
+\begin{array}{ccccccccl}
+(3x &+ 5)^2 & = & (3x)^2 & +2 &3x& 5 + & (5)^2 & = 9x^2 + 30 x + 25 \\
+\downarrow & \downarrow & & \uparrow & & \uparrow &\uparrow & \uparrow &\\
+(a & +b)^2 & = & a^2 & +2 & a & b + & b^2 &\\
+\end{array}
+$$
+\end{exemple}
+
+\section{Division euclidienne}
+
+Comme une division de deux nombres entiers en colonne, on peut diviser deux polynômes. Cette manière de faire est héritée du grec Euclide\index{Euclide}, 300 ans avant notre ère !
+
+\begin{exemple}
+On cherche à effectuer la division suivante :
+$$
+(a^4 + 2a^3 b - a^2 b^2 + 3 a b^3 - b^3)\div (a+b)
+$$
+On utilise la division en colonne suivante
+$$
+\begin{array}{rrrrrr|}
+&a^4& + 2a^3 b& - a^2 b^2& + 3 a b^3& - b^3\\
+-&(a^4& + a^3b) & & & \\
+\hline
+& & a^3 b & -a^2b^2 &&\\
+-& &(a^3 b &+ a^2 b^2)&&\\
+\hline
+& & &- 2a^2b^2 & + 3 a b^3 &\\
+-& & &(-2a^2b^2 & - 2 a b^3) &\\
+\hline
+&&&& 5a b^3 &- b^3\\
+-&&&&(5ab^2 &+ 5b^3)\\
+\hline
+&&&&&-6b^3 \\
+\end{array}
+\begin{array}{rrrr}
+a&+b && \\
+\hline
+a^3 &+ a^2 b &-2ab^2& +5b^3 \\
+&&&\\&&&\\&&&\\&&&\\&&&\\&&&\\&&&\\&&&\\
+\end{array}
+$$
+donc la division est donnée par
+$$
+(a^4 + 2a^3 b - a^2 b^2 + 3 a b^3 - b^3)\div (a+b) = a^3 + a^2 b -2ab^2 +5b^3 + \frac{-6b^3}{a+b}
+$$
+\end{exemple}
+
+\subsection{Schéma de Hörner}\label{horner}
+
+Dans le cas particulier d'une division par $(x-a)$, c'est-à-dire de $x$ moins un nombre, on peut utiliser la méthode de Hörner qui raccourci les calculs :
+
+\begin{exemple}
+On cherche à effectuer $(3x^5 - 3x^4 -11x - 26)\div(x-2)$. 
+$$
+\begin{array}{|r|r|r|r|r|r|}
+\hline
+x^5 & x^4 & x^3 & x^2 & x & \\
+\hline
+3	&	-3	&	0	&	0	&	-11	&	-26	\\
+\hline
+(2)&	6	&	6	&	12	&	24	&	26	\\
+\hline
+3	&	3	&	6	&	12	&	13	&	0	\\
+\hline
+x^4 & x^3 & x^2 & x & & \mbox{reste} \\
+\hline
+\end{array}
+$$
+Le tableau fonctionne de la manière suivante :
+\begin{enumerate}
+\item faire un nombre de colonnes égale à la plus haute puissance de $x$ plus une
+\item écrire le polynôme de base dans la première ligne
+\item écrire $a$ dans la première case de la deuxième ligne (ici $x-2 \rightarrow 2$)
+\item la première case de la première ligne descend directement dans la première case de la troisième ligne
+\item on passe de la troisième ligne à la deuxième en diagonal et en multipliant par $a$, donc $2$
+\item on additionne la première et la deuxième ligne en vertical pour arriver à la troisième
+\item la solution est donnée par la troisième ligne complète, la dernière case de la dernière ligne représente le reste de la division
+\end{enumerate}
+Ainsi 
+$$
+(3x^5 - 3x^4 -11x - 26)\div(x-2) = 3x^4 + 3x^3 +6x^2 + 12x + 13
+$$
+\end{exemple}
+
+\section{\'Equations}
+
+\begin{definition}[\'Equation]
+Une \emph{\'equation} est une égalité entre deux polynômes.
+\end{definition}
+
+Il existe un nombre infini d'équations différentes, avec une ou plusieurs lettres. Pour l'instant nous nous contenterons d'étudier les équations avec une seule lettre. Cette lettre, en général $x$, sera appelée l'\emph{inconnue}.\index{équation!à une inconnue!premier degré}
+
+\begin{definition}[Solution d'une équation]
+Un nombre est \emph{solution d'une équation} si la valeur numérique du polynôme de gauche est égale à la valeur numérique du polynôme de droite.
+\end{definition}
+
+\begin{definition}[Résoudre une équation]
+Pour résoudre une équation, il faut trouver toutes les valeurs de l'inconnue qui sont solutions de l'équation.
+
+L'ensemble des valeurs que peut prendre une inconnue et sont solutions de l'équation est appelé \emph{ensemble des solutions de l'équation}.
+\end{definition}
+
+\begin{exemple}
+Pour l'équation
+$$
+3x-1 = 4-2x,
+$$
+la valeur $x=1$ vérifie l'égalité. En effet : $3 \cdot 1 - 1 = 2$ et $4-2\cdot 1 = 2$.
+\end{exemple}
+
+\begin{definition}
+Deux équations sont dites \emph{équivalentes} si elles ont le même ensemble des solutions. On lie les deux équations par le signe $\ssi$.
+\end{definition}
+
+\begin{theoreme}
+Les seules opérations qui ne changent pas l'ensemble des solutions d'une équation, et donc qui préservent l'équivalence,  sont :
+\begin{enumerate}
+\item additionner ou soustraire le même nombre à chaque polynôme
+\item additionner ou soustraire le même monôme à chaque polynôme
+\item multiplier ou diviser chaque polynôme par un nombre
+\end{enumerate}
+Toutes les autres opérations mathématiques peuvent changer l'ensemble des solutions et donc n'assurent pas la validité de la réponse !
+\end{theoreme}
+
+\begin{proof}
+La preuve fait appel à des notions trop complexes de mathématiques.
+\end{proof}
+
+\begin{remarque}
+Parmi les opérations qui ne préservent pas l'équivalence on peut citer
+\begin{enumerate}
+\item diviser par le même monôme chaque polynôme
+\item mettre chaque polynôme à la même puissance ou sous la même racine
+\end{enumerate}
+Par exemples
+\begin{enumerate}
+\item l'équation $x^2 -2x = 4x$ a comme ensemble des solutions $\{0; 6\}$, mais si l'on divise par $x$ chaque polynôme, on obtient l'équation $x-2=4$ qui n'a plus que $\{6\}$ comme ensemble des solutions. En divisant par $x$, on perd la solutions $x=0$,
+\item l'équation $x^2 = 9$ a comme ensemble des solutions $\{-3;3\}$, mais si l'on applique une racine carrée à chaque polynôme, on obtient l'équation $x = 3$ qui n'a plus que $\{3\}$ comme ensemble des solutions. En mettant une racine, on perd la solution $x=-3$.
+\end{enumerate}
+\end{remarque}
+
+\section{Résolution de problèmes}
+
+Un des grands aspects des mathématiques, et certainement un des plus utilisés notamment dans les milieux financiers est la modélisation de processus et la résolution de problèmes par des processus mathématiques.
+
+Dans une situation problématique, il convient tout d'abord de bien comprendre les tenants et les aboutissants. Aussi il est conseillé de lire plusieurs fois la donnée du problème, sans a priori et sans essayer de le résoudre. Si le problème est clair, faire un schéma ou un dessin ne devrait pas être trop difficile.
+
+Dans un deuxième temps, identifier la nature de la solution permet de diriger la résolution. Que dois-je savoir ? Un âge, une somme d'argent, un nombre de légumes, \dots ? En général, c'est cet objet que je vais appeler \textit{inconnue} et noter $x$.
+
+Par la suite, il est intéressant d'extraire du problème toutes les indications, et d'identifier celles qui vont être utiles à la modélisation et celles qui n'apportent rien.
+
+Pour finir avec la modélisation, si les étapes précédentes ont été effectuées consciencieusement, il ne devrait pas être trop compliqué de trouver une égalité entre deux aspects du problème. Cependant, cette égalité doit pouvoir toujours être expliquée avec des mots et garder un sens logique. Durant cette étape, il faut faire bien attention avec les différentes unités ! On ne peut pas comparer de l'argent et des pommes par exemple !
+
+Une fois la modélisation et la ou les équations posées, il suffit d'une résolution algébrique pour déterminer la ou les solutions du problème. N'oubliez pas d'écrire clairement la réponse à la question posée !
+
+\section{Exercices}
+
+\begin{exercice}
+Calculer la valeur numérique des expressions suivantes :
+\begin{enumerate}
+\item $6{{a}^{3}}{{b}^{2}}-5{{a}^{2}}{{b}^{3}}+{{a}^{4}}b$	avec $a=5$ et $b=-2$
+\item $5xy+2{{x}^{2}}y-3{{y}^{2}}-4x$	avec $x=3$ et $y=0,2$
+\item $\left( a+b+c \right)\left( a+b-c \right)\left( a-b+c \right)$	avec $a=3$ ; $b=0,2$ et $c=-0,2$
+\end{enumerate}
+\end{exercice}
+
+\begin{exercice}
+Ordonner et réduire, par rapport aux puissances décroissantes de $x$, les polynômes suivants :
+\begin{enumerate}
+\item $7{{x}^{3}}+4{{y}^{3}}-3{{x}^{2}}y-x{{y}^{2}}$
+\item $2{{x}^{4}}-3{{x}^{2}}+{{x}^{3}}-7{{x}^{2}}-2$
+\item ${{x}^{4}}-{{x}^{2}}{{y}^{2}}-3x{{y}^{3}}+{{y}^{4}}+{{x}^{3}}y$	
+\item $25{{a}^{2}}{{x}^{2}}-3{{a}^{4}}-a{{x}^{3}}-4{{a}^{4}}-2{{a}^{3}}x+{{x}^{4}}$
+\item $6{{x}^{5}}-3{{x}^{4}}-2{{x}^{4}}+5{{x}^{3}}-10{{x}^{2}}+6{{x}^{3}}+{{x}^{2}}-2x+5+4x-8$
+\item $10{{x}^{4}}-15{{a}^{2}}{{x}^{2}}-5a{{x}^{3}}-4{{a}^{3}}x+6a{{x}^{3}}+2{{a}^{2}}{{x}^{2}}+4{{a}^{3}}x-{{a}^{4}}$
+\end{enumerate}
+\end{exercice}
+
+\begin{exercice}
+Réduire les polynômes suivants :
+\begin{enumerate}
+\item ${{x}^{2}}-\left( {{y}^{2}}-{{z}^{2}} \right)+{{y}^{2}}-\left( {{x}^{2}}+{{y}^{2}} \right)-{{z}^{2}}-\left( {{x}^{2}}-{{y}^{2}} \right)$
+\item $\left( 4{{x}^{3}}-2{{x}^{2}}+x+1 \right)-\left( -{{x}^{2}}+3{{x}^{3}}-x-7 \right)-\left( {{x}^{3}}-4{{x}^{2}}+8+2x \right)$
+\item $x+2y-3z-\left[ \left( x-y+2z \right)-\left( 2x+3y-z \right) \right]-\left[ \left( 5x+4y-6z \right)-\left( -4x+5y-3z \right) \right]$
+\item $7a-\left\{ -3a-\left[ 4a-\left( 5a-2b \right) \right]-\left( -3b+2a \right) \right\}$
+\item $2{{a}^{2}}-\left[ 2{{b}^{2}}-\left( {{a}^{2}}+{{b}^{2}} \right) \right]-\left\{ 5{{b}^{2}}-\left[ 3{{a}^{2}}+\left( {{b}^{2}}-2{{a}^{2}} \right) \right] \right\}$
+\item $a+\left\{ 4b-\left[ 6c-\left( 4d-1 \right) \right] \right\}-\left[ \left( a+4b \right)-\left( 6c-4d \right)-1 \right]$
+\end{enumerate}
+\end{exercice}
+
+\begin{exercice}Effectuer les produits suivants :
+\begin{multicols}{2}
+\begin{enumerate}
+\item ${{x}^{2}}y\cdot x{{y}^{2}}$	
+\item ${{x}^{3}}{{y}^{2}}\cdot x{{y}^{3}}$	
+\item ${{x}^{3}}{{y}^{2}}{{z}^{4}}\cdot {{x}^{2}}y{{z}^{2}}$	
+\item $\left( 5ax{{y}^{2}} \right)\left( -8{{a}^{2}}{{x}^{3}}y \right)$	
+\item $\left( -3{{x}^{2}}{{y}^{3}}{{z}^{5}} \right)\left( 4{{x}^{4}}{{y}^{2}}{{z}^{6}} \right)$	
+\item $\left( 12{{a}^{5}}{{b}^{6}} \right)\left( -5{{a}^{8}}{{b}^{7}} \right)$	
+\item $\left( 4{{a}^{2}}b{{c}^{4}} \right)\left( -3{{a}^{5}}{{b}^{5}}{{c}^{3}} \right)\left( 2a{{b}^{6}}{{c}^{2}} \right)$	\item $\left( 3{{x}^{3}}{{y}^{2}} \right)\left( 4{{x}^{4}}{{y}^{5}}{{z}^{2}} \right)\left( -x{{y}^{5}}{{z}^{3}} \right)$	
+\item $\left( 3{{x}^{3}}{{y}^{4}} \right)\left( {{x}^{2}}{{y}^{5}} \right)\left( 15{{x}^{12}}{{y}^{11}} \right)$
+\item $\left( 4{{a}^{2}}{{b}^{3}}{{c}^{5}} \right)\left( -5{{a}^{6}}{{b}^{2}}{{c}^{4}} \right)$	
+\item $-\left( -a{{b}^{2}} \right)\left( -{{a}^{2}}b \right)\left( -{{a}^{3}}{{b}^{4}} \right)$
+\item $\left( {{x}^{-3}}{{y}^{-2}} \right)\left( {{x}^{4}}{{y}^{3}} \right)\left( {{x}^{3}}{{y}^{-1}} \right)$
+\item $\left( 3{{x}^{2}}y \right)\left( -5{{x}^{3}}{{y}^{2}} \right)\left( 2x{{y}^{3}} \right)\left( -4{{x}^{4}}{{y}^{5}} \right)\left( -xy \right)$
+\item $\left( {{x}^{m}}{{y}^{m}} \right)\left( {{x}^{m}}{{y}^{n}} \right)$
+\item $\left( {{x}^{m}}{{y}^{3}} \right)\left( {{x}^{2}}{{y}^{n}} \right)$
+\item $\left( {{x}^{m+1}}{{y}^{n-1}} \right)\left( {{x}^{m-3}}{{y}^{n+4}} \right)$
+\item $\left( {{x}^{2m-3}}{{y}^{3n-2}} \right)\left( 2{{x}^{m+1}}{{y}^{n+2}} \right)$
+\item $\left( {{x}^{3-m}}{{y}^{4+n}} \right)\left( {{x}^{2m-3}}{{y}^{n+3}} \right)\left( {{x}^{m+1}}{{y}^{2-n}} \right)$
+\end{enumerate}
+\end{multicols}
+\end{exercice}
+
+\begin{exercice}
+Effectuer les opérations suivantes et réduire :
+\begin{enumerate}
+\item $15{{x}^{2}}+24{{y}^{2}}-\left( 3x+2y \right)\left( 5x+6y \right)$
+\item $2xy+x\left( 9x+8y \right)-\left( 8x-9y \right)\left( 5x+7y \right)-\left( 3x-2y \right)\left( 5x+8y \right)$
+\item $\left( 3x-6y \right)\left( 4x-3y \right)-\left[ \left( 2x-5y \right)\left( 6x-11y \right)-\left( 37{{y}^{2}}-6xy \right) \right]$
+\item $\left( 3{{x}^{3}}-2{{x}^{2}}+x-1 \right)\left( 5{{x}^{2}}-4x-1 \right)-\left( 15{{x}^{4}}-12{{x}^{3}}+3{{x}^{2}}-x-1 \right)\left( x-1 \right)$
+\item $\left( {{x}^{2}}-{{y}^{2}} \right)\left( 2{{x}^{3}}-4{{x}^{2}}y-5x{{y}^{2}} \right)-\left( {{y}^{2}}-{{x}^{2}} \right)\left( 4{{x}^{3}}+8{{x}^{2}}y+5x{{y}^{2}} \right)$
+\item $\left[ \left( a-b \right){{x}^{2}}+\left( a-b \right)x+\left( a-b \right) \right]\left[ \left( a+b \right){{x}^{2}}+\left( a+b \right)x+\left( a+b \right) \right]$
+\item $\left( {{a}^{2}}-{{b}^{2}} \right)\left( 2a-3b+5c \right)+\left( b-a \right)\left( 3{{a}^{2}}+4bc-5ac \right)+\left( {{b}^{2}}-{{a}^{2}} \right)\left( 4a-3b+c \right)$
+\item $\left( 34a-12b \right)\left( 17a-8b \right)-\left[ \left( 4a-6b \right)\left( 7a-3b \right)-\left( 5a-8b \right)\left( 7a-6b \right) \right]$
+\item $\left( {{x}^{2}}-{{y}^{2}} \right)\left( 2{{x}^{3}}-4{{x}^{2}}y-5x{{y}^{2}} \right)-\left( {{y}^{2}}-{{x}^{2}} \right)\left( 4{{x}^{3}}+8{{x}^{2}}y+5x{{y}^{2}} \right)+\left( {{x}^{2}}-{{y}^{2}} \right)\left( 9{{x}^{2}}y-6{{x}^{3}} \right)$ 
+\item $\left( 2{{a}^{2m}}+{{b}^{n}} \right)\left( {{a}^{2m}}+3{{b}^{n}} \right)\left( 3{{a}^{2m}}+2{{b}^{n}} \right)\left( 2{{a}^{2m}}-3{{b}^{n}} \right)$
+\item $\left( 3{{a}^{2m+2}}+2{{a}^{m+1}} \right)\left( 2{{a}^{2m}}+3{{a}^{m-1}} \right)\left( 2{{a}^{2m+1}}-{{a}^{m}} \right)$
+\item $\left( 2{{a}^{3m+2}}+3{{b}^{2n+1}} \right)\left( 3{{a}^{3m+3}}b-a{{b}^{2n+2}} \right)\left( 4{{a}^{3m+2}}{{b}^{n}}-3{{b}^{3n+1}} \right)$
+\end{enumerate}
+\end{exercice}
+
+
+\begin{exercice}\'Ecrire directement le résultat des produits suivants, sans effectuer de développements intermédiaires :
+\begin{multicols}{2}
+\begin{enumerate}
+\item $\left( x+3 \right)\left( x+5 \right)$	
+\item $\left( x+5 \right)\left( x-2 \right)$	
+\item $\left( x-4 \right)\left( x-3 \right)$	
+\item $\left( x+7 \right)\left( x-8 \right)$		
+\item $\left( x-12 \right)\left( x+6 \right)$	
+\item $\left( x+7 \right)\left( x-11 \right)$	
+\item $\left( x+a \right)\left( x+b \right)$	
+\item $\left( x+a \right)\left( x-b \right)$	
+\item $\left( x+2a \right)\left( x+3b \right)$	
+\item $\left( x-3a \right)\left( x+5b \right)$
+\item $\left( x+12ab \right)\left( x-10ab \right)$ 
+\item $\left( {{x}^{2}}-2a \right)\left( {{x}^{2}}+5a \right)$
+\item $\left( 2x+1 \right)\left( x+1 \right)$
+\item $\left( 3x-1 \right)\left( x-2 \right)$ 
+\item $\left( 2x+3 \right)\left( 3x+2 \right)$
+\item $\left( 2x-3 \right)\left( 3x-2 \right)$
+\item $\left( 2{{x}^{2}}-3 \right)\left( 3{{x}^{2}}-2 \right)$
+\item $\left( 5{{x}^{2}}+3 \right)\left( 2{{x}^{2}}-5 \right)$
+\end{enumerate}
+\end{multicols}
+\end{exercice}
+
+\begin{exercice} \'Elever au carré, puis au cube les monômes suivants :
+\begin{multicols}{2}
+\begin{enumerate}
+\item $2a$	
+\item $-3x$	
+\item $5{{x}^{2}}y$	
+\item $6{{a}^{2}}{{b}^{3}}c$	
+\item $-7{{x}^{3}}{{y}^{2}}{{z}^{4}}$	
+\item $-5ab{{c}^{2}}{{d}^{3}}$	
+\item $0,1x{{y}^{2}}{{z}^{5}}$	
+\item $0,5{{a}^{3}}b{{c}^{-2}}$	
+\item $0,04a{{b}^{7}}{{c}^{-5}}$
+\item ${{a}^{m}}{{b}^{n+1}}$
+\item $-{{a}^{m+3}}{{b}^{n-4}}$
+\item $5{{a}^{2m+3}}{{b}^{3n-2}}{{c}^{4}}$
+\end{enumerate}
+\end{multicols}
+\end{exercice}
+
+ 
+\begin{exercice}\'Elever au carré, puis au cube les binômes suivants :
+\begin{multicols}{2}
+\begin{enumerate}
+\item $a+b$	
+\item $x+2y$	
+\item $2x-y$	
+\item $3x-2y$	
+\item $2{{x}^{2}}-5{{y}^{3}}$	
+\item $3{{x}^{2}}{{y}^{3}}+4x{{y}^{2}}$	
+\item $-5{{x}^{2}}{{y}^{5}}z+3{{x}^{3}}y{{z}^{3}}$	
+\item $0,2x{{y}^{2}}+0,3{{x}^{2}}y$	
+\item ${{a}^{m}}-{{b}^{n}}$
+\item $3{{a}^{2m}}+2{{b}^{3n}}$
+\item ${{a}^{2m+3}}-2{{b}^{n-2}}$	
+\item $5{{a}^{2m-1}}{{b}^{3n+2}}+3{{a}^{m+3}}{{b}^{2n-5}}$
+\end{enumerate}
+\end{multicols}
+\end{exercice}
+
+\begin{exercice}Développer les produits suivants (propriété des binômes conjugués) :
+\begin{enumerate}
+\item $\left( a+1 \right)\left( a-1 \right)$	
+\item $\left( a-2b \right)\left( a+2b \right)$	
+\item $\left( 2xy+5 \right)\left( 2xy-5 \right)$	
+\item $\left( -7a+4b \right)\left( -7a-4b \right)$	
+\item $\left( -2xy+3z \right)\left( 2xy+3z \right)$	
+\item $\left( 3{{x}^{2}}y+5{{y}^{3}}{{z}^{2}} \right)\left( 3{{x}^{2}}y-5{{y}^{3}}{{z}^{2}} \right)$	
+\item $\left( 10{{x}^{2}}{{y}^{3}}-5xy \right)\left( 2x{{y}^{2}}+1 \right)$	
+\item $\left( a{{b}^{2}}{{c}^{4}}-2{{a}^{2}}b{{c}^{2}} \right)\left( b{{c}^{3}}+2ac \right)$
+\item $\left( 4{{x}^{2}}{{y}^{3}}-12xy \right)\left( 2{{x}^{2}}{{y}^{2}}+6x \right)$ 
+\item $\left( x-y \right)\left( x+y \right)\left( {{x}^{2}}+{{y}^{2}} \right)$
+\item $\left( {{x}^{2}}+3 \right)\left( {{x}^{4}}+9 \right)\left( {{x}^{2}}-3 \right)$
+\item $\left( a+b-c \right)\left( a+b+c \right)$  
+\item $\left( 2x-y-3z \right)\left( 2x+y+3z \right)$
+\item $\left[ 7\left( a+b \right)+6c \right]\left[ 7\left( a+b \right)-6c \right]$
+\item $\left[ \left( x+2y \right)+\left( 2a+b \right) \right]\left[ \left( x+2y \right)-\left( 2a+b \right) \right]$
+\end{enumerate}
+\end{exercice}
+
+
+\begin{exercice}\'Elever au carré les polynômes suivants :
+\begin{multicols}{2}
+\begin{enumerate}
+\item $a+b+c$	
+\item $a-2b-c$	
+\item $2x-3y+z$	
+\item $a-b+c-d$	
+\item $2{{x}^{2}}+3x-1$	
+\item $3{{x}^{2}}-4x+5$	
+\item ${{x}^{4}}-2{{x}^{2}}+3$	
+\item ${{x}^{2}}y+xy-x{{y}^{2}}$	
+\item $2{{x}^{3}}-3{{x}^{2}}+x+5$
+\item ${{x}^{2m}}+2{{x}^{m}}+1$
+\item $3{{x}^{m+1}}-2{{x}^{m}}+{{x}^{m-1}}$
+\item ${{a}^{4}}+{{a}^{3}}+{{a}^{2}}+a+1$
+\end{enumerate}
+\end{multicols}
+\end{exercice}
+
+\begin{exercice}Résoudre les équations suivantes :
+\begin{enumerate}
+\item $3\left( 5x-8 \right)=4\left( 5x-7 \right)-1$
+\item $10\left( x+3 \right)-4=5\left( 3-x \right)-4$
+\item $0,4\left( 3x+1 \right)=0,5\left( 3-x \right)-4$
+\item $2\left( 0,3x+11 \right)=0,7\left( x+26 \right)$	
+\item $\left( 7+x \right)\left( x-4 \right)=\left( x+4 \right)\left( x-7 \right)$	
+\item $\left( x-3 \right)\left( x-4 \right)-\left( x+4 \right)\left( x-7 \right)=0$	
+\item $\left( 5-x \right)\left( x+4 \right)=5-{{x}^{2}}$	
+\item $\left( x-1 \right)\left( 5x+2 \right)=5\left( {{x}^{2}}-4 \right)$	
+\item ${{\left( x+5 \right)}^{2}}-{{\left( x-3 \right)}^{2}}=32$	
+\item ${{x}^{2}}+30={{\left( x+1 \right)}^{2}}-59$	
+\item $\left( x+2 \right)\left( x+3 \right)={{x}^{2}}+366$
+\item ${{\left( x+5 \right)}^{2}}-{{\left( x-5 \right)}^{2}}=500$
+\item ${{x}^{2}}-{{\left( 50-x \right)}^{2}}=100$
+\item $4\left[ 3x-4\left( x-2 \right) \right]=x-3$
+\item $4x\left( x-2 \right)+1={{\left( 2x-1 \right)}^{2}}$
+\item $2{{\left( x+1 \right)}^{2}}=\left[ 6-2\left( 2-x \right) \right]x+6$
+\item $12x-\left[ 4x-\left( x+108 \right) \right]=36$
+\item $3\left[ x-2\left( x-3 \right) \right]=2\left[ x-2\left( x-2,5 \right) \right]$
+\item $2\left\{ 3x-2\left[ x-5\left( x-1 \right)+3 \right]-5 \right\}=x$
+\item $5\left\{ 5\left[ 5\left( 5x-4 \right)-4 \right] \right\}-4=21$
+\end{enumerate}
+\end{exercice}
+
+\begin{exercice}Résoudre les problèmes suivants (une seule inconnue) :
+\begin{enumerate}
+\item Un marchand vous achète 20 kg de fer et 5 kg de cuivre pour un total de Fr. 540.—. Le kilogramme de cuivre coûtant huit fois plus que le kilogramme de fer, déterminer le prix du kilogramme de chaque métal
+
+\item Pour fixer l’emplacement d’une exposition, on doit tenir compte des exigences suivantes : le tiers de la superficie est réservé à la verdure, le sixième aux routes, le quart au parking, 24 ha aux pavillons étrangers, 16 ha aux stands nationaux. Quelle est la superficie totale nécessaire à cette exposition ?
+
+\item Partager Fr. 26'000.— entre trois personnes de telle manière que la première ait Fr. 1'500.— de plus que la deuxième et la troisième Fr. 4'000.— de moins que la première.
+
+\item Quel capital doit posséder une personne qui plaçant le tiers à 4\% et le reste à 3 \% désire retirer un revenu annuel de Fr. 48'000.— ?
+
+\item Un entrepreneur doit transporter 460 tonnes de terre : il dispose de 2 camions, l’un de 5 tonnes, l’autre de 3 tonnes ; il désire effectuer 100 transports. Combien de fois doit-il utiliser chaque camion ?
+
+\item La recette d’un cinéma s’élève à Fr. 13'450.—, les places sont à Fr. 30.— et Fr. 40.—. Sachant qu’il y a eu 400 places vendues, déterminer le nombre de places de chaque espèce.
+
+\item On a partagé Fr. 1'650.–– entre 125 personnes ; chaque homme a reçu Fr. 15.–– et chaque femme Fr. 10.––. Combien y avait-il d'hommes et de femmes ?
+
+\item Il y avait dans une corbeille 3 fois autant de poires que de pommes ; on ôte 8 fruits de chaque sorte et le nombre de poires est maintenant 5 fois celui des pommes. Combien y avait-il de pommes et de poires ?
+
+\item Deux bergers ont ensemble 332 moutons. Le nombre de moutons du 1er surpasse de 8 le triple du nombre de moutons du second. Combien de moutons ont-ils chacun ?
+
+\item Un père a 25 ans de plus que son fils. Dans 20 ans, l'âge du père sera le double de celui de son fils. Quels sont les deux âges ?
+
+\item Partager 20 en deux parties telles que la somme du triple de l'une et du quintuple de l'autre soit 84.
+
+\item Un père a 70 ans ; son fils, 40. Combien y a-t-il d'années que l'âge du père était le triple de celui de son fils ?
+\end{enumerate}
+\end{exercice}
+
+
+\section{Corrigé}
+\begin{solution} \hfill \vspace{-0.8cm}
+\begin{multicols}{3} 
+\begin{enumerate} 
+\item 2750
+\item -5,52
+\item 26,52
+\end{enumerate}
+\end{multicols}
+\end{solution}
+
+\begin{solution} \hfill \vspace{-0.8cm}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $7{{x}^{3}}-3{{x}^{2}}y-x{{y}^{2}}+4{{y}^{3}}$	
+\item $2{{x}^{4}}+{{x}^{3}}-10{{x}^{2}}-2$	
+\item ${{x}^{4}}+{{x}^{3}}y-{{x}^{2}}{{y}^{2}}-3x{{y}^{3}}+{{y}^{4}}$	
+\item ${{x}^{4}}-a{{x}^{3}}+25{{a}^{2}}{{x}^{2}}-2{{a}^{3}}x-7{{a}^{4}}$
+\item $6{{x}^{5}}-5{{x}^{4}}+11{{x}^{3}}-9{{x}^{2}}+2x-3$
+\item $10{{x}^{4}}+a{{x}^{3}}-13{{a}^{2}}{{x}^{2}}-{{a}^{4}}$
+\end{enumerate}
+\end{multicols}
+\end{solution}
+	
+\begin{solution} \hfill \vspace{-0.8cm}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $-{{x}^{2}}$
+\item $3{{x}^{2}}$
+\item $-7x+7y-3z$	
+\item $11a-b$
+\item $4{{a}^{2}}-5{{b}^{2}}$	
+\item $0$
+\end{enumerate}
+\end{multicols}
+\end{solution}
+
+
+\begin{solution} \hfill \vspace{-0.8cm}
+\begin{multicols}{3}
+\begin{enumerate}
+\item ${{x}^{3}}{{y}^{3}}$	
+\item ${{x}^{4}}y{}^{5}$	
+\item ${{x}^{5}}{{y}^{3}}{{z}^{6}}$	
+\item $-40{{a}^{3}}{{x}^{4}}{{y}^{3}}$	
+\item $-12{{x}^{6}}{{y}^{5}}{{z}^{11}}$	
+\item $-60{{a}^{13}}{{b}^{13}}$	
+\item $-24{{a}^{8}}{{b}^{12}}{{c}^{9}}$	
+\item $-12{{x}^{8}}{{y}^{12}}{{z}^{5}}$	
+\item $45{{x}^{17}}{{y}^{20}}$	
+\item $-20{{a}^{8}}{{b}^{5}}{{c}^{9}}$	
+\item ${{a}^{6}}{{b}^{7}}$	
+\item ${{x}^{4}}$	
+\item $-120{{x}^{11}}{{y}^{12}}$
+\item ${{x}^{2m}}{{y}^{m+n}}$
+\item ${{x}^{m+2}}{{y}^{n+3}}$
+\item ${{x}^{2m-2}}{{y}^{2n+3}}$ 
+\item $2{{x}^{3m-2}}{{y}^{4n}}$
+\item ${{x}^{2m+1}}{{y}^{n+9}}$
+\end{enumerate}
+\end{multicols}
+\end{solution}
+
+\begin{solution} \hfill \vspace{-0.8cm}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $-28xy+12{{y}^{2}}$	
+\item $-46{{x}^{2}}-15xy+79{{y}^{2}}$	
+\item $13xy$	
+\item $5{{x}^{4}}-5{{x}^{3}}-3{{x}^{2}}+3x$	
+\item $6{{x}^{5}}+4{{x}^{4}}y-6{{x}^{3}}{{y}^{2}}-4{{x}^{2}}{{y}^{3}}$	
+\item $\left( {{a}^{2}}-{{b}^{2}} \right)\left( {{x}^{4}}+ 2 x^3 + 3 {{x}^{2}}+ 2 x + 1 \right)$	
+\item $-5{{a}^{3}}+9{{a}^{2}}c+3{{a}^{2}}b+2a{{b}^{2}}-9abc$
+\item $585{{a}^{2}}-508ab+126{{b}^{2}}$
+\item $13{{x}^{4}}y-13{{x}^{2}}{{y}^{3}}$
+\item $12{{a}^{8m}}+32{{a}^{6m}}{{b}^{n}}-29{{a}^{4m}}{{b}^{2n}}-57{{a}^{2m}}{{b}^{3n}}-18{{b}^{4n}}$
+\item $12{{a}^{6m+3}}+20{{a}^{5m+2}}-{{a}^{4m+1}}-6{{a}^{3m}}$
+\item $24{{a}^{9m+7}}{{b}^{n+1}}+10{{a}^{6m+5}}{{b}^{3n+2}}-33{{a}^{3m+3}}{{b}^{5n+3}}+9a{{b}^{7n+4}}$
+\end{enumerate}
+\end{multicols}
+\end{solution}
+ 
+\begin{solution} \hfill \vspace{-0.8cm}
+\begin{multicols}{3}
+\begin{enumerate}
+\item ${{x}^{2}}+8x+15$	
+\item ${{x}^{2}}+3x-10$	
+\item ${{x}^{2}}-7x+12$	
+\item ${{x}^{2}}-x-56$	
+\item ${{x}^{2}}-6x-72$	
+\item ${{x}^{2}}-4x-77$	
+\item ${{x}^{2}}+(a+b)x+ab$	
+\item ${{x}^{2}}+(a-b)x-ab$	
+\item ${{x}^{2}}+(2a+3b)x+6ab$	
+\item ${{x}^{2}}-(3a-5b)x-15ab$	
+\item ${{x}^{2}}+2abx-120{{a}^{2}}{{b}^{2}}$	
+\item ${{x}^{4}}+3a{{x}^{2}}-10{{a}^{2}}$	
+\item $2{{x}^{2}}+3x+1$
+\item $3{{x}^{2}}-7x+2$
+\item $6{{x}^{2}}+13x+6$
+\item $6{{x}^{2}}-13x+6$
+\item $6{{x}^{4}}-13{{x}^{2}}+6$
+\item $10{{x}^{4}}-19{{x}^{2}}-15$
+\end{enumerate}
+\end{multicols}
+\end{solution}
+
+\begin{solution} \hfill \vspace{-0.5cm}
+\begin{enumerate}
+\item $2a$ \hspace{5mm}	$4{{a}^{2}}$\hspace{5mm}	$8{{a}^{3}}$
+\item $-3x$\hspace{5mm}	$9{{x}^{2}}$\hspace{5mm}	$-27{{x}^{3}}$
+\item $5{{x}^{2}}y$\hspace{5mm}	$25{{x}^{4}}{{y}^{2}}$\hspace{5mm}	$125{{x}^{6}}{{y}^{3}}$
+\item $6{{a}^{2}}{{b}^{3}}c$\hspace{5mm}	$36{{a}^{4}}{{b}^{6}}{{c}^{2}}$\hspace{5mm}	$216{{a}^{6}}{{b}^{9}}{{c}^{3}}$
+\item $-7{{x}^{3}}{{y}^{2}}{{z}^{4}}$\hspace{5mm}	$49{{x}^{6}}{{y}^{4}}{{z}^{8}}$\hspace{5mm}	$-343{{x}^{9}}{{y}^{6}}{{z}^{12}}$
+\item $-5ab{{c}^{2}}{{d}^{3}}$\hspace{5mm}	$25{{a}^{2}}{{b}^{2}}{{c}^{4}}{{d}^{6}}$\hspace{5mm}	$-125{{a}^{3}}{{b}^{3}}{{c}^{6}}{{d}^{9}}$
+\item $0.1x{{y}^{2}}{{z}^{5}}$\hspace{5mm}	$0.01{{x}^{2}}{{y}^{4}}{{z}^{10}}$\hspace{5mm}	$0.001{{x}^{3}}{{y}^{6}}{{z}^{15}}$
+\item $0.5{{a}^{3}}b{{c}^{-2}}$\hspace{5mm}	$0.25{{a}^{6}}{{b}^{2}}{{c}^{-4}}$\hspace{5mm}	$0.125{{a}^{9}}{{b}^{3}}{{c}^{-6}}$
+\item $0.04a{{b}^{7}}{{c}^{-5}}$\hspace{5mm}	$0.0016{{a}^{2}}{{b}^{14}}{{c}^{-10}}$\hspace{5mm}	$0.000064{{a}^{3}}{{b}^{21}}{{c}^{-15}}$
+\item ${{a}^{m}}{{b}^{n+1}}$\hspace{5mm}	${{a}^{2m}}{{b}^{2n+2}}$\hspace{5mm}	${{a}^{3m}}{{b}^{3n+3}}$
+\item $-{{a}^{m+3}}{{b}^{n-4}}$\hspace{5mm}	${{a}^{2m+6}}{{b}^{2n-8}}$\hspace{5mm}	$-{{a}^{3m+9}}{{b}^{3n-12}}$
+\item $5{{a}^{2m+3}}{{b}^{3n-2}}{{c}^{4}}$\hspace{5mm}	$25{{a}^{4m+6}}{{b}^{6n-4}}{{c}^{8}}$\hspace{5mm}	$125{{a}^{6m+9}}{{b}^{9n-6}}{{c}^{12}}$
+\end{enumerate}
+\end{solution}
+
+\begin{solution} \hfill \vspace{-0.5cm}
+\begin{enumerate}
+\item$(a+b)^2 = {{a}^{2}}+2ab+{{b}^{2}}$\\	$(a+b)^3 = {{a}^{3}}+3{{a}^{2}}b+3a{{b}^{2}}+{{b}^{3}}$
+\item $(x+2y)^2 = {{x}^{2}}+4xy+4{{y}^{2}}$ \\	$(x+2y)^3 ={{x}^{3}}+6{{x}^{2}}y+12x{{y}^{2}}+8{{y}^{3}}$
+\item $(2x-y)^2 = 4{{x}^{2}}-4xy+{{y}^{2}}$ \\	$(2x-y)^3 =8{{x}^{3}}-12x{}^{2}y+6x{{y}^{2}}-{{y}^{3}}$
+\item $(3x-2y)^2 = 9{{x}^{2}}-12xy+4{{y}^{2}}$\\	$(3x-2y)^3 = 27{{x}^{3}}-54{{x}^{2}}y+36x{{y}^{2}}-8{{y}^{3}}$
+\item $( 2{{x}^{2}}-5{{y}^{3}} ) ^2 = 4{{x}^{4}}-20{{x}^{2}}{{y}^{3}}+25{{y}^{6}}$\\	$( 2{{x}^{2}}-5{{y}^{3}} )^3 = 8{{x}^{6}}-60{{x}^{4}}{{y}^{3}}+150{{x}^{2}}{{y}^{6}}-125{{y}^{9}}$
+\item $(3{{x}^{2}}{{y}^{3}}+4x{{y}^{2}})^2=9{{x}^{4}}{{y}^{6}}+24{{x}^{3}}{{y}^{5}}+16{{x}^{2}}{{y}^{4}}$\\
+$(3{{x}^{2}}{{y}^{3}}+4x{{y}^{2}})^3=27{{x}^{6}}{{y}^{9}}+108{{x}^{5}}{{y}^{8}}+144{{x}^{4}}{{y}^{7}}+64{{x}^{3}}{{y}^{6}}$
+\item $(-5{{x}^{2}}{{y}^{5}}z+3{{x}^{3}}y{{z}^{3}})^2=25{{x}^{4}}{{y}^{10}}{{z}^{2}}-30{{x}^{5}}{{y}^{6}}{{z}^{4}}+9{{x}^{6}}{{y}^{2}}{{z}^{6}}$\\					$(-5{{x}^{2}}{{y}^{5}}z+3{{x}^{3}}y{{z}^{3}})^3=27{{x}^{9}}{{y}^{3}}z{}^{9}-135{{x}^{8}}{{y}^{7}}{{z}^{7}}+225{{x}^{7}}{{y}^{11}}{{z}^{5}}-125{{x}^{6}}{{y}^{1}}^{5}{{z}^{3}}$
+\item $(0.2x{{y}^{2}}+0.3{{x}^{2}}y)^2=0.04{{x}^{2}}{{y}^{4}}+0.12{{x}^{3}}{{y}^{3}}+0.09{{x}^{4}}{{y}^{2}}$\\
+$(0.2x{{y}^{2}}+0.3{{x}^{2}}y)^3=0.001{{x}^{3}}{{y}^{3}}(8{{y}^{3}}+36x{{y}^{2}}+54{{x}^{2}}y+27{{x}^{3}})$
+\item $({{a}^{m}}-{{b}^{n}})^2={{a}^{2m}}-2{{a}^{m}}{{b}^{n}}+{{b}^{2n}}$\\	$({{a}^{m}}-{{b}^{n}})^3={{a}^{3m}}-3{{a}^{2m}}{{b}^{n}}+3{{a}^{m}}{{b}^{2n}}-{{b}^{3n}}$
+\item $(3{{a}^{2m}}+2{{b}^{3n}})^2=9{{a}^{4m}}+12{{a}^{2m}}{{b}^{3n}}+4{{b}^{6n}}$\\
+$(3{{a}^{2m}}+2{{b}^{3n}})^3=27{{a}^{6m}}+54{{a}^{4m}}{{b}^{3n}}+36{{a}^{2m}}{{b}^{6n}}+8{{b}^{9n}}$
+\item $({{a}^{2m+3}}-2{{b}^{n-2}})^2={{a}^{4m+6}}-4{{a}^{2m+3}}{{b}^{n-2}}+4{{b}^{2n-4}}$\\
+$({{a}^{2m+3}}-2{{b}^{n-2}})^3={{a}^{6m+9}}-6{{a}^{4m+6}}{{b}^{n-2}}+12{{a}^{2m+3}}{{b}^{2n-4}}\\ 
+-8{{b}^{3n-6}}$
+\item $(5{{a}^{2m-1}}{{b}^{3n+2}}+3{{a}^{m+3}}{{b}^{2n-5}})^2=25{{a}^{4m-2}}{{b}^{6n+4}}+30{{a}^{3m+2}}{{b}^{5n-3}}
++9{{a}^{2m+6}}{{b}^{4n-10}}$\\
+$(5{{a}^{2m-1}}{{b}^{3n+2}}+3{{a}^{m+3}}{{b}^{2n-5}})^3 =125{{a}^{6m-3}}{{b}^{9n+6}}+225{{a}^{5m+1}}{{b}^{8n-1}}\mbox{...}\\ \mbox{\hspace{12em} ...}+135{{a}^{4m+5}}{{b}^{7n-8}}+27{{a}^{3m+9}}{{b}^{6n-15}}$
+\end{enumerate}
+\end{solution}
+
+\begin{solution} \hfill \vspace{-0.8cm}
+\begin{multicols}{3}
+\begin{enumerate}
+\item ${{a}^{2}}-1$	
+\item ${{a}^{2}}-4{{b}^{2}}$	
+\item $4{{x}^{2}}{{y}^{2}}-25$	
+\item $49{{a}^{2}}-16{{b}^{2}}$	
+\item $9{{z}^{2}}-4{{x}^{2}}{{y}^{2}}$	
+\item $9{{x}^{4}}{{y}^{2}}-25{{y}^{6}}{{z}^{4}}$	
+\item $5xy(4{{x}^{2}}{{y}^{4}}-1)$	
+\item $ab{{c}^{3}}({{b}^{2}}{{c}^{4}}-4{{a}^{2}})$	
+\item $8{{x}^{2}}y({{x}^{2}}{{y}^{4}}-9)$	
+\item ${{x}^{4}}-{{y}^{4}}$	
+\item ${{x}^{8}}-81$
+\item ${{a}^{2}}+2ab+{{b}^{2}}-{{c}^{2}}$
+\item $4{{x}^{2}}-{{(y+3z)}^{2}}$
+\item $49{{(a+b)}^{2}}-36{{c}^{2}}$
+\item ${{\left( x+2y \right)}^{2}}-{{\left( 2a+b \right)}^{2}}$
+\end{enumerate}
+\end{multicols}
+\end{solution}
+
+\begin{solution} \hfill \vspace{-0.5cm}
+\begin{enumerate}
+\item ${{a}^{2}}+{{b}^{2}}+{{c}^{2}}+2ab+2ac+2bc$
+\item ${{a}^{2}}+4{{b}^{2}}+{{c}^{2}}-4ab-2ac+4bc$
+\item $4{{x}^{2}}+9{{y}^{2}}+{{z}^{2}}-12xy+4xz-6yz$ 
+\item ${{a}^{2}}+{{b}^{2}}+{{c}^{2}}+{{d}^{2}}-2ab+2ac-2ad-2bc+2bd-2cd$
+\item $4{{x}^{4}}+12{{x}^{3}}+5{{x}^{2}}-6x+1$
+\item $9{{x}^{4}}-24x{}^{3}+46{{x}^{2}}-40x+25$
+\item ${{x}^{8}}-4{{x}^{6}}+10{{x}^{4}}-12{{x}^{2}}+9$
+\item ${{x}^{2}}{{y}^{2}}({{x}^{2}}+1+{{y}^{2}}+2x-2xy-2y)$
+\item $4{{x}^{6}}-12{{x}^{5}}+13{{x}^{4}}+14{{x}^{3}}-29{{x}^{2}}+10x+25$
+\item ${{x}^{4m}}+4{{x}^{3m}}+6{{x}^{2m}}+4{{x}^{m}}+1$
+\item $9{{x}^{2m+2}}-12{{x}^{2m+1}}+10{{x}^{2m}}-4{{x}^{2m-1}}+{{x}^{2m-2}}$
+\item ${{a}^{8}}+2{{a}^{7}}+3{{a}^{6}}+4{{a}^{5}}+5{{a}^{4}}+4{{a}^{3}}+3{{a}^{2}}+2a+1$ 
+\end{enumerate}
+\end{solution}
+ 
+\begin{solution} \hfill \vspace{-0.8cm}
+\begin{multicols}{4}
+\begin{enumerate}
+\item $x=1$	
+\item $x=-1$	
+\item $x=-\frac{29}{17}$	
+\item $x=38$	
+\item $x=0$	
+\item $x=10$	
+\item $x=-15$	
+\item $x=6$	
+\item $x=1$	
+\item $x=44$	
+\item $x=72$	
+\item $x=25$	
+\item $x=26$	
+\item $x=7$	
+\item $x=0$	
+\item $x=2$	
+\item $x=-8$
+\item $x=8$
+\item $x=2$
+\item $x=1$
+\end{enumerate}
+\end{multicols}
+\end{solution}
+
+\begin{solution} \hfill \vspace{-0.5cm}
+\begin{enumerate}
+\item Soit x le prix du kg de fer et 8x le prix du kg de cuivre
+	$20\cdot x+5\cdot 8\cdot x=540\Rightarrow x=9$	fer : Fr. 9.–/kg ; cuivre : Fr. 72.–/kg
+\item Soit x la surface de l'exposition $\frac{x}{3}+\frac{x}{6}+\frac{x}{4}+24+16=x\Rightarrow x=160$  
+	surface de l'exposition : 160 ha
+\item Soit x la part de la 1ère  personne : $x+(x-1500)+(x-4000)=26000\Rightarrow x=10500$
+	1re personne : Fr. 10'500.–,   2e personne : Fr. 9'000.–, 3e personne : Fr. 6'500.–.
+\item Soit x le capital $\frac{x}{3}\cdot \frac{4}{100}+\frac{2x}{3}\cdot \frac{3}{100}=48000$	capital x = Fr. 1'440'000.–.
+\item Soit x le nombre de voyages de camions de 5 tonnes et le nombre de camions à 3 tonnes
+	$5x+3(100-x)=460\Rightarrow x=80$	80 voyages à 5 tonnes et 20 voyages à 20 tonnes.
+\item Soit x le nombre de places à Fr. 30.–  et $\left( 400-x \right)$  le nombre de places à Fr. 40.–.
+	$30x+(400-x)40=13450\Rightarrow x=255$	255 places à Fr. 30.– et 145 places à Fr.40.–.
+\item Soit x le nombre d’hommes et 125-x le nombre de femmes.
+	$15x+10\left( 125-x \right)=1650\Rightarrow x=80$	0 hommes et 45 femmes
+\item Soit x le nombre de pommes et 3x le nombre de poires
+	$3x-8=5\left( x-8 \right)\Rightarrow x=16$	16 pommes et 48 poires
+\item Soit x le nombre de moutons du premier berger et 332-x le nombre de moutons du deuxième berger
+	$x-8=3\left( 332-x \right)\Rightarrow x=251$	251 moutons pour le 1er berger et 81 moutons pour le 2e berger
+\item Soit x l’âge du fils et x+25 l’âge du père
+	$x+25+20=2\left( x+20 \right)\Rightarrow x=5$	le fils a 5 ans et le père 30 ans
+\item Soit x la première partie et 20-x le deuxième
+	$3x+5\left( 20-x \right)=84\Rightarrow x=8$	la 1ère partie est 8 et la 2e est 12
+\item Soit x le nombre d’années
+	$70-x=3\left( 40-x \right)\Rightarrow x=25$	il y a 25 ans
+\end{enumerate}
+\end{solution}
+

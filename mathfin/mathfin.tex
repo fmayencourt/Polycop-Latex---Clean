@@ -1,0 +1,198 @@
+\chapter{Mathématiques financières}
+
+\section{Intérêts composés}
+
+Un capital $c$ est placé sur un compte en banque à un taux $i$. Chaque année, le capital présent sur le compte augmente en fonction du taux d'intérêt. On obtient donc une suite que l'on peut définir ainsi (ou $c_n$ représente le capital à l'année $n$) :
+$$
+c_{n+1} = c_n + c_n \cdot i = c_n \cdot (1+i)
+$$
+Cette formule, selon le chapitre consacré aux suites, décrit une suite géométrique~\index{suite!géométrique} de raison $q = 1+i$. Ainsi la forme générale est donnée par la formule : $c_n = c_1 \cdot (1+i)^{n-1}$. Cependant, dans les exercices et dans la vie courante, il est plus intéressant de regarder le nombre d'années qui écoulées entre le dépôt du capital $c$ sur le compte et la valeur actuelle de ce dernier. Or si $c_1$ est le capital initial et que l'on laisse passer $n$ années, on doit chercher avec la formule non plus $c_n$, mais $c_{n+1}$. On obtient donc la formule
+
+
+\begin{equation*}
+\shadowbox{$
+C = c \cdot (1+i)^n $}
+\end{equation*}
+
+\begin{equation*}
+\mbox{ où } 
+\begin{array}{lll}
+C&=&\mbox{ capital d'arrivée}\\
+c&=&\mbox{ capital de départ}\\
+n&=&\mbox{ nombre d'années écoulées}\\
+i&=&\mbox{ taux d'intérêt}\\
+\end{array}
+\end{equation*}
+
+\section{Annuités}
+
+On cherche à créer un patrimoine en déposant \textit{régulièrement} le même capital sur un compte. Si l'on dépose chaque année un montant $a$, on a 
+$$
+a \rightarrow a + a (1+i) \rightarrow a + a (1+i) + a(1+i)^2 \rightarrow \dots
+$$
+Il s'agit d'une série géométrique de raison $(1+i)$ et de terme initial $a$. Contrairement aux intérêts composés, il est plus adéquat de compter le nombre de versements pour retrouver la formule de la suite géométrique, d'où la formule :
+
+\begin{equation*}
+\shadowbox{$
+A = a \cdot \frac{(1+i)^n-1}{i} $}
+\end{equation*}
+
+\begin{equation*}
+\mbox{ où } 
+\begin{array}{lll}
+A&=&\mbox{ capital d'arrivée}\\
+a&=&\mbox{ capital versé annuellment}\\
+n&=&\mbox{ nombre de versements}\\
+i&=&\mbox{ taux d'intérêt}\\
+\end{array}
+\end{equation*}
+
+\textcolor{red}{Attention : le nombre de versements $=$ le nombre d'années $+1$}
+
+\subsection{Mensualités}
+
+Dans la vie courante, on trouve plus souvent des payements par mensualité. La formule est identique, mais les paramètres sont un peu modifiés :
+
+\begin{equation*}
+\shadowbox{$
+M = m \cdot \frac{(1+i)^n-1}{i} $}
+\end{equation*}
+
+\begin{equation*}
+\mbox{ où } 
+\begin{array}{lll}
+M&=&\mbox{ capital d'arrivée}\\
+m&=&\mbox{ capital versé mensuellement}\\
+n&=&\mbox{ nombre de versements}\\
+i&=&\frac{\mbox{ taux d'intérêt}}{12}\\
+\end{array}
+\end{equation*}
+
+\section{Remboursement d'une dette}
+
+Toutes les formules données ci-après ne sont qu'une déduction des deux formules de base. Cependant, elles peuvent se montrer utiles pour éviter certains calculs.
+
+On emprunte un certain montant $V$ auprès d'un établissement que l'on rembourses en $n$ versements annuels. \textcolor{red}{Le premiers remboursement commence une année après l'emprunt.}
+
+On peut représenter la situation comme une balance entre deux comptes : l'un négatif et l'autre positif. On cherche donc après combien de versements les deux comptes sont à l'équilibre. Puisque le premier versement commence une année après l'emprunt, le nombre d'années d'intérêts composés pour la dette correspond au nombre de versements :
+
+$$
+V \cdot (1+i)^n = a \cdot \frac{(1+i)^n-1}{i}
+$$
+
+On divise par $(1+i)^n$ de chaque côté :
+
+$$
+V = a \cdot \frac{1-\frac{1}{(1+i)^n}}{i} 
+$$
+
+Grâce aux règles d'exposants on peut écrire $\frac{1}{(1+i)^n} = (1+i)^{-n}$ et on a donc la formule :
+
+\begin{equation*}
+\shadowbox{$
+V = a \cdot \frac{1-(1+i)^{-n}}{i} $}
+\end{equation*}
+
+\begin{equation*}
+\mbox{ où } 
+\begin{array}{lll}
+V&=&\mbox{ montant emprunté}\\
+a&=&\mbox{ capital remboursé annuellment}\\
+n&=&\mbox{ nombre de versements} = \mbox{ nombre d'années}\\
+i&=&\mbox{ taux d'intérêt}\\
+\end{array}
+\end{equation*}
+
+De manière identique, on peut calculer un remboursement mensuel en remplaçant 
+
+\begin{equation*}
+\mbox{ où } 
+\begin{array}{lll}
+V&=&\mbox{ montant emprunté}\\
+a&=&\mbox{ capital remboursé mensuellement}\\
+n&=&\mbox{ nombre de versements} = \mbox{ nombre d'années}\\
+i&=& \frac{\mbox{ taux d'intérêt}}{12}\\
+\end{array}
+\end{equation*}
+
+\section{Retraits réguliers}
+
+On dispose d'un capital $X$ sur un compte en banque. Une année après, puis chaque année, on retire le même montant $a$. On cherche à connaître la valeur du compte après $n$ retraits.
+
+Dans ce cas de figure, le nombre d'années et le nombre de retraits sont les mêmes. Il suffit de prendre la formules des intérêts composés et d'y soustraire celle des annuités. C'est comme si l'on avait deux comptes, l'un positif (capital) et l'autre négatif (retrait). Notre fortune se monte donc à la soustraction des deux montants :
+
+\begin{equation*}
+\shadowbox{$
+Y = X(1+i)^n - a \cdot \frac{(1+i)^{n}-1}{i} $}
+\end{equation*}
+
+\begin{equation*}
+\mbox{ où } 
+\begin{array}{lll}
+Y&=&\mbox{ capital restant}\\
+X&=&\mbox{ capital de départ}\\
+a&=&\mbox{ montant retiré annuellement}\\
+n&=&\mbox{ nombre de versements} = \mbox{ nombre d'années}\\
+i&=&\mbox{ taux d'intérêt}\\
+\end{array}
+\end{equation*}
+
+\section{Exemple}
+
+Parfois il est intéressant de représenter la situation graphiquement pour mieux savoir quelle(s) formule(s) utiliser. Une représentation standard (mais il en existe d'autres) consiste à utiliser un trait horizontal par année, une barre verticale s'il ne se passe rien, une croix pour un versement et un rond pour un retrait.
+
+\begin{exemple}
+Le premier janvier $2000$, puis chaque premier janvier, je dépose sur un compte à $2\%$ d'intérêt la somme de $1'500$chf, pour un total de cinq versements. Le premier janvier $2010$, puis chaque premier janvier jusqu'au premier janvier $2020$, je retire $500$chf de ce compte. Le premier janvier $2024$, j'achète une voiture à $7'000$chf. J'utilise le capital restant sur mon compte et j'emprunte le reste à un institut de prêt à rembourser en $24$ mensualités au taux de $7\%$. Quel sera le montant à payer chaque mois (versement le dernier jour du mois, premier versement le $31$ janvier) ?
+\end{exemple}
+
+On commence par faire une ligne qui représentera tout ce qui se passe sur le compte entre $2000$ et $2024$ :
+
+\begin{center}
+\includegraphics[width = \textwidth]{mathfin/ligneexemple.png}
+\end{center}
+
+On se sert de la ligne pour compter les informations manquantes (années, nombre de retraits). Puis on calcule la valeur du compte pour des années bien choisies :
+\begin{enumerate}
+\item[$2004$] Il s'agit d'une annuité :
+$$
+A = 1'500 \cdot \frac{1.02^5-1}{0.02} \simeq 7'806.05
+$$
+\item[$2009$] Si l'on veut utiliser ensuite la formule des retraits, il faut connaître la valeur du compte une année avant le premier retrait. Il s'agit d'un intérêt composé de $5$ ans :
+$$
+C = 7'806.05 \cdot 1.02^5 \simeq 8'618.50
+$$
+\item[$2020$] On utilise la formule des retraits pour $11$ retraits :
+$$
+Y = 8'618.50 \cdot 1.02^{11} - 250 \cdot \frac{1.02^11 - 1}{0.02} \simeq 4'631.70
+$$
+\item[$2024$] Il nous reste donc $4$ ans d'intérêts composés :
+$$
+4'631.70 \cdot 1.02^4 \simeq 5'013.50
+$$
+\end{enumerate}
+À noter que pour chaque étape il convient de stocker la valeur dans la mémoire de la calculatrice et de n'arrondir que la réponse finale si l'on veut éviter des erreurs de centimes.
+
+Dans la seconde partie du problème, un dessin semble superflu car il s'agit d'appliquer une formule de remboursement mensuel sans particularité. 
+
+\begin{equation*}
+\mbox{ Ainsi } 
+\begin{array}{lll}
+V&=&7'000-5'013.50 = 1'986.50\\
+a&=&\mbox{ capital remboursé mensuellement} = \mbox{ inconnue}\\
+n&=&24 \mbox{ mois}\\
+i&=& \frac{0.07}{12}\\
+\end{array}
+\end{equation*}
+
+On a donc :
+
+$$
+1'986.50 = a \cdot \frac{1-1.0058\overline{3}^{-24}}{0.0058\overline{3}} \Longrightarrow a \simeq 186.95\mbox{chf}
+$$
+
+En bref, ce genre de donnée peut paraître inabordable, mais si l'on découpe correctement le problème, chacune des étapes suit une formule.
+\section{Exercice}
+
+\input{mathfin/exerciceinteret}
+
+\input{mathfin/exerciceannuite}

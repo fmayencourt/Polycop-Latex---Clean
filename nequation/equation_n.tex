@@ -1,0 +1,440 @@
+\chapter[\'Equations de degré $\geq$ 2]{\'Equations de degré supérieur ou égale à 2}
+
+\section{Remarques générales}
+
+Nous nous intéressons ici aux équations avec une inconnue à une puissance supérieure ou égale à deux, par exemple :
+
+$$
+2x^2 +3x -4 = (x+1)(x+2).
+$$
+
+Pour résoudre ce genre d'équations, nous allons utiliser de manière fondamentale le théorème suivant :
+
+\begin{theoreme}\label{fondamental}
+Soient $a$ et $b$ deux polynômes à une inconnue, alors 
+$$
+a\cdot b = 0 \ssi a = 0 \mbox{ ou } b=0.
+$$
+\end{theoreme}
+
+\begin{proof}
+Si $a=0$ ou si $b = 0$, alors forcément le produit de $a$ et de $b$ est égal à $0$. Il nous reste donc à montrer que si $a\cdot b = 0$, alors $a=0$ ou $b=0$. Supposons que $a\cdot b =0$, mais que ni $a$ ni $b$ ne soient égales à zéro. Alors on peut diviser de chaque côté de l'égalité par $b$, puisque celui-ci n'est pas zéro. On obtient donc $a=0$, ce qui contredit notre hypothèse. Ainsi $a=0$ ou $b=0$.
+\end{proof}
+
+\begin{exemple}
+Ce théorème peut paraître trivial, voire inutile, mais il permet de résoudre l'équation suivante :
+$$
+x^2 -x -2 =0.
+$$
+En effet, si l'on factorise le terme de gauche, on obtient l'équation 
+$$
+(x-2)(x+1)=0.
+$$
+Or d'après le théorème, on a forcément
+$$
+\left\{
+\begin{array}{lcl}
+x-2 &=& 0\\
+&\mbox{ou}&\\
+x+1 &=& 0
+\end{array}
+\right.
+\ssi
+\left\{
+\begin{array}{lcl}
+x&=&2\\
+&\mbox{ou}&\\
+x&=&-1
+\end{array}
+\right.
+$$
+Et donc l'ensemble des solutions est donné par $S=\{-1;2\}$.
+\end{exemple}
+
+Ainsi, résoudre une équations de degré supérieur ou égale à deux revient à factoriser un polynôme.
+
+\section{Les équations du deuxième degré}\label{seconddegre}
+
+Comme pour toute équations de degré supérieur ou égale à deux, les équations du second degré se résolvent par factorisation. Cependant, il existe une formule permettant de déterminer directement les réponses d'une telle équation. Nous utiliserons la notation suivante pour une équation du second degré :
+$$
+ax^2 + bx + c = 0.
+$$
+Bien sûr, $a$ ne peut pas être égale à zéro, sinon l'équation n'est plus une équation du second  degré. Par contre, rien n'empêche $b$ et $c$ d'être égaux à zéro.
+
+\begin{theoreme}[Complétion du carré]\label{completion}\index{Complétion du carré}
+Pour une équation du second degré du type $ax^2 + bx + c = 0$, avec $a\neq 0$, et si $b^2 -4ac \geq 0$, les solutions $x_1$ et $x_2$ sont données par
+$$
+\left\{
+\begin{array}{lcl}
+x_1 &=& \frac{-b-\sqrt{b^2 - 4ac}}{2a}\\
+x_2 &=& \frac{-b+\sqrt{b^2-4ac}}{2a}
+\end{array}
+\right.
+$$
+\end{theoreme}
+
+\begin{proof}
+La démarche utilise l'identité remarquable suivante qu'on rappelle :
+$$
+(a+b)^2 = a^2 + 2ab + b^2.
+$$
+Soit donc l'équation $ax^2 + bx + c =0$. Commençons par diviser par $a$ de chaque côté de l'équation. On peut le faire car $a\neq 0$ en hypothèse du théorème. On a donc
+$$
+x^2 + \frac{b}{a}x + \frac{c}{a} = 0.
+$$
+
+On aimerait à présent pouvoir utiliser l'identité susmentionnée en utilisant $x^2$ et $\frac{b}{a}x$ pour cela, il faut rajouter $\frac{b^2}{4a^2}$, puis l'enlever pour ne pas changer la valeureux de l'équation :
+$$
+\underbrace{x^2 + \frac{b}{a}x + \frac{b^2}{4a^2}}_\textrm{on retrouve l'identité} - \frac{b^2}{4a^2} + \frac{c}{a} = 0.
+$$
+
+On a donc 
+$$
+\begin{array}{l}
+\left(x+\frac{b}{2a}\right)^2 - \frac{b^2 - 4ac}{4a^2} = 0 \ssi\\
+\\
+\left(x+\frac{b}{2a}\right)^2 = \frac{b^2 - 4ac}{4a^2}  \ssi \\
+\\
+x+\frac{b}{2a} = \underbrace{\sqrt{\frac{b^2 - 4ac}{4a^2}}}_\textrm{on peut le faire car $b^2-4ac\geq 0$} \mbox{ ou } x+\frac{b}{2a} = -\sqrt{\frac{b^2 - 4ac}{4a^2}}\ssi \\
+\\
+x+\frac{b}{2a} = \frac{\sqrt{b^2 - 4ac}}{2a} \mbox{ ou } x+\frac{b}{2a} = -\frac{\sqrt{b^2 - 4ac}}{2a}\ssi \\
+\\
+x_1 = \frac{-b+\sqrt{b^2 - 4ac}}{2a} \mbox{ ou } x_2 = \frac{-b-\sqrt{b^2 - 4ac}}{2a}.
+\end{array}
+$$
+\end{proof}
+
+\begin{exemple}
+$$
+2x^2 -4x -5 = 0
+$$
+On a donc $a=2$, $b=-4$ et $c=-5$. On peut donc calculer $\Delta$
+$$
+\Delta = b^2 -4ac = (-4)^2 -4 \cdot 2 \cdot (-5) = 16 - (-40) = 16+40 = 56
+$$
+ainsi que $\sqrt{\Delta}$
+$$
+\sqrt{\Delta} = \sqrt{56} = \sqrt{4\cdot 14} = 2\sqrt{14}
+$$
+On a donc comme solutions, d'après le théorème~\ref{completion} :
+$$
+x_1 = \frac{-b-\sqrt{\Delta}}{2a} = \frac{4-2\sqrt{14}}{4} = \frac{2-\sqrt{14}}{2}
+\mbox{ et } x_2 = \frac{-b+\sqrt{\Delta}}{2a} = \frac{4+2\sqrt{14}}{4} = \frac{2+\sqrt{14}}{2}
+$$
+\end{exemple}
+
+\begin{remarque}
+Dans la démonstration du théorème~\ref{completion}, on remarque un critère important :
+il faut que $\Delta$ soit plus grand ou égal à zéro !
+
+On a donc trois cas particuliers en fonction du signe de $\Delta$ :
+\begin{enumerate}
+\item $\Delta >0$ : c'est le cas "standard", les deux solutions sont celles du théorème.
+\item $\Delta = 0$ : dans ce cas, la valeur de la racine est aussi zéro et donc les deux solutions sont égales :
+$$
+x_1 = x_2 = \frac{-b}{2a}.
+$$
+\item $\Delta < 0$ : dans ce cas, l'équation n'a pas de solutions réelles et donc $S=\emptyset$.
+\end{enumerate}
+\end{remarque}
+
+\subsection{Utilisations particulières}
+
+\subsubsection{Formules de Viète}
+
+François Viète, un mathématicien du 16ème siècle, a donné une relations entre les racines $x_{1,2}$ d'un polynôme du deuxième degré et les coefficients $a,b \mbox{ et } c$ :
+\begin{theoreme}[Formules de Viète]\label{viete}\index{Viète, François}
+Soit un polynôme $ax^2 + bx + c$ ayant deux racines $x_1$ et $x_2$, alors
+$$
+x_1 + x_2 = \frac{-b}{a} \mbox{ et } x_1 \cdot x_2 = \frac{c}{a}
+$$
+\end{theoreme}
+
+La démonstration de ce théorème telle que faite par Viète se base sur la proposition suivante :
+
+\begin{proposition}
+Le polynôme $ax^2 +bx+c$ se factorise en 
+$$
+a(x-x_1)(x-x_2)
+$$
+où $x_{1,2}$ sont les racines du polynôme.
+\end{proposition}
+
+\begin{proof}
+La démonstration utilise fortement la factorisation par Hörner. On rappel que pour cette méthode de factorisation, il faut trouver une racine du polynôme, et ainsi le polynôme se factorise par $x$ moins la racine. Or notre polynôme a deux racines, $x_1$ et $x_2$, donc il doit se factoriser par $(x-x_1)$ et $(x-x_2)$. En d'autre terme, 
+$$
+ax^2 + bx + c = (x-x_1)(x-x_2) \cdot Q(x)
+$$
+où $Q(x)$ est un autre polynôme. Or la plus haute puissance de $x$ à gauche est un carré, pour avoir l'égalité il faut également avoir un carré à droite. Puisque $(x-x_1)(x-x_2)= x^2 -(x_1+x_2)x + x_1 x_2$, le polynôme $Q(x)$ ne peut pas voir un $x$, il s'agit donc simplement d'un nombre. Pour que l'égalité fonctionne avec le $ax^2$, il faut forcément que $Q(x) = a$. On a donc la factorisation.
+\end{proof}
+
+\begin{proof}[Formules de Viète]
+On sait donc à présent que le polynôme se factorise en 
+$$
+a(x-x_1)(x-x_2).
+$$
+Si on développe le calcul, on obtient $ax^2 -a(x_1+x_2)x + a x_1 x_2$ qui doit toujours être égal à $ax^2 + bx + c$. Comme les termes de même degré doivent être égaux, on a 
+$$
+\left\{ 
+\begin{array}{lcl}
+-a(x_1+x_2) &=& b\\
+a x_1 x_2 &=& c
+\end{array}
+\right.
+\ssi 
+\left\{ 
+\begin{array}{lcl}
+(x_1+x_2) &=& \frac{-b}{a}\\
+x_1 x_2 &=& \frac{c}{a}
+\end{array}
+\right.
+$$
+ce qui démontre les deux formules de Viète.
+\end{proof}
+
+Ce lien entre les deux racines d'un polynôme du deuxième degré est les coefficients $a,b,c$ permet de résoudre l'exercice suivant :
+
+\begin{exercice}
+Trouver deux nombres dont la somme vaut 15 et le produit 24.
+
+On sait que la somme des deux racines d'un polynôme du deuxième degré est donnée par $\frac{-b}{a}$ et que leur produit est donné par $\frac{c}{a}$. On va donc construire un polynôme qui va répondre à la question. Pour rendre les calculs plus simples, posons $a=1$ (on aurait pu prendre $a=42$, mais les calculs sont plus longs). On a donc :
+$$
+\begin{array}{ll}
+\mbox{La somme } = 15 = -b \ssi b=-15
+\mbox{Le produit } = 24 = c
+\end{array}
+$$
+Les deux nombres sont donc les racines du polynôme 
+$$
+x^2 -15x+24
+$$
+et on trouve 
+$$
+x_1 = \frac{15-\sqrt{129}}{2} \mbox{ et } x_2 = \frac{15+\sqrt{129}}{2} 
+$$
+\end{exercice}
+
+\section{Les équations de degré supérieur à 2}
+
+Dans cette partie, nous aborderons des cas bien particulier d'équations de degré supérieur à 2. Il s'agira ensuite de repérer dans les exercices de quel type d'équation il s'agit.
+
+\subsection{Les équations bicarrées}
+
+La forme générale d'une équation bicarrée est 
+$$
+ax^{2m}  + bx^{m} + c = 0
+$$
+c'est-à-dire un trinôme possédant un terme constant (sans $x$) et dont les deux autres termes sont de degré double l'un de l'autre.
+
+L'astuce consiste à substituer\index{substitution} l'inconnu par un autre mieux choisi pour se ramener à une équation du deuxième degré.
+
+\begin{exemple}
+Résoudre l'équation 
+$$
+x^4 -3x^2 + 2 = 0
+$$
+
+Posons $\textcolor{red}{y}=\textcolor{red}{x^2}$ on a donc
+$$
+\begin{array}{l}
+(\textcolor{red}{x^2})^2 - 3\textcolor{red}{x^2} + 2 = 0 \ssi \\
+(\textcolor{red}{y})^2 - 3\textcolor{red}{y} + 2 = 0 \ssi \\
+y^2 -3y + 2 = 0
+\end{array}
+$$
+
+On résout cet équation du second degré avec par exemple la méthode du discriminant (théorème~\ref{completion}) et on trouve :
+$$
+\textcolor{red}{y_1} = \textcolor{blue}{1} \mbox{ et } \textcolor{red}{y_2} = \textcolor{blue}{2}.
+$$
+\begin{center}
+\fbox{\begin{minipage}{0.8\textwidth}Attention ! L'exercice n'est pas fini. Mon équation de base était en $x$, il faut donc donner une réponse en $x$ !\end{minipage}}
+\end{center}
+Nous avions posé
+$$
+\textcolor{red}{y} = \textcolor{red}{x^2}
+$$
+On a donc à présent les deux équations suivantes :
+$$
+\left\{
+\begin{array}{lcl}
+\textcolor{red}{x^2} &=& \textcolor{blue}{1}\\
+\textcolor{red}{x^2} &=& \textcolor{blue}{2}
+\end{array}
+\right.
+\ssi 
+\left\{
+\begin{array}{lcl}
+\textcolor{red}{x} = 1& \mbox{ ou }& \textcolor{red}{x} = -1\\
+\textcolor{red}{x} = \sqrt{2}& \mbox{ ou }& \textcolor{red}{x} = -\sqrt{2}\\
+\end{array}
+\right.
+$$
+Car $(-1)^2 = 1$ et $(-\sqrt{2})^2 = 1$
+\end{exemple}
+
+\subsubsection{Cas particulier : simplifier une  racine double}
+
+Durant ce processus, on remarque que l'on doit prendre la racine carrée de $y_1$ et de $y_2$. Or on a déjà remarqué que ces deux nombres peuvent être eux-même l'addition d'un nombre et d'une racine. On peut donc se retrouver avec une réponse du genre :
+$$
+\sqrt{2+\sqrt{12}} \textcolor{red}{\neq \sqrt{2} + \sqrt{\sqrt{12}} ! }
+$$
+Ces racines doubles se simplifient par le théorème suivant :
+\begin{theoreme}
+Soient $A$ et $B$ deux nombres. Alors 
+$$
+\sqrt{A+2\sqrt{B}} = \sqrt{m}+\sqrt{n}
+$$
+où $m$ et $n$ sont deux nombres positifs dont la \textcolor{red}{somme} fait $A$ et le \textcolor{blue}{produit} $B$.
+\end{theoreme}
+
+\begin{proof}
+En effet, regardons ce qui ce passe si je met $\sqrt{m}+ \sqrt{n}$ au carré :
+$$
+\begin{array}{lcl}
+\left(\sqrt{m}+ \sqrt{n} \right)^2 &=& \left(\sqrt{m}\right)^2 + 2\cdot \sqrt{m} \cdot \sqrt{n} + \left(\sqrt{n}\right)^2\\
+\mbox{selon l'identité } (a+b)^2 = a^2 + 2ab + b^2&&\\
+&=& m + 2 \sqrt{m\cdot n} + n \\
+&=& (m+n) + 2 \sqrt{m\cdot n}
+\end{array}
+$$
+On a donc bien 
+$$
+\begin{array}{l}
+\left(\sqrt{m}+ \sqrt{n} \right)^2 = (m+n) + 2 \sqrt{m\cdot n} \ssi^{\sqrt{\cdot}}\\
+\sqrt{m}+ \sqrt{n} = \sqrt{(\textcolor{red}{m+n}) + 2 \sqrt{\textcolor{blue}{m\cdot n}}} = \sqrt{A+2\sqrt{B}}.
+\end{array}
+$$
+\end{proof}
+
+\subsection{Les équations réciproques}
+
+Certaines équations possèdent des symétries intéressantes. C'est les cas des équations suivantes, dites \emph{réciproques}
+\begin{enumerate}
+\item $ ax^3+ bx^2+ bx+ a =0$ \label{reciproque1}
+\item $ ax^3+ bx^2- bx- a =0$ \label{reciproque2}
+\item $ax^4+ bx^3 -bx- a = 0$ \label{reciproque3}
+\item $ax^4+ bx^3+ cx^2+ bx+ a =0 $\label{reciproque4}
+\end{enumerate}
+Avec $a\neq 0$ !
+
+Elles sont appelées \emph{réciproques} à cause du théorème suivant :
+\begin{theoreme}
+Soit $P(x) = 0$ une équation réciproque et soit $x_1$ une solution de cet équation. Alors $\frac{1}{x_1}$ est aussi une solution de l'équation $P(x) = 0$.
+\end{theoreme}
+\begin{proof}
+Nous démontrerons ce théorème uniquement pour l'équation~\ref{reciproque1}, les autres démonstrations étant semblables.
+
+Si $x_1$ est une solution de l'équation $P(x) = 0$, cela veut dire que la valeur numérique du polynôme $ax^3+ bx^2+ bx+ a$ vaut zéro lorsque l'on remplace $x$ par $x_1$. En d'autres termes plus mathématiques :
+$$
+ax_1^3+ bx_1^2+ bx_1+ a = 0
+$$
+Divisons maintenant chaque côté par $x_1^3$. On obtient 
+$$
+\begin{array}{lcl}
+\frac{ax_1^3}{x_1^3} + \frac{bx_1^2 }{x_1^3} + \frac{bx_1}{x_1^3} + \frac{a}{x_1^3} &=& 0\ssi^{\mbox{simplifier les fractions}} \\
+a + \frac{b}{x_1} + \frac{b}{x_1^2} + \frac{a}{x_1^3} &=& 0\ssi^{\mbox{ordonner différemment}}  \\
+\frac{a}{x_1^3}+ \frac{b}{x_1^2}+ \frac{b}{x_1}+a&=& 0 \ssi^{\mbox{sortir les paramètres}} \\
+a\frac{1}{x_1^3}+ b\frac{1}{x_1^2}+ b\frac{1}{x_1}+a &=& 0 \ssi^{\mbox{sortir les puissances}} \\
+a\left(\frac{1}{x_1}\right)^3 + b\left(\frac{1}{x_1}\right)^2 + b \left(\frac{1}{x_1}\right) + a &=& 0\ssi\\
+P\left(\frac{1}{x_1}\right) &=& 0
+\end{array}
+$$
+Donc la valeur numérique de $P(x)$ en $x=\frac{1}{x_1}$ est aussi zéro, ce qui veut dire que $\frac{1}{x_1}$ est une solution de l'équation $P(x) = 0$.
+\end{proof}
+
+Grâce à ce théorème, on sait que si par exemple on a une solution en $x=2$, alors on a aussi une solution en $x= \frac{1}{2}$. Dans les faits, nous trouverons des méthodes plus directes qui nous donnerons toutes les solutions des équations, mais nous pourrons toujours utiliser ce théorème pour valider nos solutions.
+
+\subsubsection{Résolution des équations~\ref{reciproque1}, \ref{reciproque2} et \ref{reciproque3}}
+
+On résout ces équations en associant les termes ayant la même partie numérique, en la mettant en évidence et en utilisant les identités remarquables binômiales. Cette méthode ressemble un peu à la méthode du trinôme~\ref{factorisertrinome}.
+
+\begin{exemple}
+\begin{enumerate}
+\item 
+
+\begin{eqnarray*}
+3x^3 - 7x^2 - 7x + 3 &=& 0\\
+3x^3 + 3 - 7x^2 -7x &=& 0\\
+3(x^3+1) - 7x(x+1) &=&0\\
+3(x+1)(x^2 - x + 1)-7x(x+1= &=& 0\\
+(x+1)\left( 3(x^2 - x + 1)-7x\right) &=& 0\\
+(x+1)(3x^2 - 3x+ 3-7x)&=&0\\
+(x+1)(3x^2-10x+3)&=&0
+\end{eqnarray*}
+$$
+\ssi
+\left\{
+\begin{array}{lcl}
+x_1 &=& -1\\
+x_2 &=& 3\\
+x_3 &=& \frac{1}{3}
+\end{array}
+\right.
+$$
+\item 
+\begin{eqnarray*}
+x^4+4x^3-4x-1 &=& 0\\
+x^4 - 1 + 4x^3 - 4x &=&0 \\
+(x^2+1)(x^2-1) + 4(x^2-1) &=& 0\\
+(x^2-1)(x^2+ 4x +1)&=&0
+\end{eqnarray*}
+$$
+\ssi 
+\left\{
+\begin{array}{lcl}
+x_1 &=& 1\\
+x_2 &=& -1\\
+x_3 &=& -2+\sqrt{3}\\
+x_4 &=& -2+\sqrt{3}
+\end{array}
+\right.
+$$
+\end{enumerate}
+\end{exemple} 
+
+\subsubsection{Résolution de l'équation~\ref{reciproque4}}
+
+\begin{exemple}
+\begin{eqnarray*}
+10x^4 - 77x^3+150x^2-77x+10 &=& 0 \mbox{ diviser par } x^2\\
+10x^2-77x+150 - \frac{77}{x}+\frac{10}{x^2} &=& 0\\
+10x^2 + \frac{10}{x^2} - 77x -\frac{77}{x} + 150 &=& 0\\
+10\left(x^2 + \frac{1}{x^2}\right) -77\left(x+\frac{1}{x}\right) + 150 &=& 0 \mbox{ posons } y=\left(x+\frac{1}{x}\right) \mbox{ et } y^2-2 = \left(x^2 + \frac{1}{x^2}\right)\\
+10(y^2-2)-77y+150 &=& 0\\
+10y^2 - 77y + 130 &=& 0
+\end{eqnarray*}
+$$
+\ssi 
+\left\{
+\begin{array}{lcl}
+y_1 &=& \frac{26}{5}\\
+y_2 = \frac{5}{2}
+\end{array}
+\right.
+$$
+On a donc deux cas à traiter :
+$$
+\begin{array}{lcl}
+y=\frac{26}{5}&&\\
+x+\frac{1}{x}&=&\frac{26}{5}\\
+5x^2-26x+5 &=&0\\
+x_1 = 5 &\mbox{ ou }& x_2 = \frac{1}{5}
+\end{array}
+\mbox{ ou }
+\begin{array}{lcl}
+y=\frac{5}{2}&&\\
+x+\frac{1}{x}&=&\frac{5}{2}\\
+2x^2-5x+2 &=&0\\
+x_3 = 2 &\mbox{ ou }& x_4 = \frac{1}{2}
+\end{array}
+$$
+\end{exemple}
+
+\section{Exercices}
+
+\input{nequation/exercice}
+
+\section{Corrigés}
+
+\input{nequation/corrige}
